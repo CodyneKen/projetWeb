@@ -25,6 +25,7 @@ A partir de maintenant, tu as la branche main du projet sur ton ordi
 UTILE : git branch est pratique, ca permet de se reperer 
 
 Maintenant, pour commencer a bosser :
+  
             >git checkout -b <pelo_qui_bosse>-<fichier_edité>-<date?>
             ex : >git checkout -b coco-projet_acceuil-0104
             c'est une idée, jsp comment on va faire en pratique, mais c'est important de distinguer les branches, a qui elles appartiennent, qui les modifie, etc
