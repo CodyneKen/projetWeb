@@ -50,4 +50,9 @@ POUR BOSSER
             >git push -u origin coco-php (coco-php = le nom de la branche que tu veut fusionner, ca sera souvent main pour nous)
 a partir de la, tout le code qu'on as ecrit est sur github.com, et il faut qu'on fasse les merge manuellement ensemble
 (EVITER DE MODIFIER LES MEME FICHIERS SEPAREMENT, ca devient vite chiant)
+
+faut faire des git pull de temps a temps, ATTENTION, c'est pour ca besoin de se coordonner. Quand on fais push/pull, ca va fusionner notre code avec le main, MAIS, si qqn a modifié la fonction bidoutruc() et que quelqu'un d'autre la modifié, quand on fait pull, ca va proposer de choisir laquelle on veut garder. OR, si Wallid l'as modifié d'une certaine facon psq il avait besoin, mais ca interfere avc mon code, bah c vite la merde
+
+            >git pull
  
+ En fait il faut surtout se coordonner avant de faire des push, comme ca on peut faire pull quand on veut et le code marchera.
