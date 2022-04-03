@@ -4,7 +4,8 @@ Auteur : c'est macouille
 
 BONNES RESSOURCES :<br> https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners <br>
                     https://www.atlassian.com/fr/git/tutorials/syncing/git-push <br>
-                    https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1
+                    https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1 <br>
+                    https://git-scm.com/book/it/v2/Git-Basics-Working-with-Remotes
 
 Initialisation:
 Installer github cli https://github.com/cli/cli
