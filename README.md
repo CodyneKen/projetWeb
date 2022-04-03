@@ -40,13 +40,20 @@ UTILE : git checkout -b <nom_de_branch> va creer une branch a partir de la branc
 
 \</FACULTATIF\>
 
-POUR BOSSER
+Résumé POUR BOSSER
+            >gh repo clone CodyneKen/projetWeb
+            
+            >cd projetWeb
   
             >git status : permet  de voir quels fichiers on étés modifiés, lesquels sont trackés
             
-            >git add <nom_fichier> : ajoute des fichiers au trackage(suivi des modifs de fichiers), je fais tout le temps git add . ou git add *, ca ajoute tout les fichiers, balek
+            >git add <nom_fichier> : ajoute des fichiers au trackage(suivi des modifs de fichiers), je fais tout le temps "git add ." ou "git add *", ca ajoute tout les fichiers, balek
+            
+            <TAFFER, puis refaire "git add *" si tu créé des nouveaux dossier>
             
             >git commit -m "message du commit" : fixe les changements effectués au fichiers a la branche actuelle
+            
+            <C'est tout pour l'instant, push & pull ca se fait ensemble>
             
             >git push -u origin coco-php (coco-php = le nom de la branche que tu veut fusionner, ca sera souvent main pour nous)
 a partir de la, tout le code qu'on as ecrit est sur github.com, et il faut qu'on fasse les merge manuellement ensemble
