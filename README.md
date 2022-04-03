@@ -13,8 +13,9 @@ Installer github cli https://github.com/cli/cli
 aller sur https://github.com/CodyneKen/projetWeb
 
 Sur pc:
+            >gh auth login
+            
 aller dans le dossier on on veut mettre le repo (la ou tu mes tout tes dossies github)
-
             >gh repo clone CodyneKen/projetWeb
 UTILE : ca met un dossier deja existant sur ton pc, après c'est bonnard.
         pour mettre un dossier sur github c'est vachement plus compliqué, me demander
