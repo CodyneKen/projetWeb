@@ -2,21 +2,24 @@ projet_web
 
 Auteur : c'est macouille
 
-BONNES RESSOURCES :<br> https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners <br>
-                    https://www.atlassian.com/fr/git/tutorials/syncing/git-push <br>
-                    https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1 <br>
+BONNES RESSOURCES <br>
+                    INTRO EN FRANCAIS : https://www.atlassian.com/fr/git/tutorials/syncing/git-push <br>
+                    intermediaire : https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1 <br>
+                    avancé / utilisation pour ecrire du software pro :<br>
+                    https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners <br>
                     https://git-scm.com/book/it/v2/Git-Basics-Working-with-Remotes
 
-Initialisation:
+Initialisation:<br>
 Installer github cli https://github.com/cli/cli
 
-aller sur https://github.com/CodyneKen/projetWeb
-
 Sur pc:
+
             >gh auth login
             
-aller dans le dossier on on veut mettre le repo (la ou tu mes tout tes dossies github)
+aller dans le dossier on on veut mettre le repo (la ou tu mes tout tes dossiers github)
+
             >gh repo clone CodyneKen/projetWeb
+            
 UTILE : ca met un dossier deja existant sur ton pc, après c'est bonnard.
         pour mettre un dossier sur github c'est vachement plus compliqué, me demander
         
@@ -28,7 +31,7 @@ A partir de maintenant, tu as la branche main du projet sur ton ordi
 
             >cd projetWeb
             >git branch      (pour voir sur quelle branche on est)
-(affichage) >* main          (normalement)
+            >* main          (en affichage sur le terminal)
 
 UTILE : git branch est pratique, ca permet de se reperer 
 
@@ -43,6 +46,11 @@ UTILE : git checkout -b <nom_de_branch> va creer une branch a partir de la branc
 \</FACULTATIF\>
 
 Résumé POUR BOSSER
+
+            >INSTALLER gh command line  https://github.com/cli/cli/blob/trunk/docs/install_linux.md
+
+            >gh auth login
+
             >gh repo clone CodyneKen/projetWeb
             
             >cd projetWeb
