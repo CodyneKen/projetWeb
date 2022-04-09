@@ -2,6 +2,30 @@ projet_web
 
 Auteur : c'est macouille
 
+Résumé POUR BOSSER
+
+            >INSTALLER gh command line  https://github.com/cli/cli/blob/trunk/docs/install_linux.md
+
+            >gh auth login
+
+            >gh repo clone CodyneKen/projetWeb
+            
+            >cd projetWeb
+  
+            >git status : permet  de voir quels fichiers on étés modifiés, lesquels sont trackés
+            
+            >git add <nom_fichier> : ajoute des fichiers au trackage(suivi des modifs de fichiers), je fais tout le temps "git add ." ou "git add *", ca ajoute tout les fichiers, balek
+            
+            <TAFFER, puis refaire "git add *" si tu créé des nouveaux dossier>
+            
+            >git commit -m "message du commit" : fixe les changements effectués au fichiers a la branche actuelle
+            
+            <C'est tout pour l'instant, push & pull ca se fait ensemble>
+            
+            >git push -u origin coco-php (coco-php = le nom de la branche que tu veut fusionner, ca sera souvent main pour nous)
+            
+            
+
 BONNES RESSOURCES <br>
                     INTRO EN FRANCAIS : https://www.atlassian.com/fr/git/tutorials/syncing/git-push <br>
                     intermediaire : https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1 <br>
@@ -45,27 +69,7 @@ UTILE : git checkout -b <nom_de_branch> va creer une branch a partir de la branc
 
 \</FACULTATIF\>
 
-Résumé POUR BOSSER
 
-            >INSTALLER gh command line  https://github.com/cli/cli/blob/trunk/docs/install_linux.md
-
-            >gh auth login
-
-            >gh repo clone CodyneKen/projetWeb
-            
-            >cd projetWeb
-  
-            >git status : permet  de voir quels fichiers on étés modifiés, lesquels sont trackés
-            
-            >git add <nom_fichier> : ajoute des fichiers au trackage(suivi des modifs de fichiers), je fais tout le temps "git add ." ou "git add *", ca ajoute tout les fichiers, balek
-            
-            <TAFFER, puis refaire "git add *" si tu créé des nouveaux dossier>
-            
-            >git commit -m "message du commit" : fixe les changements effectués au fichiers a la branche actuelle
-            
-            <C'est tout pour l'instant, push & pull ca se fait ensemble>
-            
-            >git push -u origin coco-php (coco-php = le nom de la branche que tu veut fusionner, ca sera souvent main pour nous)
 a partir de la, tout le code qu'on as ecrit est sur github.com, et il faut qu'on fasse les merge manuellement ensemble
 (EVITER DE MODIFIER LES MEME FICHIERS SEPAREMENT, ca devient vite chiant)
 
