@@ -2,9 +2,9 @@
 <html lang = "fr"> 
   <head>
         <meta charset="utf-8" />
-        <title>Formulaire</title>
+        <title>NOZANA</title>
         <link rel = "stylesheet" href="projet.css">
-        <script src="projet.js"></script>
+        <script src="script.js"></script>
     </head> 
     <body> 
         <h1>NOZAMA</h1>
@@ -30,7 +30,7 @@
         <div id = "promo">
             <h2>Promotions</h2>
             <h3>ROG Zephyrus M16 GU603HE avec NVIDIA GeForce RTX 3050 Ti</h3>
-            <img src="photos/pc_asus.webp" class='image' alt="PC gamer asus" /><br>
+            <img src="photos/pc_asus.webp" class='image' alt="PC gamer asus"/><br>
             <p class='ancien_prix'>1799,99 € </p>
             <p class = 'nouveau_prix'>1499,99 €</p>
             Économisez 300,00 € <br>
@@ -59,9 +59,24 @@
             Économisez 149,01 € <br>
         </div>
         <br>
-        <a href = http://localhost:8000/apropos.php>A propos de NOZANA</a>
-        <button id="contacter" onclick="contacter()">Nous contacter !</button>
+        <a href = http://localhost:8000/apropos.html>A propos de NOZANA</a>
+        <button id="contacter" onclick="Afficher()">Nous contacter !</button>
         <br>
         <br>
-    </body>
+        </body>
+        <footer>
+        <form id="form1" onsubmit="return verifierDonnees()" novalidate="novalidate">
+            <fieldset>
+            <legend><strong>Commentaire</strong></legend>
+            <label for="nom">Nom</label><input type="text" id="nom" required />
+            <label for="email">Adresse email</label><input type="email" id="email" required /><br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="10" cols="86" required="required"></textarea><br>
+            Nous acceptons seulement les commentaires de plus de 50 caractères.
+            </fieldset>  
+            <button id="enlever" onclick="Enlever()">Masquer formulaire </button>
+            <input type="submit" value="Envoyer le message" onclick="verifierDonnees()" />
+            <input type="reset" value="Effacer" />      
+         </form>  
+    </footer>
 </html>
