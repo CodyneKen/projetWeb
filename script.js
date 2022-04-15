@@ -33,4 +33,3 @@ document.getElementById("louis").style.display = "none";
 document.getElementById("walid").style.display = "none";
 document.getElementById("corentin").style.display = "block";
 }
-

@@ -1,36 +1,50 @@
 <!DOCTYPE html>
-<html lang = "fr"> 
-  <head>
-        <meta charset="utf-8" />
-        <title>NOZANA</title>
-        <link rel = "stylesheet" href="projet.css">
-        <script src="script.js"></script>
-    </head> 
-    <body> 
-        <h1>NOZAMA</h1>
-        <?php
-            if ($_POST['pseudo']!=""){
-                echo "<a href = http://localhost:8000/compte.php>Mon compte</a>";
-                echo "<a href = http://localhost:8000/panier.php>Panier</a>";
-            }
-            else{
-                echo "<a id = 'connexion' href = http://localhost:8000/connexion.php>Connexion</a>";
-            }
-        ?>
-        <div id = "categories">
-        Catégories :
-        <a href = http://localhost:8000/informatique.php>Informatique</a>
-        <a href = http://localhost:8000/electromenager.php>Electromenager</a>
-        <a href = http://localhost:8000/figurine.php>figurine</a>
-        <a href = http://localhost:8000/vetements.php>Vêtements</a>
-        <a href = http://localhost:8000/mobilier.php>Mobilier</a>
-        <a href = http://localhost:8000/poster.php>Poster</a>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="script.js"></script>
+	<title>accueil</title>
+</head>
+<body>
+	<div id="haut">
+	 <div class="logo"><strong>NOZAMA</strong> </div>   
+	 <div class="barre"><input id="searchbar"  type="text"
+        name="search" placeholder="recherche">  </div> 
+	<div class="co">
+		<?php
+
+session_start();
+require_once 'config.php';
+	if(!isset($_SESSION['user']))
+	{
+		echo "<a id=\"con\" href=\"connexion2.php\">connexion</a><br> <a id=\"panier\" href=\"panier.php\">Mon Panier</a></div>";
+	}
+	else{
+		echo "<a id=\"con\" href=\"compte.php\">{$_SESSION['user']}</a><br> <a id=\"panier\" href=\"panier.php\">Mon Panier</a></div>";
+	}
+
+		?>
+		
+	</div>
+	<br>
+	<br>
+	<br>
+	<div id = "categories">
+        Categories :
+        <a class ="c" href = http://localhost:8000/informatique.php>Informatique</a>
+        <a class ="c" href = http://localhost:8000/electromenager.php>Electromenager</a>
+        <a class ="c"  href = http://localhost:8000/figurine.php>figurine</a>
+        <a class ="c" href = http://localhost:8000/vetements.php>Vetements</a>
+        <a class ="c" href = http://localhost:8000/mobilier.php>Mobilier</a>
+        <a class ="c" href = http://localhost:8000/poster.php>Poster</a>
         </div>
-        <br>
+
         <div id = "promo">
             <h2>Promotions</h2>
             <h3>ROG Zephyrus M16 GU603HE avec NVIDIA GeForce RTX 3050 Ti</h3>
-            <img src="photos/pc_asus.webp" class='image' alt="PC gamer asus"/><br>
+            <img src="photos/pc_asus.webp" class='image' alt="PC gamer asus" /><br>
             <p class='ancien_prix'>1799,99 € </p>
             <p class = 'nouveau_prix'>1499,99 €</p>
             Économisez 300,00 € <br>
@@ -59,24 +73,32 @@
             Économisez 149,01 € <br>
         </div>
         <br>
+
         <a href = http://localhost:8000/apropos.html>A propos de NOZANA</a>
-        <button id="contacter" onclick="Afficher()">Nous contacter !</button>
+        <?php
+        if(isset($_SESSION['user'])){
+            echo "<button id=\"contacter\" onclick=\"Afficher()\">Nous contacter !</button>";
+        } 
+        else{
+            echo "<div>Pour laisser un commentaire connectez vous s'il vous plait.</div>";
+        }
+        ?>
         <br>
         <br>
         </body>
         <footer>
-        <form id="form1" onsubmit="return verifierDonnees()" novalidate="novalidate">
+        <form id="form1" action="commentaire.php" method="post">
             <fieldset>
             <legend><strong>Commentaire</strong></legend>
-            <label for="nom">Nom</label><input type="text" id="nom" required />
-            <label for="email">Adresse email</label><input type="email" id="email" required /><br>
-            <label for="message">Message:</label>
+            <label for="message"></label>
             <textarea id="message" name="message" rows="10" cols="86" required="required"></textarea><br>
-            Nous acceptons seulement les commentaires de plus de 50 caractères.
             </fieldset>  
             <button id="enlever" onclick="Enlever()">Masquer formulaire </button>
             <input type="submit" value="Envoyer le message" onclick="verifierDonnees()" />
             <input type="reset" value="Effacer" />      
          </form>  
     </footer>
+
+</body>
 </html>
+
