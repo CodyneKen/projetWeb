@@ -1,13 +1,14 @@
 la table sql :
-
 CREATE TABLE clients (
-    pseudo VARCHAR(40) PRIMARY KEY,
-    prenom VARCHAR(20),
-    nom VARCHAR(20),
-    mail VARCHAR(40),
-    adresse VARCHAR(40),
-    mdp VARCHAR(20)
-);
+ idClient int NOT NULL AUTO_INCREMENT,
+ pseudo varchar(40) NOT NULL,
+ prenom varchar(20) DEFAULT NULL,
+ nom varchar(20) DEFAULT NULL,
+ mail varchar(40) DEFAULT NULL,
+ adresse varchar(40) DEFAULT NULL,
+ mdp varchar(20) DEFAULT NULL,
+ PRIMARY KEY (idClient)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
 table commentaire :
 
