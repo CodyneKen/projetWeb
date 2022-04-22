@@ -55,7 +55,7 @@
                 </div>
                 <h3>Image</h3>
                 <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
-                <label> Ajouter une image : <input type="file" name="image" accept="image/jpeg"></label><br>
+                <label> Ajouter une image : <input type="file" name="image"></label><br>
                 <div class="bloc">
                     <button type="submit" >Ajouter article</button>
                 </div>   

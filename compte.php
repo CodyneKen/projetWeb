@@ -183,7 +183,7 @@ require_once 'config.php';
         <a class ="c" href = http://localhost:8000/vetements.php>Vetements</a>
         <a class ="c" href = http://localhost:8000/mobilier.php>Mobilier</a>
         <a class ="c" href = http://localhost:8000/poster.php>Poster</a>
-        </div>
+    </div>
 	<br>
 	<br>
 	<br>

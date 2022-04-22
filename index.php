@@ -5,7 +5,7 @@
     $check = $connexion->prepare("SELECT  pseudo, typemembre FROM Membres where pseudo  = '$pseudo' ");
     $check->execute(array($pseudo));
     $data = $check->fetch();
-    ?>
+?>
     
     <!DOCTYPE html>
 <html>

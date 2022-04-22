@@ -52,5 +52,4 @@ INSERT INTO Membres VALUES(NULL, 'moi', 'Anonyme', '????', 'personne@mystere.fr'
 INSERT INTO Membres VALUES(NULL, 'toi', 'Fanck', 'Bidack', 'farnck@gmail.com', '7 rue Bidack', 'FRANCKfranck','client');
 
 
-INSERT INTO Articles VALUES(NULL, 'frigo', 'gros frigo', '1239.69','photos/frigo1.jpeg', 1, 28, 'electromenager');
 
