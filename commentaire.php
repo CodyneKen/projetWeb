@@ -15,7 +15,7 @@ if(isset($_SESSION['user'])){
         'Idcom' => NULL,
         'pseudo' => $pseudo
     ));
-    header('Location:index.php?reg_err=success');
+    header('Location:index.php');
     die();
 }
 

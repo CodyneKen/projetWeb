@@ -21,9 +21,10 @@ CREATE TABLE Articles(
     nomArticle VARCHAR(128) NOT NULL,
     descriptif TEXT NOT NULL,
     prix FLOAT NOT NULL,
-    img VARCHAR(128),
+    img BLOB,
     idVendeur INT,
     stock INT,
+    categorie ENUM('informatique', 'electromenager', 'figurine', 'vetement', 'mobilier', 'poster'),
     FOREIGN KEY (idVendeur) REFERENCES Membres(idMembre) 
     )ENGINE=InnoDB;
 
@@ -51,5 +52,5 @@ INSERT INTO Membres VALUES(NULL, 'moi', 'Anonyme', '????', 'personne@mystere.fr'
 INSERT INTO Membres VALUES(NULL, 'toi', 'Fanck', 'Bidack', 'farnck@gmail.com', '7 rue Bidack', 'FRANCKfranck','client');
 
 
-INSERT INTO Articles VALUES(NULL, 'frigo', 'gros frigo', '1239.69','photos/frigo1.jpeg', 1, 28);
+INSERT INTO Articles VALUES(NULL, 'frigo', 'gros frigo', '1239.69','photos/frigo1.jpeg', 1, 28, 'electromenager');
 
