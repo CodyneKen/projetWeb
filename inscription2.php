@@ -4,75 +4,14 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>inscription</title>
-	<style type="text/css">
-			
-	@font-face { 	font-family: "Molot"; 	src: url('molot.ttf'); }
-	body {
-              background-color:#04212f ;
-            }
-
-            .logo {
-                width:10%;
-                font-family: "Molot";
-                font-size: 40px;
-                float:center;
-                
-                position: relative;
-                color: whitesmoke;
-                margin: 0 auto;
-     		width: 100px;
-          }
-          .co {
-          	
-          	margin: 0 auto;
-     		width: 1000px;
-     		height: 1000px;
-     		background-color: black;
-     		position: relative;
-     		align-content: center;
-          }
-          .bloc{
-          	margin: 0 auto;
-     		width: 150px;
-
-          }
-          h2{
-          	margin: 0 auto;
-     		width: 150px;
-          	font-family: "Molot";
-             font-size: 40px;
-		color: whitesmoke;
-          }
-          button {
-          	margin: 0 auto;
-     		width: 100px;
-     		font-family: "Molot";
-          	width: 100px;
-          	font-size: 40;
-          }
-
-          input {
-          	font-family: "Molot";
-          	font-size: 20px;
-		color: #04212f;
-          }
-          a{
-          	font-family: "Molot";
-          	color: red;
-          	text-decoration: none;
-          	position: relative;
-          	float: right;
-          }
-
-
-	</style>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
 
 
 	 <div class="logo"><strong>NOZAMA</strong> </div> 
-	 <a href="index.php">Accueil</a>
+	 <a class = "accueil" href="index.php">Accueil</a>
 	 <br>
 	<br>
 	<br>
@@ -162,6 +101,15 @@
                 </div>
                 <div class="bloc">
                     <input type="password" name="password_retype"  placeholder="Verif-mot de passe" required="required" autocomplete="off">
+                </div>
+                <h3>Cilent ou Vendeur</h3>
+                <div class="bloc">
+                    <input type="radio" id="client" name="type" value="client">
+                    <label for="client">Client</label>
+                </div>
+                <div class="bloc" >
+                    <input type="radio" id="vendeur" name="type" value="vendeur">
+                    <label for="vendeur">Vendeur</label>
                 </div>
                 <div class="bloc">
                     <button type="submit" >Inscription</button>
