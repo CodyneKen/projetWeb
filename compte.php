@@ -73,14 +73,15 @@ align-content: space-between;
 position: relative;
 }
 
-#categories {
+#categories{
 	font-size: 30px;
 	background-color: whitesmoke;
 	font-family: "Molot";
 	color: #04212f;
 	align-content: space-between;
-	
 }
+
+
 #categories a:link:hover{
     border: solid 1px black;
 }
@@ -140,7 +141,11 @@ body{
 	width:50%;
 }
 
-
+.accueil{
+	font-size: 30px;
+	font-family: "Molot";
+	color: whitesmoke;
+}
 
 </style>
 <body>
@@ -196,7 +201,7 @@ require_once 'config.php';
         				require_once 'config.php';
 						$pseudo = $_SESSION['user'] ;
 						
-						$check = $connexion->prepare("SELECT  pseudo,prenom,nom,mail,adresse,mdp FROM clients where pseudo  = '$pseudo' ");
+						$check = $connexion->prepare("SELECT  pseudo,prenom,nom,mail,adresse,mdp FROM Membres where pseudo  = '$pseudo' ");
 					    $check->execute(array($pseudo));
 					    $data = $check->fetch();
 					    
@@ -207,11 +212,10 @@ require_once 'config.php';
 					    	  <br> MAIL : {$data['mail']} " ;
 
         			?>
-        			
-        		</div>
-        		<div class="mes_commandes">Mes commandes:
         			<br>
-        			
+					<a class = "accueil" href = http://localhost:8000/index.php>Accueil</a>
+        		</div>
+        		<div class="mes_commandes">Mes commandes:        			
         		</div>
 
         </div>

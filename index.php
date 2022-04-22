@@ -1,4 +1,13 @@
-<!DOCTYPE html>
+<?php
+    session_start();
+    require_once 'config.php';
+    $pseudo = $_SESSION['user'] ;
+    $check = $connexion->prepare("SELECT  pseudo, typemembre FROM Membres where pseudo  = '$pseudo' ");
+    $check->execute(array($pseudo));
+    $data = $check->fetch();
+    ?>
+    
+    <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -12,19 +21,15 @@
         <div class="logo"><strong>NOZAMA</strong> </div>   
         <div class="barre">
             <input id="searchbar" type="text" name="search" placeholder="recherche">  </div> 
-        <div class="co">
-            <?php
-
-        if(!isset($_SESSION['user']))
-        {
-            echo "<a id=\"con\" href=\"connexion2.php\">connexion</a><br> <a id=\"panier\" href=\"panier.php\">Mon Panier</a></div>";
-        }
-        else{
-            echo "<a id=\"con\" href=\"compte.php\">{$_SESSION['user']}</a><br> <a id=\"panier\" href=\"panier.php\">Mon Panier</a></div>";
-        }
-
-            ?>
-            
+        <div class="co">     
+        <?php
+                if(!isset($_SESSION['user'])){
+                    echo "<a id=\"con\" href=\"connexion2.php\">connexion</a><br> <a id=\"panier\" href=\"panier.php\">Mon Panier</a></div>";
+                }
+                else{
+                    echo "<a id=\"con\" href=\"compte.php\">Bonjour {$_SESSION['user']}</a><br> <a id=\"panier\" href=\"panier.php\">Mon Panier</a></div>";
+                }
+		?>
         </div>
         <br>
         <br>
@@ -74,16 +79,20 @@
 
             <a href = http://localhost:8000/apropos.html>A propos de NOZANA</a>
             <?php
-            /*if(isset($_SESSION['user'])){*/
+            if(isset($_SESSION['user'])){
                 echo "<button id=\"contacter\" onclick=\"Afficher()\">Nous contacter !</button>";
-            //} 
-            /*else{
+            } 
+            else{
                 echo "<div>Pour laisser un commentaire connectez vous s'il vous plait.</div>";
-            }*/
+            }
             ?>
             <br>
             <br>
-            <a href = http://localhost:8000/ajout_produit.php>Mettre un article en vente</a>
+            <?php
+                if($data['typemembre'] == 'vendeur'){
+                    echo "<a href = http://localhost:8000/ajout_produit.php>Mettre un article en vente</a>";
+                }
+            ?>
             </body>
             <footer>
             <form id="form1" action="commentaire.php" method="post">
