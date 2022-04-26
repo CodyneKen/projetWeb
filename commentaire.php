@@ -2,22 +2,22 @@
 
 session_start();
 require_once 'config.php';
-
-if(isset($_SESSION['user'])){
-    $message = htmlspecialchars($_POST['message']);
-    $pseudo = $_SESSION['user'];
-    $insert = $connexion->prepare("INSERT INTO commentaire(nom,prenom,email,commentaire,Idcom,pseudo) VALUES(:nom,:prenom,:email,:commentaire,:Idcom,:pseudo)");
-    $insert->execute(array(
-        'nom' => $_SESSION['nom'],
-        'prenom' => $_SESSION['prenom'],
-        'email' => $_SESSION['email'],
-        'commentaire' => $message,
-        'Idcom' => NULL,
-        'pseudo' => $pseudo
-    ));
-    header('Location:index.php');
-    die();
-}
-
+$pseudo = $_SESSION['user'];
+$requete = "SELECT idMembre FROM Membres WHERE pseudo = '$pseudo'";
+/* recupere dans resultat toutes les lignes evc les colonnes QUE l'ON VEUT */
+$resultat = $connexion->prepare($requete);
+$resultat->execute();
+$ligne = $resultat->fetch();
+$message = htmlspecialchars($_POST['message']);
+$insert = $connexion->prepare("INSERT INTO Commentaires(dateCommentaire, mess, idMembre) VALUES(:dateCommentaire, :mess, :idMembre)");
+$temps = time();
+$today = date('Y-m-d', $temps);
+$insert->execute(array(
+    'dateCommentaire' => $today,
+    'mess' => $message,
+    'idMembre' => $ligne['idMembre']
+));
+header('Location:index.php');
+die();
 
 ?>
