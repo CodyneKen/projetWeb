@@ -51,5 +51,9 @@ INSERT INTO Membres VALUES(NULL, 'toto', 'Toto', 'Treto', 'toto@outlook.com', '7
 INSERT INTO Membres VALUES(NULL, 'moi', 'Anonyme', '????', 'personne@mystere.fr', '7 rue mystere', 'RIENrien', 'vendeur');
 INSERT INTO Membres VALUES(NULL, 'toi', 'Fanck', 'Bidack', 'farnck@gmail.com', '7 rue Bidack', 'FRANCKfranck','client');
 
+INSERT INTO Membres VALUES(NULL, 'Louis', 'Louis', 'Marliac', 'louis.marliac@etu.univ-st-etienne.fr', '7 rue Louis', 'Louis','admin');
+INSERT INTO Membres VALUES(NULL, 'Walid', 'Walid', 'Zeghdallou', 'walid.zeghdallou@etu.univ-st-etienne.fr', '7 rue Walid', 'Walid','admin');
+INSERT INTO Membres VALUES(NULL, 'Corentin', 'Corentin', 'Bohelay', 'corentin.bohelay@etu.univ-st-etienne.fr', '7 rue Corentin', 'Corentin','admin');
+
 
 

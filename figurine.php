@@ -40,6 +40,9 @@
                 echo $ligne['prix']."€";
                 echo "<br>";
                 echo "Plus que ".$ligne['stock']." articles";
+                echo "<br>";
+                echo "<br>";
+                echo "<button id='ajouter' onclick='...fonctionpanier...'>Ajouter au panier</button>";
                 echo "</div>";
                 echo "<div class = 'box2'>";
                 echo "<img src='$image' class='image' alt='$image' />";

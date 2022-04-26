@@ -145,8 +145,8 @@ h1{
 }
 
 .image {
-    width : 200px;
-    height : 200px;
+    max-width: 200px;
+    max-height : 200px;
     position: absolute;
 }
     
@@ -175,6 +175,12 @@ input::placeholder {
 }
     
 input {
+    font-family: "Molot";
+    font-size: 20px;
+    color: #04212f;
+}
+
+button {
     font-family: "Molot";
     font-size: 20px;
     color: #04212f;
