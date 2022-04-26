@@ -19,8 +19,9 @@
     <body>
         <div id="haut">
         <div class="logo"><strong>NOZAMA</strong> </div>   
-        <div class="barre">
-            <input id="searchbar" type="text" name="search" placeholder="recherche">  </div> 
+        <form class="barre" method="GET" action="recherche.php">
+            <input id="searchbar" type="search" name="search" placeholder="recherche">  
+        </form> 
         <div class="co">     
         <?php
                 if(!isset($_SESSION['user'])){
