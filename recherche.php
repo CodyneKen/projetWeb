@@ -14,12 +14,12 @@
         <br>
         <div id = "categories">
             Categories :
-            <a class ="c" href = http://localhost:8000/informatique.php>Informatique</a>
-            <a class ="c" href = http://localhost:8000/electromenager.php>Electromenager</a>
-            <a class ="c"  href = http://localhost:8000/figurine.php>figurine</a>
-            <a class ="c" href = http://localhost:8000/vetements.php>Vetements</a>
-            <a class ="c" href = http://localhost:8000/mobilier.php>Mobilier</a>
-            <a class ="c" href = http://localhost:8000/poster.php>Poster</a>
+            <a class ="c" href = http://localhost:8000/categ.php?categorie=informatique>Informatique</a>
+            <a class ="c" href = http://localhost:8000/categ.php?categorie=electromenager>Electromenager</a>
+            <a class ="c"  href = http://localhost:8000/categ.php?categorie=figurine>Figurines</a>
+            <a class ="c" href = http://localhost:8000/categ.php?categorie=vetements>Vetements</a>
+            <a class ="c" href = http://localhost:8000/categ.php?categorie=mobilier>Mobilier</a>
+            <a class ="c" href = http://localhost:8000/categ.php?categorie=poster>Poster</a>
         </div>
         <br>
 
