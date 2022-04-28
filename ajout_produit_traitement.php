@@ -1,6 +1,12 @@
 <?php
 	
-	require_once 'config.php';
+	session_start();
+    require_once 'config.php';
+    $pseudo = $_SESSION['user'];
+    $requete = "SELECT idMembre FROM Membres WHERE pseudo = '$pseudo'";
+    $resultat = $connexion->prepare($requete);
+    $resultat->execute();
+    $ligne = $resultat->fetch();
 
     if(isset($_POST['nom']) && isset($_POST['prix']) && isset($_POST['quantite']) && isset($_POST['categorie']) && isset($_POST['descriptif']))
 	{
@@ -18,7 +24,7 @@
                 'nomArticle' => $nom,
                 'descriptif' => $descriptif,
                 'prix' => $prix,
-                'idVendeur' => 2,// à changer lorsque inscription conexion fonctionnera
+                'idVendeur' => $ligne['idMembre'],
                 'img' =>$img,
                 'stock' => $quantite,
                 'categorie' => $categorie
