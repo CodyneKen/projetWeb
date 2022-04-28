@@ -15,7 +15,7 @@ CREATE TABLE Membres (
  nom varchar(20) DEFAULT NULL,
  mail varchar(40) DEFAULT NULL,
  adresse varchar(128) DEFAULT NULL,
- mdp varchar(20) DEFAULT NULL,
+ mdp varchar(256) DEFAULT NULL,
  typemembre	ENUM('client','vendeur','admin'),
  PRIMARY KEY (idMembre)
 ) ENGINE=InnoDB;
@@ -51,14 +51,14 @@ CREATE TABLE Commentaires(
 )ENGINE=InnoDB;
 
 -- Membres (idMembre, pseudo, prenom, nom, mail, adresse, mdp , typemembre) 
-INSERT INTO Membres VALUES(NULL, 'lala', 'Jean', 'Monnet', 'jean@univ.fr', '7 rue Jean', 'JEANjean','client');
-INSERT INTO Membres VALUES(NULL, 'toto', 'Toto', 'Treto', 'toto@outlook.com', '7 rue TOTO', 'TOTOtoto','client');
-INSERT INTO Membres VALUES(NULL, 'moi', 'Anonyme', '????', 'personne@mystere.fr', '7 rue mystere', 'RIENrien', 'vendeur');
-INSERT INTO Membres VALUES(NULL, 'toi', 'Fanck', 'Bidack', 'farnck@gmail.com', '7 rue Bidack', 'FRANCKfranck','client');
+INSERT INTO Membres VALUES(NULL, 'lala', 'Jean', 'Monnet', 'jean@univ.fr', '7 rue Jean', SHA1(CONCAT(SHA1('JEANjean'), SHA1('Monnet'))),'client');
+INSERT INTO Membres VALUES(NULL, 'toto', 'Toto', 'Treto', 'toto@outlook.com', '7 rue TOTO', SHA1(CONCAT(SHA1('TOTOtoto'), SHA1('Treto'))),'client');
+INSERT INTO Membres VALUES(NULL, 'moi', 'Anonyme', '????', 'personne@mystere.fr', '7 rue mystere', SHA1(CONCAT(SHA1('RIENrien'), SHA1('????'))), 'vendeur');
+INSERT INTO Membres VALUES(NULL, 'toi', 'Fanck', 'Bidack', 'farnck@gmail.com', '7 rue Bidack', SHA1(CONCAT(SHA1('FRANCKfranck'), SHA1('Bidack'))),'client');
 
-INSERT INTO Membres VALUES(NULL, 'Louis', 'Louis', 'Marliac', 'louis.marliac@etu.univ-st-etienne.fr', '7 rue Louis', 'Louis','admin');
-INSERT INTO Membres VALUES(NULL, 'Walid', 'Walid', 'Zeghdallou', 'walid.zeghdallou@etu.univ-st-etienne.fr', '7 rue Walid', 'Walid','admin');
-INSERT INTO Membres VALUES(NULL, 'Corentin', 'Corentin', 'Bohelay', 'corentin.bohelay@etu.univ-st-etienne.fr', '7 rue Corentin', 'Corentin','admin');
+INSERT INTO Membres VALUES(NULL, 'Louis', 'Louis', 'Marliac', 'louis.marliac@etu.univ-st-etienne.fr', '7 rue Louis', SHA1(CONCAT(SHA1('Louis'), SHA1('Marliac'))),'admin');
+INSERT INTO Membres VALUES(NULL, 'Walid', 'Walid', 'Zeghdallou', 'walid.zeghdallou@etu.univ-st-etienne.fr', '7 rue Walid', SHA1(CONCAT(SHA1('Walid'), SHA1('Zeghdallou'))),'admin');
+INSERT INTO Membres VALUES(NULL, 'Corentin', 'Corentin', 'Bohelay', 'corentin.bohelay@etu.univ-st-etienne.fr', '7 rue Corentin', SHA1(CONCAT(SHA1('Corentin'), SHA1('Bohelay'))),'admin');
 
 -- Articles (idArticle, nomArticle, descriptif, prix, img, idVendeur, stock, categorie <ENUM>)
 INSERT INTO Articles VALUES(NULL, "frigo", "frigo", 5, LOAD_FILE('./photos/frigo1.jpeg'), 3, 15, 'electromenager');
