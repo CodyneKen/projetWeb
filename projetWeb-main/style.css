@@ -1,0 +1,257 @@
+
+@font-face { font-family: "Molot"; 	src: url('molot.ttf'); }
+
+#haut {
+    width:100%;
+    align-content: space-between;
+}
+
+#searchbar{
+    width: 1200px;
+    height: 30px;
+}
+
+.search {
+width:80%;
+float:left;
+align-content: space-between;
+position: relative;
+}
+
+.logo {
+    width:10%;
+	font-family: "Molot";
+	font-size: 40px;
+	float:left;
+	align-content: space-between;
+	position: relative;
+	color: whitesmoke;
+}
+
+#con {
+    font-family: "serif";
+color : whitesmoke;
+text-decoration: none;
+}
+
+#panier {
+    font-family: "serif";
+	
+    color : whitesmoke;
+    text-decoration: none;
+    
+}
+.co {
+    width:10%;
+    font-family: "serif";
+    float:left;
+    align-content: space-between;
+    position: relative;
+}
+
+#categories {
+    font-size: 30px;
+	background-color: whitesmoke;
+	font-family: "Molot";
+	color: #04212f;
+	align-content: space-between;
+	
+}
+#categories a:link:hover{
+    border: solid 1px black;
+}
+
+.c {
+    color: #04212f;
+	text-decoration: none;
+}
+
+#promo{
+    border:2px solid #5c3566;
+    width: 300px;
+    background-color: aliceblue;
+}
+
+#meilleures_ventes{
+    width: 300px;
+    border:2px solid #5c3566;
+    position: absolute;
+    left: 600px;
+    top: 240px;
+    background-color: aliceblue;
+}
+#form1{
+    display: none;
+}
+
+footer{
+    background-color: rgb(108, 158, 160);
+}
+
+fieldset{
+    border: 1px solid rgb(8, 1, 29);
+}
+
+h1{
+    margin: 0 auto;
+    width: 150px;
+    font-family: "Molot";
+    font-size: 40px;
+    color: whitesmoke;
+}
+
+#contacter {
+    box-shadow: 3px 4px 0px 0px #1564ad;
+    background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+    background-color:#79bbff;
+    border-radius:42px;
+    border:1px solid #337bc4;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:19px;
+    font-weight:bold;
+    padding:15px 65px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #528ecc;
+    position: absolute;
+    left: 400px;
+}
+
+#contacter:hover {
+    background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+    background-color:#378de5;
+}
+
+#contacter:active {
+    position:relative;
+    top:2px;
+}
+
+
+#contacter{
+    position: relative;
+    bottom: 10%;
+}
+
+.ancien_prix {
+    color: red;
+    text-decoration:line-through;
+}
+
+.nouveau_prix {
+    color: green;
+}
+
+.image {
+    width : 100px;
+    height : 100px;
+    position: absolute;
+}
+    
+    
+    /*
+    div {
+        width: 173px;
+        height: 50px;
+        font-size: 40px;
+        position: relative;
+        float: left;
+        align-content: space-around;
+        font-weight: 400;
+        font-family: "Molot";
+        color: whitesmoke;
+        
+        
+        
+    }
+    */
+ 
+
+input::placeholder {
+    color: black;
+    font-family: "Molot";
+    font-size: large;
+}
+    
+input {
+    font-family: "Molot";
+    font-size: 20px;
+    color: black;
+}
+
+
+
+body{
+    background-color: #04212f;
+    
+}
+
+a{
+    text-decoration: none;
+    color: red;
+    font-family: "Molot";
+
+}
+
+
+/* CSS DE INSCRPTION DE WALID
+body {
+    background-color:#04212f ;
+  }
+
+  .logo {
+      width:10%;
+      font-family: "Molot";
+      font-size: 40px;
+      float:center;
+      
+      position: relative;
+      color: whitesmoke;
+      margin: 0 auto;
+   width: 100px;
+}
+.co {
+    
+    margin: 0 auto;
+   width: 1000px;
+   height: 1000px;
+   background-color: grey;
+   position: relative;
+   align-content: center;
+}
+.bloc{
+    margin: 0 auto;
+   width: 150px;
+
+}
+h2{
+    margin: 0 auto;
+   width: 150px;
+    font-family: "Molot";
+   font-size: 40px;
+color: whitesmoke;
+}
+button {
+    margin: 0 auto;
+   width: 100px;
+   font-family: "Molot";
+    width: 100px;
+    font-size: 40;
+}
+
+input {
+    font-family: "Molot";
+    font-size: 20px;
+color: #04212f;
+}
+a{
+    font-family: "Molot";
+    color: red;
+    text-decoration: none;
+    position: relative;
+    float: right;
+}
+*/
+

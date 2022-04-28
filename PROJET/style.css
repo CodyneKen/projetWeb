@@ -1,0 +1,191 @@
+
+@font-face { 	font-family: "Molot"; 	src: url('molot.ttf'); }
+
+
+
+#haut {
+width:100%;
+align-content: space-between;
+
+}
+
+ input {
+          	font-family: "Molot";
+          	font-size: 20px;
+		color: #04212f;
+          }
+.barre {
+	
+          	
+width:80%;
+
+float:left;
+align-content: space-between;
+position: relative;
+}
+
+.logo {
+	width:10%;
+	font-family: "Molot";
+	font-size: 40px;
+	float:left;
+	align-content: space-between;
+	position: relative;
+	color: whitesmoke;
+}
+
+#con {
+font-family: "serif";
+
+color : whitesmoke;
+text-decoration: none;
+}
+
+#panier {
+	font-family: "serif";
+	
+color : whitesmoke;
+text-decoration: none;
+
+}
+.co {
+width:10%;
+font-family: "serif";
+color : red;
+float:left;
+align-content: space-between;
+position: relative;
+}
+
+#categories {
+	font-size: 30px;
+	background-color: whitesmoke;
+	font-family: "Molot";
+	color: #04212f;
+	align-content: space-between;
+	
+}
+#categories a:link:hover{
+    border: solid 1px black;
+}
+
+.c {
+	color: #04212f;
+	text-decoration: none;
+
+}
+
+#promo{
+    border:2px solid #5c3566;
+    width: 300px;
+    background-color: aliceblue;
+}
+
+#meilleures_ventes{
+    width: 300px;
+    border:2px solid #5c3566;
+    position: absolute;
+    left: 600px;
+    top: 240px;
+    background-color: aliceblue;
+}
+#form1{
+    display: none;
+}
+
+footer{
+    background-color: rgb(108, 158, 160);
+}
+
+fieldset{
+    border: 1px solid rgb(8, 1, 29);
+}
+h1{
+    text-shadow: 0 1px 0px #378ab4, 1px 0 0px #5dabcd, 1px 2px 1px #378ab4, 2px 1px 1px #5dabcd, 2px 3px 2px #378ab4, 3px 2px 2px #5dabcd, 3px 4px 2px #378ab4, 4px 3px 3px #5dabcd, 4px 5px 3px #378ab4, 5px 4px 2px #5dabcd, 5px 6px 2px #378ab4, 6px 5px 2px #5dabcd, 6px 7px 1px #378ab4, 7px 6px 1px #5dabcd, 7px 8px 0px #378ab4, 8px 7px 0px #5dabcd;
+    color: #ffffff;
+    float: leftS;
+} 
+
+#contacter {
+        box-shadow: 3px 4px 0px 0px #1564ad;
+        background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+        background-color:#79bbff;
+        border-radius:42px;
+        border:1px solid #337bc4;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:19px;
+        font-weight:bold;
+        padding:15px 65px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #528ecc;
+        position: absolute;
+        left: 400px;
+    }
+    #contacter:hover {
+        background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+        background-color:#378de5;
+    }
+    #contacter:active {
+        position:relative;
+        top:2px;
+    }
+
+
+#contacter{
+    position: relative;
+    bottom: 10%;
+}
+
+.ancien_prix {
+    color: red;
+    text-decoration:line-through;
+}
+
+.nouveau_prix {
+    color: green;
+}
+
+.image {
+    width : 100px;
+    height : 100px;
+    position: absolute;
+    }
+
+
+/*
+div {
+	width: 173px;
+	height: 50px;
+	font-size: 40px;
+	position: relative;
+	float: left;
+	align-content: space-around;
+	font-weight: 400;
+	font-family: "Molot";
+	color: whitesmoke;
+
+
+
+}
+*/
+
+input::placeholder {
+	color: #04212f;
+	font-family: "Molot";
+	font-size: large;
+}
+
+input {
+	width: 1200px;
+    height: 30px;
+}
+
+
+
+body{
+	background-color: #04212f;
+
+}
