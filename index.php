@@ -1,9 +1,9 @@
 <?php
 session_start();
 require_once 'config.php';
-
-$pseudo = $_SESSION['user'];
-$check = $connexion->prepare(" SELECT pseudo, typemembre FROM Membres where pseudo  = '$pseudo' ");
+$id = $_SESSION['user'];
+$pseudo = $_SESSION['pseudo'];
+$check = $connexion->prepare(" SELECT pseudo, typemembre FROM Membres where idMembre  = '$id' ");
 $check->execute(array($pseudo));
 $data = $check->fetch();
 ?>
@@ -27,10 +27,10 @@ $data = $check->fetch();
         </form>
         <div class="co">
             <?php
-            if (!isset($_SESSION['user'])) {
+            if (!isset($_SESSION['pseudo'])) {
                 echo "<a id=\"con\" href=\"connexion2.php\">connexion</a><br> <a id=\"panier\" href=\"panier.php\">Mon Panier</a></div>";
             } else {
-                echo "<a id=\"con\" href=\"compte.php\">Bonjour {$_SESSION['user']}</a><br> <a id=\"panier\" href=\"panier.php\">Mon Panier</a></div>";
+                echo "<a id=\"con\" href=\"compte.php\">Bonjour {$_SESSION['pseudo']}</a><br> <a id=\"panier\" href=\"panier.php\">Mon Panier</a></div>";
             }
             ?>
         </div>

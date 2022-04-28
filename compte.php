@@ -1,3 +1,15 @@
+
+<?php
+session_start();
+
+					require_once 'config.php';
+					$id = $_SESSION['user'];
+
+					$check = $connexion->prepare("SELECT idMembre, pseudo,prenom,nom,mail,adresse,mdp FROM Membres where idMembre  = '$id' ");
+					$check->execute(array($id));
+					$data = $check->fetch();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -164,12 +176,11 @@
 		<div class="co">
 			<?php
 
-			session_start();
-			require_once 'config.php';
-			if (!isset($_SESSION['user'])) {
+			
+			if (!isset($_SESSION['pseudo'])) {
 				echo "<a id=\"con\" href=\"connexion2.php\">connexion</a> <a id=\"panier\" href=\"panier.php\">Mon Panier</a> <a id=\"deco\" href=\"deconnexion.php\">deconnexion</a></div>";
 			} else {
-				echo "<a id=\"con\" href=\"index.php\">{$_SESSION['user']}</a> <a id=\"panier\" href=\"panier.php\">Mon Panier</a></div><a id=\"deco\" href=\"deconnexion.php\">deconnexion</a></div> ";
+				echo "<a id=\"con\" href=\"index.php\">{$_SESSION['pseudo']}</a> <a id=\"panier\" href=\"panier.php\">Mon Panier</a></div><a id=\"deco\" href=\"deconnexion.php\">deconnexion</a></div> ";
 			}
 
 			?>
@@ -189,6 +200,12 @@
 		</div>
 		<br>
 		<br>
+		<form action="modifier_compte.php" method="post">
+			<?php
+			echo '<button type="submit" name="idMembre" value="'.$data['idMembre'].'">Modifier compte</button>';
+			?>
+		</form>
+		
 		<br>
 
 
@@ -201,12 +218,7 @@
 				<div class="mes_infos">Mes informations:
 					<br>
 					<?php
-					require_once 'config.php';
-					$pseudo = $_SESSION['user'];
-
-					$check = $connexion->prepare("SELECT  pseudo,prenom,nom,mail,adresse,mdp FROM Membres where pseudo  = '$pseudo' ");
-					$check->execute(array($pseudo));
-					$data = $check->fetch();
+					
 
 					echo " pseudo : {$data['pseudo']}
 					    		<br> NOM : {$data['nom']}
