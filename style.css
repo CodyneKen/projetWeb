@@ -167,9 +167,10 @@ h1{
         
     }
     */
-    
+ 
+
 input::placeholder {
-    color: #04212f;
+    color: black;
     font-family: "Molot";
     font-size: large;
 }
@@ -177,22 +178,22 @@ input::placeholder {
 input {
     font-family: "Molot";
     font-size: 20px;
-    color: #04212f;
-}
-
-button {
-    font-family: "Molot";
-    font-size: 20px;
-    color: #04212f;
+    color: black;
 }
 
 
 
 body{
     background-color: #04212f;
+    
 }
 
+a{
+    text-decoration: none;
+    color: red;
+    font-family: "Molot";
 
+}
 
 
 /* CSS DE INSCRPTION DE WALID

@@ -11,6 +11,16 @@
     height: 30px;
 }
 
+
+a{
+    text-decoration: none;
+    color: red;
+    font-family: "Molot";
+
+}
+
+
+
 .search {
 width:80%;
 float:left;
@@ -150,6 +160,10 @@ h1{
     position: absolute;
 }
     
+    .texte {
+        color: green;
+        font-family: "Molot";
+    }
     
     /*
     div {

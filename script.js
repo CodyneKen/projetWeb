@@ -33,18 +33,3 @@ document.getElementById("louis").style.display = "none";
 document.getElementById("walid").style.display = "none";
 document.getElementById("corentin").style.display = "block";
 }
-
-
-//FONCTIONS DE NAVIGATION
-// quand on clique, renvoie a l'acceuil
-function goHomepage(){
-  window.location = "http://localhost:8000/index.php";
-}
-
-// FONCTIONS POUR PANIER
-// ajoute 1 de l'article au panier (variables de session)
-function ajouterPanier(elmt){
-  alert(elmt);
-
-  alert("Article ajouté au panier");
-}
