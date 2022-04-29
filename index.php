@@ -3,8 +3,6 @@
 // session_start(); -> deplacé dans config.php
 require_once 'config.php';
 
-
-
 $id = $_SESSION['user'];
 $pseudo = $_SESSION['pseudo'];
 $check = $connexion->prepare(" SELECT pseudo, typemembre FROM Membres where idMembre  = '$id' ");

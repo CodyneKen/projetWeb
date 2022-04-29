@@ -10,20 +10,19 @@ if (isset($_GET['recup_id_art'])) {
     echo "erreur dans le GET recup_id_art";
 }
 
-// on check si le panier exite, sinon on le créé
-if (!isset($_SESSION['cart'])) {
-    $_SESSION['cart'] = array();
-}
-
 // on initialise l'article dans le panier s'il n'y etais pas, puis on ajoute 1 exemplaire
 // $cart = $_SESSION['cart'];
 if (!isset($_SESSION['cart'][$idArticle])) {
-    $_SESSION['cart'][$idArticle] = 0;
+    echo "Problème, panier non existant";
 }
-$_SESSION['cart'][$idArticle] += 1;
+$_SESSION['cart'][$idArticle] -= 1;
+
+if ($_SESSION['cart'][$idArticle] == 0){
+    unset($_SESSION['cart'][$idArticle]);
+}
 
 // pour debugger, enlever le header pour panier.php
-// echo $_SESSION['cart'][$idArticle];
+//echo $_SESSION['cart'][$idArticle];
 
 // pour renvoyer au panier une fois ajouté :
 header('Location:panier.php');

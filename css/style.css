@@ -205,7 +205,34 @@ a{
 }
 
 .tete_panier{
+    border-radius: 15px;
+    border: 15px solid slategray;
     background-color:rgba(240, 248, 255, 0.164);
+}
+
+.nom_produit {
+    width: 25%;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 5px;
+    border: 3px solid slategray;
+}
+
+.prix {
+    width: 15%;
+    background-color: antiquewhite;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 5px;
+    border: 3px solid slategray;
+}
+
+.quantité {
+    width: 15%;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 5px;
+    border: 3px solid slategray;
 }
 
 

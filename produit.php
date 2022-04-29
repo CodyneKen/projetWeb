@@ -1,8 +1,5 @@
 <?php
-
-    session_start();
     require_once 'config.php';
-    $host = "http://localhost:8000/";
 
     $id = $_GET['id'];
     $requete = "SELECT idArticle , nomArticle, descriptif, prix, img, stock, categorie FROM Articles where idArticle = '$id'";

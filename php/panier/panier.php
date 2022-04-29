@@ -10,8 +10,8 @@ require_once '../../config.php';
 <head>
 	<meta charset="UTF-8">
 	<title>Panier</title>
-	<link rel="stylesheet" href="<?=$host?>css/style.css">
-	<script src="<?=$host?>script.js"></script>
+	<link rel="stylesheet" href="<?= $host ?>css/style.css">
+	<script src="<?= $host ?>script.js"></script>
 </head>
 
 <body>
@@ -21,7 +21,7 @@ require_once '../../config.php';
 
 
 		<h2 classe="tete_panier">Panier d'achat</h2>
-		<form action="index.php?page=panier" method="post">
+		<form>
 			<table>
 				<thead classe="tete_panier">
 					<tr>
@@ -42,24 +42,51 @@ require_once '../../config.php';
 						echo "<td colspan='5'>Vous n'avez aucun produit ajouté dans votre panier</td>";
 					} else {
 						$cart = $_SESSION['cart'];
+						$total = 0;
 						foreach ($cart as $idArticle) {
+
 							$requete = 'SELECT idArticle, nomArticle, descriptif, prix, img, stock FROM Articles WHERE idArticle =' . $idArticle . ';';
 							$resultat = $connexion->prepare($requete);
 							$resultat->execute();
 							$produit = $resultat->fetch();
+
+							$total += $produit['prix'] * $cart[$idArticle];
+
+							$image = $host . "photos/" . $produit['img'];
 							// afficheProduit($produit);
 					?>
 							<tr>
 								<td class="img">
-									<img src="imgs/<?= $produit['img'] ?>" width="50" height="50" alt="<?= $produit['nomArticle'] ?>">
+									<img src="<?= $image ?>" width="50" height="50" alt="<?= $produit['nomArticle'] ?>">
 								</td>
-								<td><?= $produit['nomArticle'] ?></a>
+								<td class ="nom_produit"><?= $produit['nomArticle'] ?></a>
 									<br>
-									<i>Supprimer </i>
+
 								</td>
+								<!-- recupère le prix dans base de dondées -->
 								<td class="prix">&euro;<?= $produit['prix'] ?></td>
-								<td class="quantité"><input type="number" name="quantité-<?= $produit['id'] ?>" value="<?= $produits_in_panier[$produit['id']] ?>" min="1" max="<?= $produit['quantité'] ?>" placeholder="quantité" required></td>
+								<!-- récupère le nombre d'article voulu dans le car de session -->
+								<td class="quantité"><?= $cart[$idArticle]  ?></td>
+								<!-- calcul du total pour cet article -->
 								<td class="prix">&euro;<?= $produit['prix'] * $cart[$idArticle] ?></td>
+								<!-- bouton d'ajout d'article -->
+								<td>
+									<form method='GET' action='panier_plus.php'>
+										<button id='suppr' type='submit' name='recup_id_art' value='<?= $idArticle ?>'><i>+1 </i></button>
+									</form>
+								</td>
+								<!-- bouton de suppression d'article -->
+								<td>
+									<form method='GET' action='panier_moins.php'>
+										<button id='suppr' type='submit' name='recup_id_art' value='<?= $idArticle ?>'><i>-1 </i></button>
+									</form>
+								</td>
+								<!-- enlever l'article du panier (se fait tout seul si on a mis 0 articles) -->
+								<td>
+									<form method='GET' action='panier_supprimer.php'>
+										<button id='suppr' type='submit' name='recup_id_art' value='<?= $idArticle ?>'><i>Supprimer </i></button>
+									</form>
+								</td>
 							</tr>
 
 					<?php	}
@@ -67,9 +94,10 @@ require_once '../../config.php';
 					?>
 				</tbody>
 			</table>
+			<br>
 			<div class="subtotal">
 				<span class="text">Prix Total</span>
-				<span class="prix">&euro;<?= $subtotal ?></span>
+				<span class="prix">&euro;<?= $total ?></span>
 			</div>
 			<br>
 			<div class="buttons">

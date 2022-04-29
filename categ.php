@@ -58,7 +58,9 @@ $resultat->execute();
         echo "Plus que " . $ligne['stock'] . " articles";
         echo "<br>";
         echo "<br>";
-        echo "<button id='ajouter' href='http://localhost:8000/php/panier/panier_ajout.php?idArticle=$idArticle'>Ajouter au panier</button>";
+        echo "<form method='GET' action='php/panier/panier_ajout.php' >";
+        echo "<button id='ajouter' type='submit' name = 'recup_id_art' value='".$idArticle."'>Ajout au panier</button>";
+        echo "</form>";
         echo "</div>";
 
         echo "<div class = 'box2'>";

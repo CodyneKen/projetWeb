@@ -1,8 +1,6 @@
 <?php
 
-    session_start();
     require_once 'config.php';
-    $host = "http://localhost:8000/";
 
     $id = $_POST['idMembre'];
     $requete = "SELECT * FROM Membres where idMembre = '$id'";
