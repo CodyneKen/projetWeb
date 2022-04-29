@@ -1,0 +1,74 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amssymb}
+\usepackage[top=3cm, bottom=3cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{psfrag}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage[french,vlined,boxed]{algorithm2e}
+
+\setcounter{secnumdepth}{3}
+
+
+\newcommand{\vide}{\emptyset}
+
+\newcommand{\entetealgo}[3]{%
+	\vspace*{3mm}%
+	\par\noindent\framebox[\textwidth]{{\bf Algorithme} #1}%
+	\par\noindent\framebox[\textwidth][l]{{\bf Donn\'ees :~~}%
+		\begin{minipage}[t]{11cm}%
+			#2%
+	\end{minipage}}%
+	\par\noindent\framebox[\textwidth][l]{{\bf R\'esultat(s) :~~}%\hfill
+		\begin{minipage}[t]{11cm}%
+			#3%
+	\end{minipage}}%
+	\par}
+
+
+\newcommand{\vers}{\leftarrow}
+
+\begin{document}
+	\begin{center}
+		\centering C.BOHELAY - L.MARLIAC - W.ZEGHDALLOU	
+	\end{center}
+	\bigskip
+	\bigskip
+	\bigskip
+	\bigskip
+	\bigskip
+	\begin{center}
+		\textbf{\Large Projet Web : NOZAMA}
+	\end{center}
+	\bigskip
+	\bigskip
+	\bigskip
+	\bigskip
+	\bigskip
+	\begin{center}
+		\textbf{\Large Site marchand de vendeurs \`a clients}
+		
+	\end{center}
+	\newpage
+	\begin{center}
+		\textbf{\Large Table des mati\`eres}
+	\end{center}
+	\newpage
+	\begin{center}
+		\textbf{\Large Pr\'esentation du sujet}
+	\end{center}
+	\bigskip
+	\paragraph{}
+
+	Nous avons choisi de vous proposer un site marchand. Un membre peut s'inscrire soit en vendeur soit en client, puis vous pourrez vous connecter avec votre compte. Ensuite les clients pourront donc acheter des produits et les vendeurs pourront mettre en vente un article mais aussi en acheter. Lorsque vous \^etes connect\'e vous pourrez consulter votre compte en cliquant sur Bonjour <pseudo>, vous aurez acc\`es \`a vos informations, vos commandes et vous pourrez modifier votre compte. 
+
+	Les articles en ventes sont class\'es par cat\'egories. Pour trouver l'article que l'on chercher nous pourrons soit cliquer sur la cat\'egorie correspondante soit le chercher dans la barre de recherche. Bous pourrez donc ajouter des articles \`a votre panier puis effectuer votre commande(fictive bien \'evidemment). 
+	
+	Un client ou un vendeur pourra contacter les administrateurs du site avec le bouton en bas de la page d'accueil. Ceci laissera un message que seuls les administrateurs pourront consulter/supprimer. Les administrateurs sont Louis, Walid et Corentin(Ceux-ci sont ajout\'es manuellement lors de la cr\'eation de la table Membres).
+	
+	Un administrateur peut g\'erer les articles, les membres et les messages laiss\'es par les membres \`a partir d'un lien "gestion admin" sur la page d'accueil. Il peut mettre un article en vente, modifier n'importe quelle article en vente ou m\^eme le supprimer. Il peut aussi avoir acc\`es a certaines informations des membres et bannir tout membres hormis les autres administrateurs. Pour finir un administrateur peut consulter les messages laiss\'es par les membres ainsi que les supprimer.
+	
+\end{document}
