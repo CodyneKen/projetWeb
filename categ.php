@@ -1,6 +1,8 @@
 <?php
-session_start();
+// $_SERVER["DOCUMENT_ROOT"]
 require_once 'config.php';
+
+// récupère la catégorie depuis l'url/get et l'insère dans les requêtes pdo et l'affichage
 if (isset($_GET['categorie'])) {
     $cat = "" . $_GET['categorie'];
 } else {
@@ -20,8 +22,8 @@ $resultat->execute();
 <head>
     <meta charset="UTF-8">
     <title><?php echo ucfirst($cat) ?></title>
-    <link rel="stylesheet" type="text/css" href="css/categories.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?=$host?>css/categories.css">
+    <script src="<?=$host?>script.js"></script>
 </head>
 
 <body>
@@ -56,7 +58,7 @@ $resultat->execute();
         echo "Plus que " . $ligne['stock'] . " articles";
         echo "<br>";
         echo "<br>";
-        echo "<button id='ajouter' href='http://localhost:8000/panier_ajout.php?idArticle=$idArticle'>Ajouter au panier</button>";
+        echo "<button id='ajouter' href='http://localhost:8000/php/panier/panier_ajout.php?idArticle=$idArticle'>Ajouter au panier</button>";
         echo "</div>";
 
         echo "<div class = 'box2'>";

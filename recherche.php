@@ -1,11 +1,19 @@
+<?php
+
+session_start();
+require_once '../../config.php';
+$host = "http://localhost:8000/";
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
         <title>NOZAMA</title>
-        <link rel="stylesheet" type="text/css" href="css/categories.css">
-        <script src="script.js"></script>
+        <link rel="stylesheet" type="text/css" href="<?=$host?>css/categories.css">
+        <script src="<?=$host?>script.js"></script>
 
     </head>
     <body>

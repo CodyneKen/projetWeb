@@ -2,6 +2,8 @@
 
     session_start();
     require_once 'config.php';
+    $host = "http://localhost:8000/";
+
     $id = $_GET['id'];
     $requete = "SELECT idArticle , nomArticle, descriptif, prix, img, stock, categorie FROM Articles where idArticle = '$id'";
     /* recupere dans resultat toutes les lignes evc les colonnes QUE L'ON VEUT */
@@ -16,8 +18,8 @@
     <head>
         <meta charset="utf-8">
         <title>inscription</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <script src="script.js"></script>
+        <link rel="stylesheet" type="text/css" href="<?=$host?>css/style.css">
+        <script src="<?=$host?>script.js"></script>
     </head>
     <body>
         <div class="logo" onclick="goHomepage()"><strong>NOZAMA</strong> </div> 

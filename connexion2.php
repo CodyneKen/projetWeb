@@ -1,4 +1,11 @@
+<?php
 
+session_start();
+require_once 'config.php';
+$host = "http://localhost:8000/";
+
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -6,8 +13,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>connexion</title>
-	<link rel="stylesheet" type="text/css" href="css/connexion.css">
-	<script src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?=$host?>css/connexion.css">
+	<script src="<?=$host?>script.js"></script>
 </head>
 <body>
 	 <div class="logo" onclick="goHomepage()"><strong>NOZAMA</strong> </div> 

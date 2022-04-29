@@ -2,6 +2,7 @@
 session_start();
 
 require_once 'config.php';
+$host = "http://localhost:8000/";
 $id = $_SESSION['user'];
 
 $check = $connexion->prepare("SELECT idMembre, pseudo,prenom,nom,mail,adresse,mdp FROM Membres where idMembre  = '$id' ");
@@ -15,8 +16,8 @@ $data = $check->fetch();
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="css/compte.css">
-	<script src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?=$host?>css/compte.css">
+	<script src="<?=$host?>script.js"></script>
 
 	<title>compte</title>
 </head>

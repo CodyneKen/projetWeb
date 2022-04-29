@@ -1,7 +1,6 @@
 <?php
 
-session_start();
-require_once 'config.php';
+require_once '../../config.php';
 
 ?>
 
@@ -11,8 +10,8 @@ require_once 'config.php';
 <head>
 	<meta charset="UTF-8">
 	<title>Panier</title>
-	<link rel="stylesheet" href="css/style.css">
-	<script src="script.js"></script>
+	<link rel="stylesheet" href="<?=$host?>css/style.css">
+	<script src="<?=$host?>script.js"></script>
 </head>
 
 <body>

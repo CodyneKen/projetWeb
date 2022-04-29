@@ -1,6 +1,8 @@
 <?php
     session_start();
     require_once 'config.php';
+    $host = "http://localhost:8000/";
+
     $categorie = $_GET['c'];
 			
     
@@ -22,8 +24,8 @@
     <head>
         <meta charset="utf-8">
         <title>inscription</title>
-        <link rel="stylesheet" type="text/css" href="css/categories.css">
-        <script src="script.js"></script>
+        <link rel="stylesheet" type="text/css" href="<?=$host?>css/categories.css">
+        <script src="<?=$host?>script.js"></script>
     </head>
     <body>
         <div class="logo" onclick="goHomepage()"><strong>NOZAMA</strong> </div> 
@@ -57,9 +59,6 @@
 			        $adresse .= ($i == 0 ? '?' : '&').$cle.($valeur ? '='.$valeur : '');
 			        $i++;
 			    }
-    			
-			
-			
 			
 			 echo "<br>";
 

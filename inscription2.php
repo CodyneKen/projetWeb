@@ -1,11 +1,20 @@
+<?php
+
+session_start();
+require_once '../../config.php';
+$host = "http://localhost:8000/";
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>inscription</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?=$host?>css/style.css">
+    <script src="<?=$host?>script.js"></script>
 </head>
 <body>
 

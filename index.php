@@ -1,6 +1,10 @@
 <?php
-session_start();
+
+// session_start(); -> deplacé dans config.php
 require_once 'config.php';
+
+
+
 $id = $_SESSION['user'];
 $pseudo = $_SESSION['pseudo'];
 $check = $connexion->prepare(" SELECT pseudo, typemembre FROM Membres where idMembre  = '$id' ");
@@ -14,8 +18,8 @@ $data = $check->fetch();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?=$host?>css/style.css">
+    <script src="<?=$host?>script.js"></script>
     <title>accueil</title>
 </head>
 
@@ -27,10 +31,12 @@ $data = $check->fetch();
         </form>
         <div class="co">
             <?php
-            if (!isset($_SESSION['pseudo'])) {
-                echo "<a id=\"con\" href=\"connexion2.php\">connexion</a><br> <a id=\"panier\" href=\"panier.php\">Mon Panier</a></div>";
-            } else {
-                echo "<a id=\"con\" href=\"compte.php\">Bonjour {$_SESSION['pseudo']}</a><br> <a id=\"panier\" href=\"panier.php\">Mon Panier</a></div>";
+            if (!isset($_SESSION['pseudo'])) { 
+                ?> <a id="con" href="connexion2.php">connexion</a><br> <a id="panier" href="php/panier/panier.php">Mon Panier</a></div> <?php 
+            } 
+            else { 
+                
+                ?> <a id="con" href="compte.php">Bonjour <?php $_SESSION['pseudo'] ?> </a><br> <a id="panier" href="php/panier/panier.php">Mon Panier</a></div> <?php 
             }
             ?>
         </div>
