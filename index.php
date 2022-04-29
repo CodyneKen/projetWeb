@@ -35,8 +35,10 @@ $data = $check->fetch();
                 ?> <a id="con" href="connexion2.php">connexion</a><br> <a id="panier" href="php/panier/panier.php">Mon Panier</a></div> <?php 
             } 
             else { 
+
                 
-                ?> <a id="con" href="compte.php">Bonjour <?php $_SESSION['pseudo'] ?> </a><br> <a id="panier" href="php/panier/panier.php">Mon Panier</a></div> <?php 
+                ?> <a id="con" href="compte.php">Bonjour <?php echo $_SESSION['pseudo'] ; ?> </a><br> <a id="panier" href="php/panier/panier.php">Mon Panier</a></div> <?php 
+                
             }
             ?>
         </div>
@@ -103,7 +105,7 @@ $data = $check->fetch();
         ?>
  <?php
                 if($data['typemembre'] == 'admin'){
-                    echo "<a href = http://localhost:8000/gestion.php>gestion produit</a>";
+                    echo "<a href = http://localhost:8000/gestion.php>gestion admin</a>";
                 }
             ?>
 </body>
