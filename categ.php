@@ -45,7 +45,7 @@ $resultat->execute();
     <br>
     <?php
     while ($ligne = $resultat->fetch()) {
-        $image = "photos/" . $ligne['img'];
+        $image = "photos/".$ligne['img'];
         $idArticle = $ligne['idArticle'];
 
         echo "<div class = 'affiche'>";

@@ -28,6 +28,7 @@ $data = $check->fetch();
 
 	<div class="haut">
 		<div class="logo" onclick="goHomepage()"><strong>NOZAMA</strong> </div>
+
 		<div class="barre"><input id="searchbar" type="text" name="search" placeholder="recherche"> </div>
 		<div class="co">
 			<?php

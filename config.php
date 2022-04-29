@@ -1,3 +1,4 @@
+
  <?php
 
   // Rassemblement des entêtes de tt les fichiers .php
@@ -17,7 +18,7 @@
   // Variables de PDO
   $serveur = "localhost";
   $login = 'root';
-  $pass = 'root';
+  $pass = 'lealou43';
 
   try {
     $connexion = new PDO("mysql:host=$serveur;dbname=phpmyadmin", $login, $pass);
@@ -25,5 +26,3 @@
   } catch (PDOException $e) {
     echo 'echec ' . $e->getMessage();
   }
-
-  ?>
