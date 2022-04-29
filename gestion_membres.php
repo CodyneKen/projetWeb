@@ -1,4 +1,3 @@
-
 <?php
     session_start();
     require_once 'config.php';
@@ -24,14 +23,11 @@
             <br>
             
             <div id = "categories">
-            	 Produits
+            	 Membres
             Categories :
-            <a class ="c" href =http://localhost:8000/produits.php?c=informatique>Informatique</a>
-            <a class ="c" href = http://localhost:8000/produits.php?c=electromenager>Electromenager</a>
-            <a class ="c"  href = http://localhost:8000/produits.php?c=figurine>figurine</a>
-            <a class ="c" href = http://localhost:8000/produits.php?c=vetements>Vetements</a>
-            <a class ="c" href = http://localhost:8000/produits.php?c=mobilier>Mobilier</a>
-            <a class ="c" href = http://localhost:8000/produits.php?c=poster>Poster</a>
+            <a class ="c" href =membres.php?c=client>Membres simple</a>
+            <a class ="c" href = membres.php?c=vendeur>Vendeurs</a>
+            
 
 
 			
@@ -40,15 +36,10 @@
            
             </div>
             <br>
-            Choissisez une categorie de produit à modifier.
+            Choissisez une categorie de membres à bannir.
             <br>
             <br>
-            <a href = gestion_membres.php>Gestion utilisateurs</a>
             
-            <br>
-            <br>
-
-            <a href = http://localhost:8000/ajout_produit.php>Mettre un article en vente</a>
             
     </body>
 </html>

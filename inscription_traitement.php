@@ -9,6 +9,7 @@
 		$mail = htmlspecialchars($_POST['mail']);
 		$adresse = htmlspecialchars($_POST['adresse']);
 	    $password = htmlspecialchars($_POST['password']);
+		$mdp_crypte = SHA1(SHA1($password).SHA1($nom));
 		$type = $_POST['type'];
 	    $password_retype = htmlspecialchars($_POST['password_retype']);
 		if(strlen($pseudo) <= 100){
@@ -20,7 +21,7 @@
 					'nom' => $nom,
 					'mail' => $mail,
 					'adresse' => $adresse,
-					'mdp' => $password,
+					'mdp' => $mdp_crypte,
 					'typemembre' => $type
 				));
 				header('Location:index.php');
