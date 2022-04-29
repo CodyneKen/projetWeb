@@ -20,7 +20,7 @@ $resultat->execute();
 <head>
     <meta charset="UTF-8">
     <title><?php echo ucfirst($cat) ?></title>
-    <link rel="stylesheet" type="text/css" href="categories.css">
+    <link rel="stylesheet" type="text/css" href="css/categories.css">
     <script src="script.js"></script>
 </head>
 

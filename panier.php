@@ -11,7 +11,7 @@ require_once 'config.php';
 <head>
 	<meta charset="UTF-8">
 	<title>Panier</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/style.css">
 	<script src="script.js"></script>
 </head>
 

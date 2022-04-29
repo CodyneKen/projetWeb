@@ -1,0 +1,145 @@
+@font-face {
+    font-family: "Molot";
+    src: url('molot.ttf');
+}
+
+
+
+
+.haut {
+    width: 100%;
+
+    align-content: space-between;
+
+}
+
+#compte {
+
+    background-color: gray;
+
+}
+
+input {
+    font-family: "Molot";
+    font-size: 20px;
+    color: #04212f;
+}
+
+.barre {
+
+
+    width: 80%;
+
+    float: left;
+    align-content: space-between;
+    position: relative;
+}
+
+.logo {
+    width: 10%;
+    font-family: "Molot";
+    font-size: 40px;
+    float: left;
+    align-content: space-between;
+    position: relative;
+    color: whitesmoke;
+}
+
+#con {
+    font-family: "serif";
+
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+#panier {
+    font-family: "serif";
+
+    color: whitesmoke;
+    text-decoration: none;
+
+}
+
+.co {
+    width: 10%;
+    font-family: "serif";
+    color: red;
+    float: left;
+    align-content: space-between;
+    position: relative;
+}
+
+#categories {
+    font-size: 30px;
+    background-color: whitesmoke;
+    font-family: "Molot";
+    color: #04212f;
+    align-content: space-between;
+}
+
+
+#categories a:link:hover {
+    border: solid 1px black;
+}
+
+.c {
+    color: #04212f;
+    text-decoration: none;
+
+}
+
+input::placeholder {
+    color: #04212f;
+    font-family: "Molot";
+    font-size: large;
+}
+
+input {
+    width: 1200px;
+    height: 30px;
+}
+
+
+
+body {
+    background-color: #04212f;
+
+}
+
+.compte {
+    color: #04212f;
+    font-family: "Molot";
+
+
+    background-color: dimgray;
+}
+
+#bloc {
+    width: 100%;
+
+    align-content: space-between;
+}
+
+.mes_infos {
+    float: left;
+    font-family: "Molot";
+    color: whitesmoke;
+    align-content: space-between;
+    width: 50%;
+    background-color: dimgray;
+}
+
+.mes_commandes {
+    background-color: dimgray;
+    float: left;
+    font-family: "Molot";
+    color: whitesmoke;
+    align-content: space-between;
+    width: 50%;
+}
+
+.accueil {
+    font-size: 30px;
+    font-family: "Molot";
+    color: whitesmoke;
+}

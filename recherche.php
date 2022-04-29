@@ -4,10 +4,12 @@
     <head>
         <meta charset="UTF-8">
         <title>NOZAMA</title>
-        <link rel="stylesheet" type="text/css" href="categories.css">
+        <link rel="stylesheet" type="text/css" href="css/categories.css">
+        <script src="script.js"></script>
+
     </head>
     <body>
-        <div class="logo"><strong>NOZAMA</strong> </div>   
+        <div class="logo" onclick="goHomepage()"><strong>NOZAMA</strong> </div>   
         <form class="barre" method="GET" action="recherche.php">
             <input id="searchbar" type="search" name="search" placeholder="recherche">  
         </form> 

@@ -22,10 +22,11 @@
     <head>
         <meta charset="utf-8">
         <title>inscription</title>
-        <link rel="stylesheet" type="text/css" href="categories.css">
+        <link rel="stylesheet" type="text/css" href="css/categories.css">
+        <script src="script.js"></script>
     </head>
     <body>
-        <div class="logo"><strong>NOZAMA</strong> </div> 
+        <div class="logo" onclick="goHomepage()"><strong>NOZAMA</strong> </div> 
             <a id = 'accueil' href="index.php">Accueil</a>
             <br>
             <br>
