@@ -192,7 +192,16 @@ a{
     text-decoration: none;
     color: red;
     font-family: "Molot";
+}
 
+/* CSS DU PANIER*/
+
+.panier{
+    background-color:aliceblue;
+}
+
+.tete_panier{
+    background-color:rgba(240, 248, 255, 0.164);
 }
 
 
@@ -254,4 +263,6 @@ a{
     float: right;
 }
 */
+
+
 

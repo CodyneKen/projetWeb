@@ -19,7 +19,7 @@ $resultat->execute();
 
 <head>
     <meta charset="UTF-8">
-    <title>$cat</title>
+    <title><?php echo ucfirst($cat) ?></title>
     <link rel="stylesheet" type="text/css" href="categories.css">
     <script src="script.js"></script>
 </head>
@@ -56,7 +56,7 @@ $resultat->execute();
         echo "Plus que " . $ligne['stock'] . " articles";
         echo "<br>";
         echo "<br>";
-        echo "<button id='ajouter' href='panier_ajout.php?idArticle=$idArticle'>Ajouter au panier</button>";
+        echo "<button id='ajouter' href='http://localhost:8000/panier_ajout.php?idArticle=$idArticle'>Ajouter au panier</button>";
         echo "</div>";
 
         echo "<div class = 'box2'>";

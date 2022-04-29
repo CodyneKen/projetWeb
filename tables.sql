@@ -21,7 +21,7 @@ CREATE TABLE Articles(
     nomArticle VARCHAR(128) NOT NULL,
     descriptif TEXT NOT NULL,
     prix FLOAT NOT NULL,
-    img BLOB,
+    img VARCHAR(255),
     idVendeur INT,
     stock INT,
     categorie ENUM('informatique', 'electromenager', 'figurine', 'vetement', 'mobilier', 'poster'),
@@ -55,5 +55,13 @@ INSERT INTO Membres VALUES(NULL, 'Louis', 'Louis', 'Marliac', 'louis.marliac@etu
 INSERT INTO Membres VALUES(NULL, 'Walid', 'Walid', 'Zeghdallou', 'walid.zeghdallou@etu.univ-st-etienne.fr', '7 rue Walid', 'Walid','admin');
 INSERT INTO Membres VALUES(NULL, 'Corentin', 'Corentin', 'Bohelay', 'corentin.bohelay@etu.univ-st-etienne.fr', '7 rue Corentin', 'Corentin','admin');
 
+-- Articles (idArticle, nomArticle, descriptif, prix, img, idVendeur, stock, categorie <ENUM>)
+INSERT INTO Articles VALUES(NULL, "frigo", "frigo", 5, 'frigo1.jpeg', 3, 15, 'electromenager');
+INSERT INTO Articles VALUES(NULL, "four", "un four", 18, 'four.webp', 3, 15, 'electromenager');
+INSERT INTO Articles VALUES(NULL, "lave vaisselle", "lave la vaisselle", 5, 'lavevaisselle.jpg', 3, 15, 'electromenager');
+INSERT INTO Articles VALUES(NULL, "machine à laver", "lave la machine", 5, 'machinealaver.webp', 3, 15, 'electromenager');
+INSERT INTO Articles VALUES(NULL, "pc asu", "ASUS ROG EXTREME", 870, 'pc_asus.webp', 3, 15, 'informatique');
+INSERT INTO Articles VALUES(NULL, "frigo", "frigo", 5, 'frigo1.jpeg', 3, 15, 'electromenager');
+INSERT INTO Articles VALUES(NULL, "explode", "vive le php", 5, 'phpexplode.webp', 3, 15, 'poster');
 
 

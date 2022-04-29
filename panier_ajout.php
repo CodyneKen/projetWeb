@@ -1,4 +1,6 @@
 <?php
+session_start();
+require_once 'config.php';
 
 // besoin d'ajouter sessionstart() ?
 echo "bien entré dans panier_aux";
