@@ -10,8 +10,8 @@ require_once '../../config.php';
 <head>
 	<meta charset="UTF-8">
 	<title>Panier</title>
-	<link rel="stylesheet" href="<?= $host ?>css/style.css">
-	<script src="<?= $host ?>script.js"></script>
+	<link rel="stylesheet" href="<?=$host?>css/style.css">
+	<script src="<?=$host?>script.js"></script>
 </head>
 
 <body>
@@ -21,7 +21,6 @@ require_once '../../config.php';
 
 
 		<h2 classe="tete_panier">Panier d'achat</h2>
-		<form>
 			<table>
 				<thead classe="tete_panier">
 					<tr>
@@ -36,33 +35,32 @@ require_once '../../config.php';
 					<?php
 
 					$subtotal = 0;
-					if (!isset($_SESSION['cart'])) {
+					if (empty($_SESSION['cart'])) {
 						echo "<tr>";
 						echo "<td colspan='5'>Vous n'avez aucun produit ajouté dans votre panier</td>";
 					} else {
 						// $cart = $_SESSION['cart'];
 						$total = 0;
-						foreach ($_SESSION['cart'] as $idArticleInt) {
+						foreach ($_SESSION['cart'] as $idArticleInt => $qteArticle) {
 							$idArticle = strval($idArticleInt);
 							$requete = 'SELECT idArticle, nomArticle, descriptif, prix, img, stock FROM Articles WHERE idArticle =' . $idArticle . ';';
 							$resultat = $connexion->prepare($requete);
 							$resultat->execute();
 							$produit = $resultat->fetch();
 
-							$total += $produit['prix'] * $_SESSION['cart'][$idArticle];
+							$total += $produit['prix'] * $qteArticle;
 
-							$image = $host . "photos/" . $produit['img'];
+							$image = $host."photos/" . $produit['img'];
 							// afficheProduit($produit);
 					?>
 							<tr>
 								<td class="img">
 									<img src="<?= $image ?>" width="50" height="50" alt="<?= $produit['nomArticle'] ?>">
 								</td>
-								<td class ="nom_produit"><?= $produit['nomArticle'] ?></a>
+								<td class="nom_produit"><?= $produit['nomArticle'] ?></a>
 									<br>
-
+									
 								</td>
-								<!-- recupère le prix dans base de dondées -->
 								<td class="prix">&euro;<?= $produit['prix'] ?></td>
 								<!-- récupère le nombre d'article voulu dans le car de session -->
 								<td class="quantité"><?= $_SESSION['cart'][$idArticle]  ?></td>
@@ -100,9 +98,10 @@ require_once '../../config.php';
 			</div>
 			<br>
 			<div class="buttons">
-				<input type="submit" value="Passer la commande" name="placerCommande">
+				<input type="submit" value="Passer la commande" name="placerCommande" action='commande.php' >
+				<button id='suppr' type='submit' name='recup_id_art' value='pip' action='commande.php'>Passer la commande </button>
+
 			</div>
-		</form>
 	</div>
 </body>
 

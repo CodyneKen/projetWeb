@@ -2,11 +2,6 @@
 
 require_once '../../config.php';
 
-// on initialise l'article dans le panier s'il n'y etais pas, puis on ajoute 1 exemplaire
-// $cart = $_SESSION['cart'];
-if (!isset($_SESSION['cart'][$idArticle])) {
-    echo "Problème, panier non existant";
-}
 
 $idArticleInt =  $_GET['recup_id_art'];
 $idArticle = strval($idArticleInt);

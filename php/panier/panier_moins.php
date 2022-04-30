@@ -3,14 +3,6 @@
 require_once '../../config.php';
 
 // on recupere l'id de l'article depuis l'url
-if (isset($_GET['recup_id_art'])) {
-    $idArticle =  $_GET['recup_id_art'];
-} else {
-    echo "erreur dans le GET recup_id_art";
-}
-
-// on initialise l'article dans le panier s'il n'y etais pas, puis on ajoute 1 exemplaire
-// $cart = $_SESSION['cart'];
 $idArticleInt =  $_GET['recup_id_art'];
 $idArticle = strval($idArticleInt);
 

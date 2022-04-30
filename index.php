@@ -2,13 +2,11 @@
 
 require_once 'config.php';
 
-if (isset($_SESSION['user']) && isset($_SESSION['user']) ){
-    $id = $_SESSION['user'];
-    $pseudo = $_SESSION['pseudo'];
-    $check = $connexion->prepare(" SELECT pseudo, typemembre FROM Membres where idMembre  = '$id' ");
+$id = $_SESSION['user'];
+$pseudo = $_SESSION['pseudo'];
+$check = $connexion->prepare(" SELECT pseudo, typemembre FROM Membres where idMembre  = '$id' ");
 $check->execute(array($pseudo));
 $data = $check->fetch();
-}
 
 
 
