@@ -12,7 +12,6 @@
       if(isset($data['mdp']) && $data['mdp'] === $mdp_crypte){
         $_SESSION['user'] = $data['idMembre'];
         $_SESSION['pseudo'] = $data['pseudo'];
-        $_SESSION['idClient'] = $data['idMembre'];
         header('Location:index.php');
       }
       else{

@@ -7,7 +7,6 @@ $stockMissing = "COMMANDE REUSSIE";
 $msgMissingStock = "";
 
 function checkStock($stockMissing, $msgMissingStock, $connexion){
-    $idClient = $_SESSION['user'];
     foreach ($_SESSION['cart'] as $idArticle => $qteArticle){
         $requete = 'SELECT idArticle, nomArticle, stock FROM Articles WHERE idArticle =' . $idArticle . ';';
         $resultat = $connexion->prepare($requete);
@@ -37,7 +36,7 @@ function addOrderDB($msgMissingStock, $connexion){
         echo $idArticle ;
         $insert = $connexion->prepare("INSERT INTO Commandes(idClient,idArticle,qteArticle,dateCommande) VALUES(:idClient,:idArticle,:qteArticle,:dateCommande)");
         $insert->execute(array(
-            'idClient' =>$_SESSION['idClient'],
+            'idClient' =>$idClient,
             'idArticle' => $idArticle,
             'qteArticle' => $qteArticle,
             'dateCommande' => $date
