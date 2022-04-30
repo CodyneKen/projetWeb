@@ -1,8 +1,7 @@
 <?php
 
 session_start();
-require_once '../../config.php';
-$host = "http://localhost:8000/";
+require_once 'config.php';
 
 
 ?>
