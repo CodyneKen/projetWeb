@@ -1,11 +1,10 @@
 <?php
 
 require_once '../../config.php';
-// Commandes(idCommande, idClient, idArticle, qteArticle, dateCommande)ddd
+// Commandes(idCommande, idClient, idArticle, qteArticle, dateCommande)
 
 $stockMissing = "COMMANDE REUSSIE";
 $msgMissingStock = "";
-
 
 function checkStock($stockMissing, $msgMissingStock, $connexion){
     $idClient = $_SESSION['user'];
@@ -28,7 +27,7 @@ function addOrderDB($msgMissingStock, $connexion){
     $idClient = $_SESSION['user'];
     foreach ($_SESSION['cart'] as $idArticleInt => $qteArticle) {
         $idArticle = strval($idArticleInt);
-        $requete = 'SELECT idArticle, prix, stock, nbVentes FROM Articles WHERE idArticle =' . $idArticle . ';';
+        $requete = 'SELECT idArticle, prix, stock FROM Articles WHERE idArticle =' . $idArticle . ';';
         $resultat = $connexion->prepare($requete);
         $resultat->execute();
         $produit = $resultat->fetch();
@@ -38,33 +37,20 @@ function addOrderDB($msgMissingStock, $connexion){
         echo $idArticle ;
         $insert = $connexion->prepare("INSERT INTO Commandes(idClient,idArticle,qteArticle,dateCommande) VALUES(:idClient,:idArticle,:qteArticle,:dateCommande)");
         $insert->execute(array(
-            'idClient' =>$_SESSION[idClient],
+            'idClient' =>$_SESSION['idClient'],
             'idArticle' => $idArticle,
             'qteArticle' => $qteArticle,
             'dateCommande' => $date
         ));
 
-
-        $insert = $connexion->prepare("UPDATE Articles set nbVentes=:nbVentes , stock=:stock where idArticle = '$idArticle'  ");
-            $insert->execute(array(
-                'stock' =>  $produit['stock'] - $qteArticle,
-                'nbVentes' => $produit['nbVentes'] + $qteArticle
-                
-                
-            ));
-
         $_SESSION['cart'] = array();
     }
     $msgMissingStock = "COMMANDE PASSEE POUR $total EUR !";
-
-
-   
 }
 
 // si il y as assez de stock on ajoute à la bdd, sinon on affiche
 if (checkStock($stockMissing, $msgMissingStock, $connexion)){
     addOrderDB($msgMissingStock, $connexion);
-
 }
 
 ?>
