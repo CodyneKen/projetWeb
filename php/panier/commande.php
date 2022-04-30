@@ -7,7 +7,7 @@ $idClient = $_SESSION['user'];
 
 foreach ($_SESSION['cart'] as $idArticleInt => $qteArticle) {
     $idArticle = strval($idArticleInt);
-    $requete = 'SELECT idArticle, prix, stock FROM Articles WHERE idArticle =' . $idArticle . ';';
+    $requete = 'SELECT idArticle, prix, stock, nbVentes FROM Articles WHERE idArticle =' . $idArticle . ';';
     $resultat = $connexion->prepare($requete);
     $resultat->execute();
     $produit = $resultat->fetch();
@@ -22,6 +22,16 @@ foreach ($_SESSION['cart'] as $idArticleInt => $qteArticle) {
         'qteArticle' => $qteArticle,
         'dateCommande' => $date
     ));
+
+
+
+    $insert = $connexion->prepare("UPDATE Articles set nbVentes=:nbVentes , stock=:stock where idArticle = '$idArticle'  ");
+            $insert->execute(array(
+                'stock' =>  $produit['stock'] - $qteArticle,
+                'nbVentes' => $produit['nbVentes'] + $qteArticle
+                
+                
+            ));
 
     $_SESSION['cart'] = array();
 }
