@@ -218,7 +218,7 @@ a{
     border: 3px solid slategray;
 }
 
-.prix {
+.prix, .total, .quantité {
     width: 15%;
     background-color: antiquewhite;
     border-radius: 15px;
@@ -228,12 +228,11 @@ a{
 }
 
 .quantité {
-    width: 15%;
-    border-radius: 15px;
-    padding: 5px;
-    margin: 5px;
+    background-color: #ffffff;
     border: 3px solid slategray;
 }
+
+
 
 
 /* CSS DE INSCRPTION DE WALID
