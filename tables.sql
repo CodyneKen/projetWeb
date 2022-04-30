@@ -69,5 +69,5 @@ INSERT INTO Articles VALUES(NULL, "machine à laver", "lave la machine", 5, 'mac
 INSERT INTO Articles VALUES(NULL, "pc asu", "ASUS ROG EXTREME", 870, 'pc_asus.webp', 3, 15, 'informatique');
 INSERT INTO Articles VALUES(NULL, "frigo", "frigo", 5, 'frigo1.jpeg', 3, 15, 'electromenager');
 INSERT INTO Articles VALUES(NULL, "explode", "vive le php", 5, 'phpexplode.webp', 3, 15, 'poster');
-
+INSERT INTO Articles VALUES(NULL, "le magicien zoro", "avec son épée", 42, 'zoro.jpg', 3, 1, 'figurine');
 
