@@ -87,6 +87,55 @@ $data = $check->fetch();
 					<a class="accueil" href=http://localhost:8000/index.php>Accueil</a>
 				</div>
 				<div class="mes_commandes">Mes commandes:
+					<br>
+					<br>
+					<?php
+						$requete = 'SELECT nomArticle, prix, qteArticle, dateCommande , img FROM Commandes, Articles WHERE Commandes.idArticle = Articles.idArticle ORDER BY dateCommande;';
+    					$resultat = $connexion->prepare($requete);
+    					$resultat->execute();
+    					
+
+
+
+		 while($ligne = $resultat->fetch()) {
+
+				$image = "photos/".$ligne['img'];
+							 echo '		<table>
+					    <thead>
+					        <tr>
+					            <th colspan="4">Commande du : '.$ligne['dateCommande'].'</th>
+					        </tr>
+					    </thead>
+					    <tbody>
+					    <tr>
+
+					            <td></td>
+					            <td>Nom article</td>
+					             <td>Prix</td>
+					             <td></td>
+					            <td>Quantite</td>
+					        </tr>
+					        <tr>
+
+					            <td><img src="'.$image.'" width="50" height="50" alt="'.$ligne['nomArticle'].'"></td>
+					            <td>'.$ligne['nomArticle'].'</td>
+					             <td>'.$ligne['prix'] * $ligne['qteArticle']."€".'</td>
+					             <td></td>
+					            <td>'.$ligne['qteArticle'].'</td>
+					        </tr>
+					    </tbody>
+					</table> ';
+					echo "<br>";
+					echo "<br>";
+
+
+
+
+
+		            }  
+           
+
+					?>
 				</div>
 
 			</div>
