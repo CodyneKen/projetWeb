@@ -35,22 +35,21 @@ require_once '../../config.php';
 					<!-- si le panier/cart n'existe pas :  , sinon on itere sur les elements du cart -->
 					<?php
 
-					echo "test";
 					$subtotal = 0;
 					if (!isset($_SESSION['cart'])) {
 						echo "<tr>";
 						echo "<td colspan='5'>Vous n'avez aucun produit ajouté dans votre panier</td>";
 					} else {
-						$cart = $_SESSION['cart'];
+						// $cart = $_SESSION['cart'];
 						$total = 0;
-						foreach ($cart as $idArticle) {
-
+						foreach ($_SESSION['cart'] as $idArticleInt) {
+							$idArticle = strval($idArticleInt);
 							$requete = 'SELECT idArticle, nomArticle, descriptif, prix, img, stock FROM Articles WHERE idArticle =' . $idArticle . ';';
 							$resultat = $connexion->prepare($requete);
 							$resultat->execute();
 							$produit = $resultat->fetch();
 
-							$total += $produit['prix'] * $cart[$idArticle];
+							$total += $produit['prix'] * $_SESSION['cart'][$idArticle];
 
 							$image = $host . "photos/" . $produit['img'];
 							// afficheProduit($produit);
@@ -66,19 +65,19 @@ require_once '../../config.php';
 								<!-- recupère le prix dans base de dondées -->
 								<td class="prix">&euro;<?= $produit['prix'] ?></td>
 								<!-- récupère le nombre d'article voulu dans le car de session -->
-								<td class="quantité"><?= $cart[$idArticle]  ?></td>
+								<td class="quantité"><?= $_SESSION['cart'][$idArticle]  ?></td>
 								<!-- calcul du total pour cet article -->
 								<td class="prix">&euro;<?= $produit['prix'] * $cart[$idArticle] ?></td>
 								<!-- bouton d'ajout d'article -->
 								<td>
 									<form method='GET' action='panier_plus.php'>
-										<button id='suppr' type='submit' name='recup_id_art' value='<?= $idArticle ?>'><i>+1 </i></button>
+										<button id='add' type='submit' name='recup_id_art' value='<?= $idArticle ?>'><i>+1 </i></button>
 									</form>
 								</td>
 								<!-- bouton de suppression d'article -->
 								<td>
 									<form method='GET' action='panier_moins.php'>
-										<button id='suppr' type='submit' name='recup_id_art' value='<?= $idArticle ?>'><i>-1 </i></button>
+										<button id='sub' type='submit' name='recup_id_art' value='<?= $idArticle ?>'><i>-1 </i></button>
 									</form>
 								</td>
 								<!-- enlever l'article du panier (se fait tout seul si on a mis 0 articles) -->

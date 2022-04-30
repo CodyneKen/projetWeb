@@ -1,13 +1,17 @@
 <?php
 
-// session_start(); -> deplacé dans config.php
 require_once 'config.php';
 
-$id = $_SESSION['user'];
-$pseudo = $_SESSION['pseudo'];
-$check = $connexion->prepare(" SELECT pseudo, typemembre FROM Membres where idMembre  = '$id' ");
+if (isset($_SESSION['user']) && isset($_SESSION['user']) ){
+    $id = $_SESSION['user'];
+    $pseudo = $_SESSION['pseudo'];
+    $check = $connexion->prepare(" SELECT pseudo, typemembre FROM Membres where idMembre  = '$id' ");
 $check->execute(array($pseudo));
 $data = $check->fetch();
+}
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -95,15 +99,13 @@ $data = $check->fetch();
         <br>
         <br>
         <?php
-        if ($data['typemembre'] == 'vendeur') {
+        if (isset($data['typemembre']) && $data['typemembre'] == 'vendeur') {
             echo "<a href = http://localhost:8000/ajout_produit.php>Mettre un article en vente</a>";
         }
-        ?>
- <?php
-                if($data['typemembre'] == 'admin'){
-                    echo "<a href = http://localhost:8000/gestion.php>gestion produit</a>";
-                }
-            ?>
+        if(isset($data['typemembre']) && $data['typemembre'] == 'admin'){
+            echo "<a href = http://localhost:8000/gestion.php>gestion produit</a>";
+        }
+    ?>
 </body>
 <footer>
     <form id="form1" action="commentaire.php" method="post">

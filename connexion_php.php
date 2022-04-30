@@ -1,6 +1,5 @@
 <
 <?php
-  session_start();
   require_once 'config.php';
 
   if(isset($_POST['pseudo']) && isset($_POST['password'])){
@@ -10,7 +9,7 @@
     $check->execute(array($password));
     $data = $check->fetch();
       $mdp_crypte = SHA1(SHA1($password).SHA1($data['nom']));
-      if($data['mdp'] === $mdp_crypte){
+      if(isset($data['mdp']) && $data['mdp'] === $mdp_crypte){
         $_SESSION['user'] = $data['idMembre'];
          $_SESSION['pseudo'] = $data['pseudo'];
         header('Location:index.php');

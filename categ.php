@@ -1,6 +1,7 @@
 <?php
 // $_SERVER["DOCUMENT_ROOT"]
 require_once 'config.php';
+session_start();
 
 // récupère la catégorie depuis l'url/get et l'insère dans les requêtes pdo et l'affichage
 if (isset($_GET['categorie'])) {

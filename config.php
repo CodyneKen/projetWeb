@@ -1,8 +1,19 @@
  <?php
 
   // Rassemblement des entêtes de tt les fichiers .php
-  session_start();
   $host = "http://localhost:8000/";
+  
+  if (!isset($_SESSION))
+  {
+    session_start();
+  }
+
+  if (!isset($_SESSION['cart'])){
+    print("CART DECLARE");
+    $_SESSION['cart'] = array();
+
+  }
+
 
   // Variables de PDO
   $serveur = "localhost";
