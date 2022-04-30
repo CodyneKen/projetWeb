@@ -1,6 +1,6 @@
 
 <?php
-    session_start();
+   
     require_once 'config.php';
     $host = "http://localhost:8000/";
 
@@ -48,7 +48,9 @@
             <br>
             <br>
             <a href = gestion_membres.php>Gestion utilisateurs</a>
-            
+            <br>
+            <br>
+            <a href = gestion_commentaire.php>Gestion commentaire</a>
             <br>
             <br>
 

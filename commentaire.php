@@ -2,7 +2,7 @@
 
 session_start();
 require_once 'config.php';
-$pseudo = $_SESSION['user'];
+$pseudo = $_SESSION['pseudo'];
 $requete = "SELECT idMembre FROM Membres WHERE pseudo = '$pseudo'";
 /* recupere dans resultat toutes les lignes evc les colonnes QUE l'ON VEUT */
 $resultat = $connexion->prepare($requete);
