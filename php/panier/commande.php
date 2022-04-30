@@ -35,39 +35,25 @@ foreach ($_SESSION['cart'] as $idArticleInt => $qteArticle) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>connexion</title>
+    <title>Comm. Passée</title>
     <link rel="stylesheet" type="text/css" href="<?= $host ?>css/connexion.css">
     <script src="<?= $host ?>script.js"></script>
 </head>
 
 <body>
     <div class="logo" onclick="goHomepage()"><strong>NOZAMA</strong> </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <form class="co" action="connexion_php.php" method="post">
+    <br><br><br><br>
         <div class="bloc">
             <h2>COMMANDE REUSSIE</h2>
-            <input name="pseudo" placeholder="pseudo" required="required" autocomplete="off">
         </div>
-        <br>
-        <br>
+        <br><br>
         <div class="bloc">
-            <input type="password" name="password" placeholder="Mot de passe" required="required" autocomplete="off">
         </div>
-        <br>
-        <br>
-        <div class="bloc">
-            <button type="submit">Connexion</button>
-        </div>
-        <br>
-        <br>
+        <br><br><br><br>
 
-    </form>
     <div class="ins">
         COMMANDE PASSEE POUR <?= $total ?> EUR !<br>
-        <a href="inscription2.php">Inscription</a>
+        <a href="../../index.php">Acceuil</a>
     </div>
 
 

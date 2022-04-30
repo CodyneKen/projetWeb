@@ -64,7 +64,7 @@ require_once '../../config.php';
 								</td>
 								<td class="prix">&euro;<?= $produit['prix'] ?></td>
 								<!-- récupère le nombre d'article voulu dans le car de session -->
-								<td class="quantité"><?= $_SESSION['cart'][$idArticle]  ?></td>
+								<td class="quantité"><?= $qteArticle  ?></td>
 								<!-- calcul du total pour cet article -->
 								<td class="prix">&euro;<?= $produit['prix'] *  $qteArticle?></td>
 								<!-- bouton d'ajout d'article -->
