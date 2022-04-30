@@ -2,8 +2,7 @@
 	
 	session_start();
     require_once 'config.php';
-    $pseudo = $_SESSION['user'];
-    $requete = "SELECT idMembre FROM Membres WHERE pseudo = '$pseudo'";
+    $id = $_SESSION['user'];
     $resultat = $connexion->prepare($requete);
     $resultat->execute();
     $ligne = $resultat->fetch();
@@ -24,7 +23,7 @@
                 'nomArticle' => $nom,
                 'descriptif' => $descriptif,
                 'prix' => $prix,
-                'idVendeur' => $ligne['idMembre'],
+                'idVendeur' => $id,
                 'img' =>$img,
                 'stock' => $quantite,
                 'categorie' => $categorie
