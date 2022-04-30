@@ -1,31 +1,51 @@
 <?php
 
 require_once '../../config.php';
-// Commandes(idCommande, idClient, idArticle, >>QTEARTICLE<<, dateCommande)
-$total = 0;
-$idClient = $_SESSION['user'];
+// Commandes(idCommande, idClient, idArticle, qteArticle, dateCommande)ddd
 
-foreach ($_SESSION['cart'] as $idArticleInt => $qteArticle) {
-    $idArticle = strval($idArticleInt);
-    $requete = 'SELECT idArticle, prix, stock, nbVentes FROM Articles WHERE idArticle =' . $idArticle . ';';
-    $resultat = $connexion->prepare($requete);
-    $resultat->execute();
-    $produit = $resultat->fetch();
-
-    $total += $produit['prix'] * $qteArticle;
-    $date = date('Y-m-d H:i:s');
-    echo $idArticle ;
-    $insert = $connexion->prepare("INSERT INTO Commandes(idClient,idArticle,qteArticle,dateCommande) VALUES(:idClient,:idArticle,:qteArticle,:dateCommande)");
-    $insert->execute(array(
-        'idClient' =>$idClient,
-        'idArticle' => $idArticle,
-        'qteArticle' => $qteArticle,
-        'dateCommande' => $date
-    ));
+$stockMissing = "COMMANDE REUSSIE";
+$msgMissingStock = "";
 
 
+function checkStock($stockMissing, $msgMissingStock, $connexion){
+    $idClient = $_SESSION['user'];
+    foreach ($_SESSION['cart'] as $idArticle => $qteArticle){
+        $requete = 'SELECT idArticle, nomArticle, stock FROM Articles WHERE idArticle =' . $idArticle . ';';
+        $resultat = $connexion->prepare($requete);
+        $resultat->execute();
+        $produit = $resultat->fetch();
+        if ($produit['stock']< $qteArticle){
+            $artRupture = $produit['nomArticle'];
+            $stockMissing = "COMMANDE AS ECHOUE";
+            $msgMissingStock = "PAS ASSEZ DE STOCKS DE $artRupture";
+            return 0;
+        }
+    }
+    return 1;
+}
+function addOrderDB($msgMissingStock, $connexion){
+    $total = 0;
+    $idClient = $_SESSION['user'];
+    foreach ($_SESSION['cart'] as $idArticleInt => $qteArticle) {
+        $idArticle = strval($idArticleInt);
+        $requete = 'SELECT idArticle, prix, stock, nbVentes FROM Articles WHERE idArticle =' . $idArticle . ';';
+        $resultat = $connexion->prepare($requete);
+        $resultat->execute();
+        $produit = $resultat->fetch();
 
-    $insert = $connexion->prepare("UPDATE Articles set nbVentes=:nbVentes , stock=:stock where idArticle = '$idArticle'  ");
+        $total += $produit['prix'] * $qteArticle;
+        $date = date('Y-m-d H:i:s');
+        echo $idArticle ;
+        $insert = $connexion->prepare("INSERT INTO Commandes(idClient,idArticle,qteArticle,dateCommande) VALUES(:idClient,:idArticle,:qteArticle,:dateCommande)");
+        $insert->execute(array(
+            'idClient' =>$idClient,
+            'idArticle' => $idArticle,
+            'qteArticle' => $qteArticle,
+            'dateCommande' => $date
+        ));
+
+
+        $insert = $connexion->prepare("UPDATE Articles set nbVentes=:nbVentes , stock=:stock where idArticle = '$idArticle'  ");
             $insert->execute(array(
                 'stock' =>  $produit['stock'] - $qteArticle,
                 'nbVentes' => $produit['nbVentes'] + $qteArticle
@@ -33,8 +53,20 @@ foreach ($_SESSION['cart'] as $idArticleInt => $qteArticle) {
                 
             ));
 
-    $_SESSION['cart'] = array();
+        $_SESSION['cart'] = array();
+    }
+    $msgMissingStock = "COMMANDE PASSEE POUR $total EUR !";
+
+
+   
 }
+
+// si il y as assez de stock on ajoute à la bdd, sinon on affiche
+if (checkStock($stockMissing, $msgMissingStock, $connexion)){
+    addOrderDB($msgMissingStock, $connexion);
+
+}
+
 ?>
 
 
@@ -54,7 +86,7 @@ foreach ($_SESSION['cart'] as $idArticleInt => $qteArticle) {
     <div class="logo" onclick="goHomepage()"><strong>NOZAMA</strong> </div>
     <br><br><br><br>
         <div class="bloc">
-            <h2>COMMANDE REUSSIE</h2>
+            <h2><?= $stockMissing ?></h2>
         </div>
         <br><br>
         <div class="bloc">
@@ -62,7 +94,7 @@ foreach ($_SESSION['cart'] as $idArticleInt => $qteArticle) {
         <br><br><br><br>
 
     <div class="ins">
-        COMMANDE PASSEE POUR <?= $total ?> EUR !<br>
+        <?= $msgMissingStock ?>
         <a href="../../index.php">Acceuil</a>
     </div>
 

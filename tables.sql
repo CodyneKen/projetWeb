@@ -71,4 +71,3 @@ INSERT INTO Articles VALUES(NULL, "pc asu", "ASUS ROG EXTREME", 870, 'pc_asus.we
 INSERT INTO Articles VALUES(NULL, "frigo", "frigo", 5, 'frigo1.jpeg', 3, 15, 'electromenager',0);
 INSERT INTO Articles VALUES(NULL, "explode", "vive le php", 5, 'phpexplode.webp', 3, 15, 'poster',0);
 
-

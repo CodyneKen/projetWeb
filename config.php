@@ -9,7 +9,6 @@
   }
 
   if (!isset($_SESSION['cart'])){
-    print("CART DECLARE");
     $_SESSION['cart'] = array();
 
   }
