@@ -90,7 +90,9 @@ $data = $check->fetch();
 					<br>
 					<br>
 					<?php
-						$requete = 'SELECT nomArticle, prix, qteArticle, dateCommande , img FROM Commandes, Articles WHERE Commandes.idArticle = Articles.idArticle ORDER BY dateCommande;';
+					$id = $_SESSION['user'];
+
+						$requete = 'SELECT nomArticle, prix, qteArticle, dateCommande,img,idClient FROM Commandes, Articles WHERE Commandes.idArticle = Articles.idArticle AND idClient = '.$id.' ORDER BY dateCommande;';
     					$resultat = $connexion->prepare($requete);
     					$resultat->execute();
     					
