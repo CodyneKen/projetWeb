@@ -16,8 +16,8 @@
 
   // Variables de PDO
   $serveur = "localhost";
-  $login = 'phpmyadmin';
-  $pass = '753951';
+  $login = 'root';
+  $pass = 'root';
 
   try {
     $connexion = new PDO("mysql:host=$serveur;dbname=phpmyadmin", $login, $pass);

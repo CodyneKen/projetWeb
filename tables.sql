@@ -62,7 +62,7 @@ INSERT INTO Membres VALUES(NULL, 'Louis', 'Louis', 'Marliac', 'louis.marliac@etu
 INSERT INTO Membres VALUES(NULL, 'Walid', 'Walid', 'Zeghdallou', 'walid.zeghdallou@etu.univ-st-etienne.fr', '7 rue Walid', SHA1(CONCAT(SHA1('Walid'), SHA1('Zeghdallou'))),'admin');
 INSERT INTO Membres VALUES(NULL, 'Corentin', 'Corentin', 'Bohelay', 'corentin.bohelay@etu.univ-st-etienne.fr', '7 rue Corentin', SHA1(CONCAT(SHA1('Corentin'), SHA1('Bohelay'))),'admin');
 
--- Articles (idArticle, nomArticle, descriptif, prix, img, idVendeur, stock, categorie <ENUM>)
+-- Articles (idArticle, nomArticle, descriptif, prix, img, idVendeur, stock, categorie <ENUM>, nbVentes)
 INSERT INTO Articles VALUES(NULL, "frigo", "frigo", 5, 'frigo1.jpeg', 3, 15, 'electromenager' ,0);
 INSERT INTO Articles VALUES(NULL, "four", "un four", 18, 'four.webp', 3, 15, 'electromenager',0);
 INSERT INTO Articles VALUES(NULL, "lave vaisselle", "lave la vaisselle", 5, 'lavevaisselle.jpg', 3, 15, 'electromenager',0);
@@ -70,4 +70,5 @@ INSERT INTO Articles VALUES(NULL, "machine à laver", "lave la machine", 5, 'mac
 INSERT INTO Articles VALUES(NULL, "pc asu", "ASUS ROG EXTREME", 870, 'pc_asus.webp', 3, 15, 'informatique',0);
 INSERT INTO Articles VALUES(NULL, "frigo", "frigo", 5, 'frigo1.jpeg', 3, 15, 'electromenager',0);
 INSERT INTO Articles VALUES(NULL, "explode", "vive le php", 5, 'phpexplode.webp', 3, 15, 'poster',0);
+INSERT INTO Articles VALUES(NULL, "zoro", "le bricoleur", 5, 'zoro.jpg', 3, 1, 'figurine',0);
 

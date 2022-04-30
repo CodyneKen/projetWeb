@@ -38,7 +38,7 @@ function addOrderDB($msgMissingStock, $connexion){
         echo $idArticle ;
         $insert = $connexion->prepare("INSERT INTO Commandes(idClient,idArticle,qteArticle,dateCommande) VALUES(:idClient,:idArticle,:qteArticle,:dateCommande)");
         $insert->execute(array(
-            'idClient' =>$idClient,
+            'idClient' =>$_SESSION[idClient],
             'idArticle' => $idArticle,
             'qteArticle' => $qteArticle,
             'dateCommande' => $date
