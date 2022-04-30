@@ -99,22 +99,11 @@ $data = $check->fetch();
         <br>
         <br>
         <?php
-        if (isset($data['typemembre']) && $data['typemembre'] == 'vendeur') {
-            echo "<a href = http://localhost:8000/ajout_produit.php>Mettre un article en vente</a>";
-        }
-<<<<<<< HEAD
         if(isset($data['typemembre']) && $data['typemembre'] == 'admin'){
             echo "<a href = http://localhost:8000/gestion.php>gestion produit</a>";
         }
     ?>
-=======
-        ?>
- <?php
-                if($data['typemembre'] == 'admin'){
-                    echo "<a href = http://localhost:8000/gestion.php>gestion admin</a>";
-                }
-            ?>
->>>>>>> main
+
 </body>
 <footer>
     <form id="form1" action="commentaire.php" method="post">
