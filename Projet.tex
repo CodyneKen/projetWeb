@@ -56,19 +56,63 @@
 	\begin{center}
 		\textbf{\Large Table des mati\`eres}
 	\end{center}
+	\tableofcontents
 	\newpage
 	\begin{center}
 		\textbf{\Large Pr\'esentation du sujet}
 	\end{center}
 	\bigskip
-	\paragraph{}
-
+	\section{Pr\'esentation du site}
+	
 	Nous avons choisi de vous proposer un site marchand. Un membre peut s'inscrire soit en vendeur soit en client, puis vous pourrez vous connecter avec votre compte. Ensuite les clients pourront donc acheter des produits et les vendeurs pourront mettre en vente un article mais aussi en acheter. Lorsque vous \^etes connect\'e vous pourrez consulter votre compte en cliquant sur Bonjour <pseudo>, vous aurez acc\`es \`a vos informations, vos commandes et vous pourrez modifier votre compte. 
-
-	Les articles en ventes sont class\'es par cat\'egories. Pour trouver l'article que l'on chercher nous pourrons soit cliquer sur la cat\'egorie correspondante soit le chercher dans la barre de recherche. Bous pourrez donc ajouter des articles \`a votre panier puis effectuer votre commande(fictive bien \'evidemment). 
+	
+	Les articles en ventes sont class\'es par cat\'egories. Pour trouver l'article que l'on cherche nous pourrons soit cliquer sur la cat\'egorie correspondante soit le chercher dans la barre de recherche. Vous pourrez donc ajouter des articles \`a votre panier puis effectuer votre commande(fictive bien \'evidemment). 
 	
 	Un client ou un vendeur pourra contacter les administrateurs du site avec le bouton en bas de la page d'accueil. Ceci laissera un message que seuls les administrateurs pourront consulter/supprimer. Les administrateurs sont Louis, Walid et Corentin(Ceux-ci sont ajout\'es manuellement lors de la cr\'eation de la table Membres).
 	
 	Un administrateur peut g\'erer les articles, les membres et les messages laiss\'es par les membres \`a partir d'un lien "gestion admin" sur la page d'accueil. Il peut mettre un article en vente, modifier n'importe quelle article en vente ou m\^eme le supprimer. Il peut aussi avoir acc\`es a certaines informations des membres et bannir tout membres hormis les autres administrateurs. Pour finir un administrateur peut consulter les messages laiss\'es par les membres ainsi que les supprimer.
+	
+	Sur la page d'accueil vous pourrez trouver des promotions rentr\'ees par les administrateurs du site et les meilleures vente calcul\'ees. Vous pourrez aussi consulter une page \textbf{\`a apropos de NOZAMA} qui vous indiquera quelle est l'utilit\'e du site et quelques informations sur les administrateurs du site.
+	
+	Sur les pages du site vous trouverez g\'en\'eralement un lien "Acceuil" qui vous redirigera \`a l'accueil, si il n'y en a pas vous pourrez toujours cliquer sur le logo NOZAMA qui vous redirigera vers l'accueil.
+	
+	\section{Structure du site}
+	
+	
+	\section{Base de donn\'ees}
+	
+	Nous avons choisi de cr\'eer 4 tables diff\'erentes, Membres, Articles, Commentaires, Commandes. Ces tables sont cr\'ees \`a partir d'un fichier "tables.sql". Ce fichier cr\'ee la base de donn\'ees si elle n'existe pas, puis l'utilise. Ensuite on va supprimer les tables si elles existent d\'ej\`a, puis les cr\'eer. Et pour finir nous allons ins\'erer quelques membres et articles de base(les 3 administrateurs sont ins\'er\'es ici aussi). Il faudra donc source tables.sql dans mysql pour utiliser notre site.
+	
+	\subsection{Table Membres}
+	
+	Pour cette table nous avons choisi de la cr\'eer avec 8 colonnes : idMembre, pseudo, prenom, nom, mail, adresse, mdp et typemembre. La cl\'e primaire de cette table est idMembre.
+	\\
+	typemembre permet d'identifier quel type de membre vous \^etes, c'est un ENUM, vous serez soit un client soit un vendeur soit un administrateur.
+	
+	
+	\subsection{Table Articles}
+	
+	La table Article poss\`ede 8 colonnes aussi : idArticle, nomArticle, descriptif, prix, img, idVendeur, stock et categorie.
+	La cl\'e primaire de cette table est idArticle.\\
+	idVendeur est une cle \'etrang\`ere qui fait r\'ef\'erence \`a l'idMembre dans la table Membres.\\
+	categorie permet d'identifier \`a quelle cat\'egorie l'article appartient, c'est un ENUM qui sera informatique, electromenager, figurine, vetement, mobilier ou poster.
+	
+	\subsection{Table Commandes}
+	
+	La table Commandes poss\`ede 5 colonnes : idCommandes, idClient, idArticle, qteArticle, dateCommande.
+	La cl\'e primaire de cette table est idCommande.\\
+	idClient et idArticle sont des cl\'es \'etrang\`eres qui font r\'ef\'erence respectivement \`a idMembre dans Membres et idArticle dans Articles.
+		
+	\subsection{Table Commentaires}
+	
+	La table Commentaires poss\`ede 4 colonnes : idCommentaire, dateCommentaire, mess, idMembre.\\
+	La cl\'e primaire de cette table est idCommentaire.\\
+	idMembre est une cl\'e \'etrang\`ere qui fait r\'ef\'erence \`a idMembre dans Membres.
+	
+	\subsection{Modification en cours de projet}
+	
+	Pour revenir \`a la table Membres, au d\'epart nous avions cr\'eer des tables diff\'erentes pour les clients, vendeurs et administrateurs. Ce qui n'\'etait pas tr\`es optimis\'e. Nous avons donc choisi de cr\'eer une seule table Membres avec un typemembre pour \'eviter de cr\'eer trois tables.
+	
+	
 	
 \end{document}
