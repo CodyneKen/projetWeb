@@ -34,12 +34,13 @@ CREATE TABLE Articles(
 
 CREATE TABLE Commandes(
     idCommande INT AUTO_INCREMENT PRIMARY KEY,
-    idClient INT NOT NULL,
-    idArticle INT NOT NULL,
+    idClient INT NOT NULL ,
+    idArticle INT NOT NULL ,
+    qteArticle INT,
     dateCommande DATE,
     FOREIGN KEY (idArticle) REFERENCES Articles(idArticle),
-    FOREIGN KEY (idClient) REFERENCES Membres(idMembre),
-    UNIQUE (idClient, idArticle)
+    FOREIGN KEY (idClient) REFERENCES Membres(idMembre)
+   
     )ENGINE=InnoDB;
 
 CREATE TABLE Commentaires(

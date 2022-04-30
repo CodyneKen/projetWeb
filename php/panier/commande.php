@@ -2,7 +2,10 @@
 
 require_once '../../config.php';
 // Commandes(idCommande, idClient, idArticle, >>QTEARTICLE<<, dateCommande)
-foreach ($_SESSION['cart'] as $idArticle => $qteArticle) {
+$total = 0;
+$idClient = $_SESSION['user'];
+
+foreach ($_SESSION['cart'] as $idArticleInt => $qteArticle) {
     $idArticle = strval($idArticleInt);
     $requete = 'SELECT idArticle, prix, stock FROM Articles WHERE idArticle =' . $idArticle . ';';
     $resultat = $connexion->prepare($requete);
@@ -11,22 +14,20 @@ foreach ($_SESSION['cart'] as $idArticle => $qteArticle) {
 
     $total += $produit['prix'] * $qteArticle;
     $date = date('Y-m-d H:i:s');
-
+    echo $idArticle ;
     $insert = $connexion->prepare("INSERT INTO Commandes(idClient,idArticle,qteArticle,dateCommande) VALUES(:idClient,:idArticle,:qteArticle,:dateCommande)");
     $insert->execute(array(
-        'idClient' => $idClient,
+        'idClient' =>$idClient,
         'idArticle' => $idArticle,
         'qteArticle' => $qteArticle,
         'dateCommande' => $date
     ));
+
+    $_SESSION['cart'] = array();
 }
 ?>
 
-<?php
 
-require_once 'config.php';
-
-?>
 
 <!DOCTYPE html>
 <html>

@@ -51,6 +51,7 @@ require_once '../../config.php';
 							$total += $produit['prix'] * $qteArticle;
 
 							$image = $host."photos/" . $produit['img'];
+							
 							// afficheProduit($produit);
 					?>
 							<tr>
@@ -65,7 +66,7 @@ require_once '../../config.php';
 								<!-- récupère le nombre d'article voulu dans le car de session -->
 								<td class="quantité"><?= $_SESSION['cart'][$idArticle]  ?></td>
 								<!-- calcul du total pour cet article -->
-								<td class="prix">&euro;<?= $produit['prix'] * $cart[$idArticle] ?></td>
+								<td class="prix">&euro;<?= $produit['prix'] *  $qteArticle?></td>
 								<!-- bouton d'ajout d'article -->
 								<td>
 									<form method='GET' action='panier_plus.php'>
@@ -98,8 +99,11 @@ require_once '../../config.php';
 			</div>
 			<br>
 			<div class="buttons">
-				<input type="submit" value="Passer la commande" name="placerCommande" action='commande.php' >
-				<button id='suppr' type='submit' name='recup_id_art' value='pip' action='commande.php'>Passer la commande </button>
+				<form    action='commande.php'  >
+					<button id='suppr' type='submit' name='recup_id_art' value='pip' action='commande.php'>Passer la commande </button>
+				</form>
+				
+				
 
 			</div>
 	</div>
