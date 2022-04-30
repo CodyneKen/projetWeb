@@ -29,6 +29,7 @@ CREATE TABLE Articles(
     idVendeur INT,
     stock INT,
     categorie ENUM('informatique', 'electromenager', 'figurine', 'vetement', 'mobilier', 'poster'),
+    nbVentes INT DEFAULT 0,
     FOREIGN KEY (idVendeur) REFERENCES Membres(idMembre) 
     )ENGINE=InnoDB;
 
@@ -61,25 +62,13 @@ INSERT INTO Membres VALUES(NULL, 'Louis', 'Louis', 'Marliac', 'louis.marliac@etu
 INSERT INTO Membres VALUES(NULL, 'Walid', 'Walid', 'Zeghdallou', 'walid.zeghdallou@etu.univ-st-etienne.fr', '7 rue Walid', SHA1(CONCAT(SHA1('Walid'), SHA1('Zeghdallou'))),'admin');
 INSERT INTO Membres VALUES(NULL, 'Corentin', 'Corentin', 'Bohelay', 'corentin.bohelay@etu.univ-st-etienne.fr', '7 rue Corentin', SHA1(CONCAT(SHA1('Corentin'), SHA1('Bohelay'))),'admin');
 
-<<<<<<< HEAD
--- Articles (idArticle, nomArticle, descriptif, prix, img, idVendeur, stock, categorie <ENUM>, nbVentes)
-INSERT INTO Articles VALUES(NULL, "frigo", "frigo", 5, 'frigo1.jpeg', 3, 15, 'electromenager' ,0);
-INSERT INTO Articles VALUES(NULL, "four", "un four", 18, 'four.webp', 3, 15, 'electromenager',0);
-INSERT INTO Articles VALUES(NULL, "lave vaisselle", "lave la vaisselle", 5, 'lavevaisselle.jpg', 3, 15, 'electromenager',0);
-INSERT INTO Articles VALUES(NULL, "machine à laver", "lave la machine", 5, 'machinealaver.webp', 3, 15, 'electromenager',0);
-INSERT INTO Articles VALUES(NULL, "pc asu", "ASUS ROG EXTREME", 870, 'pc_asus.webp', 3, 15, 'informatique',0);
-INSERT INTO Articles VALUES(NULL, "frigo", "frigo", 5, 'frigo1.jpeg', 3, 15, 'electromenager',0);
-INSERT INTO Articles VALUES(NULL, "explode", "vive le php", 5, 'phpexplode.webp', 3, 15, 'poster',0);
-INSERT INTO Articles VALUES(NULL, "zoro", "le bricoleur", 5, 'zoro.jpg', 3, 1, 'figurine',0);
-=======
 -- Articles (idArticle, nomArticle, descriptif, prix, img, idVendeur, stock, categorie <ENUM>)
-INSERT INTO Articles VALUES(NULL, "frigo", "frigo", 5, 'frigo1.jpeg', 3, 15, 'electromenager');
-INSERT INTO Articles VALUES(NULL, "four", "un four", 18, 'four.webp', 3, 15, 'electromenager');
-INSERT INTO Articles VALUES(NULL, "lave vaisselle", "lave la vaisselle", 5, 'lavevaisselle.jpg', 3, 15, 'electromenager');
-INSERT INTO Articles VALUES(NULL, "machine à laver", "lave la machine", 5, 'machinealaver.webp', 3, 15, 'electromenager');
-INSERT INTO Articles VALUES(NULL, "pc asu", "ASUS ROG EXTREME", 870, 'pc_asus.webp', 3, 15, 'informatique');
-INSERT INTO Articles VALUES(NULL, "frigo", "frigo", 5, 'frigo1.jpeg', 3, 15, 'electromenager');
-INSERT INTO Articles VALUES(NULL, "explode", "vive le php", 5, 'phpexplode.webp', 3, 15, 'poster');
-INSERT INTO Articles VALUES(NULL, "le magicien zoro", "avec son épée", 42, 'zoro.jpg', 3, 1, 'figurine');
->>>>>>> 64948bf6fc5653669c8f580daa979e6ce8e388f9
+INSERT INTO Articles VALUES(NULL, "frigo", "frigo", 5, 'frigo1.jpeg', 3, 15, 'electromenager', 0);
+INSERT INTO Articles VALUES(NULL, "four", "un four", 18, 'four.webp', 3, 15, 'electromenager', 0);
+INSERT INTO Articles VALUES(NULL, "lave vaisselle", "lave la vaisselle", 5, 'lavevaisselle.jpg', 3, 15, 'electromenager', 0);
+INSERT INTO Articles VALUES(NULL, "machine à laver", "lave la machine", 5, 'machinealaver.webp', 3, 15, 'electromenager', 0);
+INSERT INTO Articles VALUES(NULL, "pc asu", "ASUS ROG EXTREME", 870, 'pc_asus.webp', 3, 15, 'informatique', 0);
+INSERT INTO Articles VALUES(NULL, "frigo", "frigo", 5, 'frigo1.jpeg', 3, 15, 'electromenager', 0);
+INSERT INTO Articles VALUES(NULL, "explode", "vive le php", 5, 'phpexplode.webp', 3, 15, 'poster', 0);
+INSERT INTO Articles VALUES(NULL, "le magicien zoro", "avec son épée", 42, 'zoro.jpg', 3, 1, 'figurine', 0);
 

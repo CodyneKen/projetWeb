@@ -26,7 +26,7 @@ function addOrderDB($msgMissingStock, $connexion){
     $idClient = $_SESSION['user'];
     foreach ($_SESSION['cart'] as $idArticleInt => $qteArticle) {
         $idArticle = strval($idArticleInt);
-        $requete = 'SELECT idArticle, prix, stock FROM Articles WHERE idArticle =' . $idArticle . ';';
+        $requete = 'SELECT idArticle, prix, stock, nbVentes FROM Articles WHERE idArticle =' . $idArticle . ';';
         $resultat = $connexion->prepare($requete);
         $resultat->execute();
         $produit = $resultat->fetch();
@@ -41,6 +41,17 @@ function addOrderDB($msgMissingStock, $connexion){
             'qteArticle' => $qteArticle,
             'dateCommande' => $date
         ));
+        
+        // augmente le nombre de ventes et diminue le stock dans la table articles
+        $insert = $connexion->prepare("UPDATE Articles set nbVentes=:nbVentes , stock=:stock where idArticle = '$idArticle'  ");
+        $insert->execute(array(
+            'stock' =>  $produit['stock'] - $qteArticle,
+            'nbVentes' => $produit['nbVentes'] + $qteArticle
+
+
+        ));
+
+
 
         $_SESSION['cart'] = array();
     }
