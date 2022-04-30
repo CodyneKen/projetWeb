@@ -24,7 +24,7 @@
                 'nomArticle' => $nom,
                 'descriptif' => $descriptif,
                 'prix' => $prix,
-                'idVendeur' => $ligne['idMembre'],
+                'idVendeur' => $_SESSION['user'],
                 'img' =>$img,
                 'stock' => $quantite,
                 'categorie' => $categorie
