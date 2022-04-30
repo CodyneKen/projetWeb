@@ -3,9 +3,7 @@
 	session_start();
     require_once 'config.php';
     $id = $_SESSION['user'];
-    $resultat = $connexion->prepare($requete);
-    $resultat->execute();
-    $ligne = $resultat->fetch();
+
 
     if(isset($_POST['nom']) && isset($_POST['prix']) && isset($_POST['quantite']) && isset($_POST['categorie']) && isset($_POST['descriptif']))
 	{
