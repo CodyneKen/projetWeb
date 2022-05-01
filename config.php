@@ -2,16 +2,25 @@
 
   // Rassemblement des entêtes de tt les fichiers .php
   $host = "http://localhost:8000/";
+
   
-  if (!isset($_SESSION))
-  {
+// si pas de session on la lance
+  if (!isset($_SESSION)){
     session_start();
   }
 
+// si pas de panier on en créé un
   if (!isset($_SESSION['cart'])){
     $_SESSION['cart'] = array();
-
   }
+
+  // fonctions utiles :
+  function alert($msg) {
+    echo "<script type='text/javascript'>alert('$msg');</script>";
+}
+function alert_js($msg) {
+  echo "<script type='text/javascript'>alert('$msg');</script>";
+}
 
 
   // Variables de PDO

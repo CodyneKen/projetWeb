@@ -34,13 +34,12 @@ require_once '../../config.php';
 					<!-- si le panier/cart n'existe pas :  , sinon on itere sur les elements du cart -->
 					<?php
 
-					$subtotal = 0;
+					$total = 0;
 					if (empty($_SESSION['cart'])) {
 						echo "<tr>";
-						echo "<td colspan='5'>Vous n'avez aucun produit ajouté dans votre panier</td>";
+						echo "<td colspan='5' class='message'>Vous n'avez aucun produit ajouté dans votre panier</td>";
 					} else {
 						// $cart = $_SESSION['cart'];
-						$total = 0;
 						foreach ($_SESSION['cart'] as $idArticleInt => $qteArticle) {
 							$idArticle = strval($idArticleInt);
 							$requete = 'SELECT idArticle, nomArticle, descriptif, prix, img, stock FROM Articles WHERE idArticle =' . $idArticle . ';';
@@ -62,11 +61,11 @@ require_once '../../config.php';
 									<br>
 									
 								</td>
-								<td class="prix">&euro;<?= $produit['prix'] ?></td>
+								<td class="prix"><?= $produit['prix'] ?>&euro;</td>
 								<!-- récupère le nombre d'article voulu dans le car de session -->
 								<td class="quantité"><?= $qteArticle  ?></td>
 								<!-- calcul du total pour cet article -->
-								<td class="prix">&euro;<?= $produit['prix'] *  $qteArticle?></td>
+								<td class="prix"><?= $produit['prix'] *  $qteArticle?>&euro;</td>
 								<!-- bouton d'ajout d'article -->
 								<td>
 									<form method='GET' action='panier_plus.php'>
@@ -95,7 +94,7 @@ require_once '../../config.php';
 			<br>
 			<div class="subtotal">
 				<span class="text">Prix Total</span>
-				<span class="prix">&euro;<?= $total ?></span>
+				<span class="prix"><?= $total ?>&euro;</span>
 			</div>
 			<br>
 			<div class="buttons">

@@ -66,3 +66,13 @@ text-decoration: none;
     position: relative;
     align-content: center;
 }
+
+/* CSS DE COMMANDE.php (format de la page de connexion réutilisé) */
+
+.message{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: bisque;
+    float:center;
+    align-content:center;
+    text-align:center;
+}

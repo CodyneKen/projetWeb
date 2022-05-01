@@ -5,24 +5,26 @@ require_once '../../config.php';
 
 $stockMissing = "COMMANDE REUSSIE";
 $msgMissingStock = "";
+$total = 0;
 
-function checkStock($stockMissing, $msgMissingStock, $connexion){
+function checkStock(&$stockMissing, &$msgMissingStock, $connexion){
     foreach ($_SESSION['cart'] as $idArticle => $qteArticle){
         $requete = 'SELECT idArticle, nomArticle, stock FROM Articles WHERE idArticle =' . $idArticle . ';';
         $resultat = $connexion->prepare($requete);
         $resultat->execute();
         $produit = $resultat->fetch();
         if ($produit['stock']< $qteArticle){
+            echo $produit['stock'];
+            echo $qteArticle;
             $artRupture = $produit['nomArticle'];
             $stockMissing = "COMMANDE AS ECHOUE";
-            $msgMissingStock = "PAS ASSEZ DE STOCKS DE $artRupture";
+            $msgMissingStock = "Pas assez de stock de \"$artRupture\"";
             return 0;
         }
     }
     return 1;
 }
-function addOrderDB($msgMissingStock, $connexion){
-    $total = 0;
+function addOrderDB(&$msgMissingStock, &$total, $connexion){
     $idClient = $_SESSION['user'];
     foreach ($_SESSION['cart'] as $idArticleInt => $qteArticle) {
         $idArticle = strval($idArticleInt);
@@ -34,6 +36,8 @@ function addOrderDB($msgMissingStock, $connexion){
         $total += $produit['prix'] * $qteArticle;
         $date = date('Y-m-d H:i:s');
         echo $idArticle ;
+        echo $produit['stock'];
+        echo $qteArticle;
         $insert = $connexion->prepare("INSERT INTO Commandes(idClient,idArticle,qteArticle,dateCommande) VALUES(:idClient,:idArticle,:qteArticle,:dateCommande)");
         $insert->execute(array(
             'idClient' =>$idClient,
@@ -58,10 +62,23 @@ function addOrderDB($msgMissingStock, $connexion){
     $msgMissingStock = "COMMANDE PASSEE POUR $total EUR !";
 }
 
-// si il y as assez de stock on ajoute à la bdd, sinon on affiche
-if (checkStock($stockMissing, $msgMissingStock, $connexion)){
-    addOrderDB($msgMissingStock, $connexion);
+if (isset($_SESSION['user'])){
+    if (checkStock($stockMissing, $msgMissingStock, $connexion)){
+        addOrderDB($msgMissingStock, $total, $connexion);
+        if ($total == 0){
+            header('Location:../../index.php');
+        }
+    }
+    
 }
+else {
+    alert_js("Il faut se connecter pour passer une commande !");
+    // sleep(2);
+    header('Location:../../connexion2.php');
+
+}
+// si il y as assez de stock on ajoute à la bdd, sinon on affiche
+
 
 ?>
 
@@ -85,12 +102,13 @@ if (checkStock($stockMissing, $msgMissingStock, $connexion)){
             <h2><?= $stockMissing ?></h2>
         </div>
         <br><br>
-        <div class="bloc">
+        <div class="message">
+        <?= $msgMissingStock ?>
         </div>
         <br><br><br><br>
 
     <div class="ins">
-        <?= $msgMissingStock ?>
+        
         <a href="../../index.php">Acceuil</a>
     </div>
 
