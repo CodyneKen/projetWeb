@@ -92,7 +92,7 @@ $data = $check->fetch();
 					<?php
 					$id = $_SESSION['user'];
 
-						$requete = 'SELECT nomArticle, prix, qteArticle, dateCommande,img,idClient FROM Commandes, Articles WHERE Commandes.idArticle = Articles.idArticle AND idClient = '.$id.' ORDER BY dateCommande;';
+						$requete = 'SELECT Commandes.nomArticle, prixArticle, qteArticle, dateCommande,Commandes.img,idClient FROM Commandes WHERE  idClient = '.$id.' ORDER BY dateCommande;';
     					$resultat = $connexion->prepare($requete);
     					$resultat->execute();
     					
@@ -121,7 +121,7 @@ $data = $check->fetch();
 
 					            <td><img src="'.$image.'" width="50" height="50" alt="'.$ligne['nomArticle'].'"></td>
 					            <td>'.$ligne['nomArticle'].'</td>
-					             <td>'.$ligne['prix'] * $ligne['qteArticle']."€".'</td>
+					             <td>'.$ligne['prixArticle'] * $ligne['qteArticle']."€".'</td>
 					             <td></td>
 					            <td>'.$ligne['qteArticle'].'</td>
 					        </tr>

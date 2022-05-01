@@ -28,7 +28,7 @@ function addOrderDB(&$msgMissingStock, &$total, $connexion){
     $idClient = $_SESSION['user'];
     foreach ($_SESSION['cart'] as $idArticleInt => $qteArticle) {
         $idArticle = strval($idArticleInt);
-        $requete = 'SELECT idArticle, prix, stock, nbVentes FROM Articles WHERE idArticle =' . $idArticle . ';';
+        $requete = 'SELECT * FROM Articles WHERE idArticle =' . $idArticle . ';';
         $resultat = $connexion->prepare($requete);
         $resultat->execute();
         $produit = $resultat->fetch();
@@ -38,11 +38,14 @@ function addOrderDB(&$msgMissingStock, &$total, $connexion){
         echo $idArticle ;
         echo $produit['stock'];
         echo $qteArticle;
-        $insert = $connexion->prepare("INSERT INTO Commandes(idClient,idArticle,qteArticle,dateCommande) VALUES(:idClient,:idArticle,:qteArticle,:dateCommande)");
+        $insert = $connexion->prepare("INSERT INTO Commandes(idClient,idArticle,qteArticle,prixArticle,img,nomArticle,dateCommande) VALUES(:idClient,:idArticle,:qteArticle,:prixArticle,:img,:nomArticle,:dateCommande)");
         $insert->execute(array(
             'idClient' =>$idClient,
             'idArticle' => $idArticle,
             'qteArticle' => $qteArticle,
+            'prixArticle' => $produit['prix'],
+            'img' => $produit['img'],
+            'nomArticle' => $produit['nomArticle'],
             'dateCommande' => $date
         ));
         

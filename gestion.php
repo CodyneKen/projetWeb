@@ -1,6 +1,6 @@
 
 <?php
-    session_start();
+   
     require_once 'config.php';
     $host = "http://localhost:8000/";
 
@@ -28,7 +28,7 @@
             <br>
             
             <div id = "categories">
-            	 Produits
+                 Produits
             Categories :
             <a class ="c" href =http://localhost:8000/produits.php?c=informatique>Informatique</a>
             <a class ="c" href = http://localhost:8000/produits.php?c=electromenager>Electromenager</a>
@@ -38,7 +38,7 @@
             <a class ="c" href = http://localhost:8000/produits.php?c=poster>Poster</a>
 
 
-			
+            
 
 
            
@@ -48,7 +48,9 @@
             <br>
             <br>
             <a href = gestion_membres.php>Gestion utilisateurs</a>
-            
+            <br>
+            <br>
+            <a href = gestion_commentaire.php>Gestion commentaire</a>
             <br>
             <br>
 

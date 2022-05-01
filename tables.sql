@@ -38,9 +38,12 @@ CREATE TABLE Commandes(
     idClient INT NOT NULL ,
     idArticle INT NOT NULL ,
     qteArticle INT,
-    dateCommande DATE,
-    FOREIGN KEY (idArticle) REFERENCES Articles(idArticle),
-    FOREIGN KEY (idClient) REFERENCES Membres(idMembre)
+    prixArticle FLOAT NOT NULL,
+    img VARCHAR(255),
+    nomArticle VARCHAR(128) NOT NULL,
+    dateCommande DATE
+    
+    
    
     )ENGINE=InnoDB;
 

@@ -25,8 +25,8 @@ function alert_js($msg) {
 
   // Variables de PDO
   $serveur = "localhost";
-  $login = 'root';
-  $pass = 'root';
+  $login = 'phpmyadmin';
+  $pass = '753951';
 
   try {
     $connexion = new PDO("mysql:host=$serveur;dbname=phpmyadmin", $login, $pass);
