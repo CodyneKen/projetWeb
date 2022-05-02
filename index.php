@@ -58,13 +58,14 @@ $data = $check->fetch();
         <br>
         
         <div id="categories">
-            Categories :
-            <a class="c" href=http://localhost:8000/categ.php?categorie=informatique>Informatique</a>
-            <a class="c" href=http://localhost:8000/categ.php?categorie=electromenager>Electromenager</a>
-            <a class="c" href=http://localhost:8000/categ.php?categorie=figurine>Figurines</a>
-            <a class="c" href=http://localhost:8000/categ.php?categorie=vetement>Vetements</a>
-            <a class="c" href=http://localhost:8000/categ.php?categorie=mobilier>Mobilier</a>
-            <a class="c" href=http://localhost:8000/categ.php?categorie=poster>Poster</a>
+          Categories :
+          
+            <a class="c" href="http://localhost:8000/categ.php?categorie=informatique">Informatique</a>
+            <a class="c" href="http://localhost:8000/categ.php?categorie=electromenager">Electromenager</a>
+            <a class="c" href="http://localhost:8000/categ.php?categorie=figurine">Figurines</a>
+            <a class="c" href="http://localhost:8000/categ.php?categorie=vetement">Vetements</a>
+            <a class="c" href="http://localhost:8000/categ.php?categorie=mobilier">Mobilier</a>
+            <a class="c" href="http://localhost:8000/categ.php?categorie=poster">Poster</a>
         </div>
 
 
@@ -79,146 +80,19 @@ $data = $check->fetch();
       <table>
                         <thead>
                             <tr>
-                                <th colspan="5">Meilleures Ventes Electromenager :</th>
+                                <th colspan="4">Meilleures Ventes Electromenager :</th>
                             </tr>
                         </thead>
 
                         <tbody>
                         
                              
-                            <tr>
-
-                               
-                               
-
-                                
-                            </tr>
+                           
 
 
 <?php
-function promo(){
 
-     echo '<div class="bloc2">
-
-      <table>
-                        <thead>
-                            <tr>
-                                <th colspan="5">Promotions Ordinateurs :</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                        
-                             
-                            <tr>
-
-                               
-                               
-
-                                
-                            </tr>
-
-                            <tr>
-                                <td>ROG Zephyrus M16 GU603HE</td>
-                                <td><img src="photos/pc_asus.webp" class="image" alt="PC gamer asus" /></td>
-                               
-                                
-                                <td></td>
-
-                                 <td><p class="ancien_prix">2999, 00 € </p>
-            <p class="nouveau_prix">1999,00 €</p></td>
-
-
-            <td>
-                <form method="GET" action="php/panier/panier_ajout.php" >
-
-                    <button id="ajouter" type="submit" name ="recup_id_art" value="5">Ajout au panier</button>
-                </form>
-        
-
-             </td>
-                                
-                               
-                            </tr>
-<tr>
-                                <td>ROG Zephyrus M16 GU603HE</td>
-                                <td><img src="photos/pc_asus.webp" class="image" alt="PC gamer asus" /></td>
-                               
-                                
-                                <td></td>
-
-                                 <td><p class="ancien_prix">2999, 00 € </p>
-            <p class="nouveau_prix">1999,00 €</p></td>
-
-
-
-
-            <td>
-                <form method="GET" action="php/panier/panier_ajout.php" >
-
-                    <button id="ajouter" type="submit" name ="recup_id_art" value="5">Ajout au panier</button>
-                </form>
-        
-
-             </td>
-                                
-                               
-                            </tr>
-
-                            <tr>
-
-                             <td>ROG Zephyrus M16 GU603HE</td>
-                                <td><img src="photos/pc_asus.webp" class="image" alt="PC gamer asus" /></td>
-                               
-                                
-                                <td></td>
-
-                                 <td><p class="ancien_prix">2999, 00 € </p>
-            <p class="nouveau_prix">1999,00 €</p></td>
-
-
-
-
-            <td>
-                <form method="GET" action="php/panier/panier_ajout.php" >
-
-                    <button id="ajouter" type="submit" name ="recup_id_art" value="5">Ajout au panier</button>
-                </form>
-        
-
-             </td>
-
-
-                            </tr>
-
- <td>ROG Zephyrus M16 GU603HE</td>
-                                <td><img src="photos/pc_asus.webp" class="image" alt="PC gamer asus" /></td>
-                               
-                                
-                                <td></td>
-
-                                 <td><p class="ancien_prix">2999, 00 € </p>
-            <p class="nouveau_prix">1999,00 €</p></td>
-
-
-
-
-            <td>
-                <form method="GET" action="php/panier/panier_ajout.php" >
-
-                    <button id="ajouter" type="submit" name ="recup_id_art" value="5">Ajout au panier</button>
-                </form>
-        
-
-             </td>
-
-                        </tbody>
-                    </table> 
-
-                    </div>
-
-                    ';
-                }
+                
                 
                 
 
@@ -249,7 +123,7 @@ function promo(){
             <td>
                 <form method="GET" action="php/panier/panier_ajout.php" >
 
-                    <button id="ajouter" type="submit" name ="recup_id_art" value="'.$ligne['idArticle'].'">Ajout au panier</button>
+                    <button  type="submit" name ="recup_id_art" value="'.$ligne['idArticle'].'">Ajout au panier</button>
                 </form>
         
 
@@ -275,11 +149,7 @@ function promo(){
                     </div>
 </div>
 
-<?php 
-    promo();
-    
-    
-?>
+
 
 <div class="bloc3">
         
@@ -288,20 +158,14 @@ function promo(){
       <table>
                         <thead>
                             <tr>
-                                <th colspan="5">Meilleures Ventes Informatique :</th>
+                                <th colspan="4">Meilleures Ventes Informatique :</th>
                             </tr>
                         </thead>
 
                         <tbody>
                         
                              
-                            <tr>
-
-                               
-                               
-
-                                
-                            </tr>
+                          
 
                             <?php
                              $requete = 'SELECT idArticle ,nomArticle, prix,img,nbVentes,categorie FROM Articles WHERE categorie = "informatique" ORDER BY nbVentes DESC LIMIT 3;';
@@ -331,7 +195,7 @@ function promo(){
             <td>
                 <form method="GET" action="php/panier/panier_ajout.php" >
 
-                    <button id="ajouter" type="submit" name ="recup_id_art" value="'.$ligne['idArticle'].'">Ajout au panier</button>
+                    <button  type="submit" name ="recup_id_art" value="'.$ligne['idArticle'].'">Ajout au panier</button>
                 </form>
         
 
@@ -352,13 +216,8 @@ function promo(){
                     </table> 
 
                     </div>
-</div>
 
-<?php 
-    promo();
-    
-    
-?>
+
 
 
 
@@ -394,10 +253,6 @@ function promo(){
 <a href=http://localhost:8000/apropos.html>A propos de NOZANA</a>
 
 
-
-
-
-</body>
 <footer>
     <form id="form1" action="commentaire.php" method="post">
         <fieldset>
@@ -411,6 +266,10 @@ function promo(){
     </form>
 </footer>
 
+
 </body>
+
+
+
 
 </html>

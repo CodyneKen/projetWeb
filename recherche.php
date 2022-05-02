@@ -5,7 +5,6 @@ require_once 'config.php';
 $host = "http://localhost:8000/";
 
 
-
 ?>
 
 <!DOCTYPE html>
@@ -27,16 +26,16 @@ $host = "http://localhost:8000/";
         
         <br>
 
-<div id = "categories">
-            Categories :
-            <a class="c" href="http://localhost:8000/categ.php?categorie=informatique">Informatique</a>
-            <a class="c" href="http://localhost:8000/categ.php?categorie=electromenager">Electromenager</a>
-            <a class="c" href="http://localhost:8000/categ.php?categorie=figurine">Figurines</a>
-            <a class="c" href="http://localhost:8000/categ.php?categorie=vetement">Vetements</a>
-            <a class="c" href="http://localhost:8000/categ.php?categorie=mobilier">Mobilier</a>
-            <a class="c" href="http://localhost:8000/categ.php?categorie=poster">Poster</a>
-        </div>
 
+ <div id="categories">
+            Categories :
+            <a class="c" href=http://localhost:8000/categ.php?categorie=informatique>Informatique</a>
+            <a class="c" href=http://localhost:8000/categ.php?categorie=electromenager>Electromenager</a>
+            <a class="c" href=http://localhost:8000/categ.php?categorie=figurine>Figurines</a>
+            <a class="c" href=http://localhost:8000/categ.php?categorie=vetement>Vetements</a>
+            <a class="c" href=http://localhost:8000/categ.php?categorie=mobilier>Mobilier</a>
+            <a class="c" href=http://localhost:8000/categ.php?categorie=poster>Poster</a>
+        </div>
 
 
         
@@ -74,7 +73,7 @@ $host = "http://localhost:8000/";
             echo "<br>";
 
             echo "<form method='GET' action='php/panier/panier_ajout.php' >";
-        echo "<button type='submit' name='recup_id_art' value='".$ligne['idArticle']."'>Ajout au panier</button>";
+        echo "<button id='ajouter' type='submit' name='recup_id_art' value='".$ligne['idArticle']."'>Ajout au panier</button>";
         echo "</form>";
 
 
