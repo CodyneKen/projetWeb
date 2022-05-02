@@ -1,0 +1,316 @@
+
+
+@font-face { font-family: "Molot"; 	src: url('molot.ttf'); }
+
+#haut {
+    width:100%;
+    align-content: space-between;
+}
+
+#searchbar{
+    
+    width: 1200px;
+    height: 30px;
+}
+
+.search {
+width:20%;
+float:left;
+align-content: space-between;
+position: relative;
+}
+
+.logo {
+    width:10%;
+	font-family: "Molot";
+	font-size: 40px;
+	float:left;
+	align-content: space-between;
+	position: relative;
+	color: whitesmoke;
+}
+
+
+
+
+.con {
+    font-family: "serif";
+color : whitesmoke;
+text-decoration: none;
+position: relative;
+float: right;
+
+}
+
+#panier {
+    font-family: "serif";
+    float: left;
+    color : whitesmoke;
+    position: relative;
+    text-decoration: none;
+
+    
+}
+
+
+
+
+
+
+
+#superBloc {
+    
+   
+
+    width: 100%;
+
+    
+height: 600px;
+background-color: lightseagreen;
+position: relative;
+float: left;
+}
+
+.bloc2 {
+    position: relative;
+    border: 1px solid #333;
+color: #04212f;
+text-decoration: none;
+float: left;
+    font-family: "Molot";
+    
+    height: 100%;
+    width: 25%;
+    background-color:skyblue ;
+    
+}
+.bloc3 {
+   font-family: "Molot";
+    
+color : whitesmoke;
+text-decoration: none;
+float:left;
+    align-content: space-between;
+    position: relative;
+    background-color: burlywood;
+    height: 100%;
+
+    width: 24.6%;
+
+
+}
+
+
+
+
+.co {
+    width:10%;
+    font-family: "serif";
+    float:left;
+    align-content: space-between;
+    position: relative;
+}
+
+#categories {
+    font-size: 30px;
+	background-color: whitesmoke;
+	font-family: "Molot";
+	color: #04212f;
+	align-content: space-between;
+	
+}
+#categories a:link:hover{
+    border: solid 1px black;
+}
+
+.c {
+    color: #04212f;
+    text-decoration: none;
+}
+
+#promo2{
+    border:2px solid #5c3566;
+    width: 300px;
+    background-color: aliceblue;
+}
+
+
+#promo{
+    border:2px solid #5c3566;
+    width: 300px;
+    background-color: aliceblue;
+}
+
+#meilleures_ventes{
+    width: 300px;
+    border:2px solid #5c3566;
+    position: absolute;
+    left: 600px;
+    top: 240px;
+    background-color: aliceblue;
+}
+#form1{
+    display: none;
+}
+
+footer{
+    background-color: rgb(108, 158, 160);
+}
+
+fieldset{
+    border: 1px solid rgb(8, 1, 29);
+}
+
+h1{
+    margin: 0 auto;
+    width: 150px;
+    font-family: "Molot";
+    font-size: 40px;
+    color: whitesmoke;
+}
+
+#contacter {
+    box-shadow: 3px 4px 0px 0px #1564ad;
+    background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+    background-color:#79bbff;
+    border-radius:42px;
+    border:1px solid #337bc4;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:19px;
+    font-weight:bold;
+    padding:15px 65px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #528ecc;
+    position: relative;
+    float : right;
+    top :10px;
+}
+
+#contacter:hover {
+    background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+    background-color:#378de5;
+}
+
+#contacter:active {
+    position:relative;
+    top:2px;
+}
+
+
+#contacter{
+    position: relative;
+    bottom: 10%;
+}
+
+.ancien_prix {
+    color: red;
+    text-decoration:line-through;
+}
+
+.nouveau_prix {
+    color: green;
+}
+
+.image {
+    width : 70px;
+    height : 70px;
+   
+}
+    
+    
+    /*
+    div {
+        width: 173px;
+        height: 50px;
+        font-size: 40px;
+        position: relative;
+        float: left;
+        align-content: space-around;
+        font-weight: 400;
+        font-family: "Molot";
+        color: whitesmoke;
+        
+        
+        
+    }
+    */
+    
+input::placeholder {
+    color: #04212f;
+    font-family: "Molot";
+    font-size: large;
+}
+    
+input {
+    font-family: "Molot";
+    font-size: 20px;
+    color: #04212f;
+}
+
+button {
+    font-family: "Molot";
+    font-size: 20px;
+    color: #04212f;
+}
+
+
+
+body{
+    background-color: #04212f;
+}
+
+
+/* CSS DU PANIER*/
+
+.panier{
+  background-color:aliceblue;
+}
+
+#connexion{
+  color:aliceblue;
+  text-decoration :none;
+  padding-left : 10px;
+}
+
+#compte{
+  color:aliceblue;
+  text-decoration :none;
+  padding-left : 10px;
+}
+
+
+.tete_panier{
+    border-radius: 15px;
+    border: 15px solid slategray;
+    background-color:rgba(240, 248, 255, 0.164);
+}
+
+.nom_produit {
+    width: 25%;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 5px;
+    border: 3px solid slategray;
+}
+
+.prix, .total, .quantité {
+    width: 15%;
+    background-color: antiquewhite;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 5px;
+    border: 3px solid slategray;
+}
+
+.quantité {
+    background-color: #ffffff;
+    border: 3px solid slategray;
+}
+
+a{
+  text-decoration:none;
+  font-family : Molot;
+  color : whitesmoke;
+}
