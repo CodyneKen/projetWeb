@@ -8,8 +8,9 @@
 		$pseudo = htmlspecialchars($_POST['pseudo']);
 		$adresse = htmlspecialchars($_POST['adresse']);
 		$mail = htmlspecialchars($_POST['mail']);
+        $nom = htmlspecialchars($_POST['nom']);
 		$mdp = htmlspecialchars($_POST['mdp']);
-		
+		$mdp_crypte = SHA1(SHA1($mdp).SHA1($nom));
        
 	   
         if(strlen($pseudo) <=128){
@@ -19,7 +20,8 @@
                 'pseudo' => $pseudo,
                 'adresse' => $adresse,
                 'mail' => $mail,
-                'mdp' => $mdp
+                'mdp' => $mdp_crypte
+
                 
             ));
             

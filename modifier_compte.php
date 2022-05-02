@@ -30,57 +30,65 @@
             <br>
             <?php
 
-            	echo '<form action="modif_compte_traitement.php" method="post">';
+                echo '<form action="modif_compte_traitement.php" method="post">';
             ?>
             
-                <h3>Modifier Compte</h3>       
+                <h3>Modifier Compte</h3>  
                 <div class="bloc">
-                	<?php
-                		echo "PSEUDO : <input type='text' name='pseudo' value='".$ligne["pseudo"]."' required='required' autocomplete='off'>" ;
-                	?>
+                    <?php
+                        echo "NOM : <input type='text' name='nom' value='".$ligne["nom"]."' required='required' autocomplete='off'>" ;
+                    ?>
                     
                 </div>
                 <br>
-            	<br>
+                <br>     
                 <div class="bloc">
-                	<?php
-                		echo "ADRESSE : <input type='text' name='adresse' value='".$ligne["adresse"]."' required='required' autocomplete='off'>" ;
-                	?>
+                    <?php
+                        echo "PSEUDO : <input type='text' name='pseudo' value='".$ligne["pseudo"]."' required='required' autocomplete='off'>" ;
+                    ?>
                     
                 </div>
                 <br>
-            	<br>
+                <br>
                 <div class="bloc">
-                	<?php
-                		echo "ADRESSE MAIL : <input type='text' name='mail' value='".$ligne["mail"]."' required='required' autocomplete='off'>" ;
-                	?>
+                    <?php
+                        echo "ADRESSE : <input type='text' name='adresse' value='".$ligne["adresse"]."' required='required' autocomplete='off'>" ;
+                    ?>
                     
                 </div>
                 <br>
-            	<br>
+                <br>
                 <div class="bloc">
-                	<?php
-                		echo "MOT DE PASSE : <input type='text' name='mdp' value='".$ligne["mdp"]."' required='required' autocomplete='off'>" ;
-                	?>
+                    <?php
+                        echo "ADRESSE MAIL : <input type='text' name='mail' value='".$ligne["mail"]."' required='required' autocomplete='off'>" ;
+                    ?>
                     
                 </div>
                 <br>
-            	<br>
+                <br>
+                <div class="bloc">
+                    <?php
+                        echo "MOT DE PASSE : <input type='text' name='mdp' required='required' autocomplete='off'>" ;
+                    ?>
+                    
+                </div>
+                <br>
+                <br>
                
                 <div class="bloc">
-                	<?php
+                    <?php
                    echo '<button type="submit" name="id" value="'.$ligne["idMembre"].'">Modifier compte</button>';
                     ?>
                 </div> 
                 <br>
-            	<br>
+                <br>
             </form> 
 
                 <?php 
-				echo '<form action="bannir_traitement.php" method="post">';
+                echo '<form action="bannir_traitement.php" method="post">';
                 echo '<button type="submit" name="idMembre" value="'.$ligne['idMembre'].'" >supprimer compte</button></a>';
                 
-            	echo '</form>'; 
+                echo '</form>'; 
 
                
                     
