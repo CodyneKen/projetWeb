@@ -12,7 +12,7 @@
       if(isset($data['mdp']) && $data['mdp'] === $mdp_crypte){
         $_SESSION['user'] = $data['idMembre'];
         $_SESSION['pseudo'] = $data['pseudo'];
-        header('Location:index.php');
+       header('Location:index.php');
       }
       else{
       echo "lala";
@@ -20,9 +20,9 @@
       echo "<br>";
       echo "ici ".$data['mdp'];
       echo $mdp_crypte;
+      header('Location:connexion2.php');
       }
-      //header('Location:connexion.php');
-      /*header('Location:index.php?login_err=password');*/
+      
   }
   else{
     header('Location:connexion2.php');

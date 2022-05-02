@@ -79,7 +79,7 @@ $host = "http://localhost:8000/";
         require_once 'config.php';
         $recherche = $_GET['search'];
         
-        $requete = "SELECT nomArticle, descriptif, prix, img, stock FROM Articles WHERE nomArticle LIKE '". $recherche ."%'"; 
+        $requete = "SELECT idArticle ,nomArticle, descriptif, prix, img, stock FROM Articles WHERE nomArticle LIKE '". $recherche ."%'"; 
         /* recupere dans resultat toutes les lignes evc les colonnes QUE l'ON VEUT */
         $resultat = $connexion->prepare($requete);
         $resultat->execute();

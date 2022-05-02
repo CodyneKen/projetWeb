@@ -38,10 +38,11 @@ function addOrderDB(&$msgMissingStock, &$total, $connexion){
         echo $idArticle ;
         echo $produit['stock'];
         echo $qteArticle;
-        $insert = $connexion->prepare("INSERT INTO Commandes(idClient,idArticle,qteArticle,prixArticle,img,nomArticle,dateCommande) VALUES(:idClient,:idArticle,:qteArticle,:prixArticle,:img,:nomArticle,:dateCommande)");
+        $insert = $connexion->prepare("INSERT INTO Commandes(idClient,idArticle,idVendeur,qteArticle,prixArticle,img,nomArticle,dateCommande) VALUES(:idClient,:idArticle,:idVendeur,:qteArticle,:prixArticle,:img,:nomArticle,:dateCommande)");
         $insert->execute(array(
             'idClient' =>$idClient,
             'idArticle' => $idArticle,
+            'idVendeur' => $produit['idVendeur'],
             'qteArticle' => $qteArticle,
             'prixArticle' => $produit['prix'],
             'img' => $produit['img'],

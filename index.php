@@ -13,7 +13,7 @@ $data = $check->fetch();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang = "fr">
 
 <head>
     <meta charset="utf-8">
@@ -35,17 +35,17 @@ $data = $check->fetch();
             
             <?php
             if (!isset($_SESSION['pseudo'])) { 
-                ?> <a id="panier"  href="connexion2.php">connexion</a> <a id="panier" href="php/panier/panier.php">Mon Panier</a></div> <?php 
+                ?> <a id="connexion"  href="connexion2.php">connexion/Inscription</a> <a id="panier" href="php/panier/panier.php">  Mon Panier  </a></div> <?php 
             } 
             else { 
                 
-                ?> <a id="panier" href="compte.php">Bonjour <?php echo $_SESSION['pseudo'] ;?>   </a> <a id="panier" href="php/panier/panier.php"> &nbsp  Mon Panier</a></div> <?php 
+                ?> <a id="compte" href="compte.php">Bonjour <?php echo $_SESSION['pseudo'] ;?>   </a> <a  href="php/panier/panier.php"> Mon Panier  </a><br><a href="deconnexion.php">deconnexion</a></div> <?php 
             }
             ?>
             
         </div>
 
-            <form class="barre" method="GET" action="recherche_membres.php">
+            <form class="barre" method="GET" action="recherche.php">
               
                 <input id="searchbar" type="search" name="search" placeholder="recherche">
 
@@ -62,33 +62,11 @@ $data = $check->fetch();
             <a class="c" href=http://localhost:8000/categ.php?categorie=informatique>Informatique</a>
             <a class="c" href=http://localhost:8000/categ.php?categorie=electromenager>Electromenager</a>
             <a class="c" href=http://localhost:8000/categ.php?categorie=figurine>Figurines</a>
-            <a class="c" href=http://localhost:8000/categ.php?categorie=vetements>Vetements</a>
+            <a class="c" href=http://localhost:8000/categ.php?categorie=vetement>Vetements</a>
             <a class="c" href=http://localhost:8000/categ.php?categorie=mobilier>Mobilier</a>
             <a class="c" href=http://localhost:8000/categ.php?categorie=poster>Poster</a>
         </div>
 
- <!--
-        <div id="promo">
-            <h2>Promotions</h2>
-            <h3>ROG Zephyrus M16 GU603HE avec NVIDIA GeForce RTX 3050 Ti</h3>
-            <img src="photos/pc_asus.webp" class='image' alt="PC gamer asus" /><br>
-            <p class='ancien_prix'>1799,99 € </p>
-            <p class='nouveau_prix'>1499,99 €</p>
-            Économisez 300,00 € <br>
-            <h3>Table salle à manger bois massif pied mikado 240 cm MELBOURNE</h3>
-            <img src="photos/table_bois.jpg" class='image' alt="table bois" /><br>
-            <p class='ancien_prix'>1349,00 € </p>
-            <p class='nouveau_prix'>1199,99 €</p>
-            Économisez 149,01 € <br>
-            <h3>Réfrigérateur Américain LG GSXV90MCAE INSTAVIEW </h3>
-            
-            <p class='ancien_prix'>2999, 00 € </p>
-            <p class='nouveau_prix'>1999,00 €</p>
-            Économisez 1000 € <br>
-
-            
-        </div>
-    -->
 
 <br>
 
@@ -393,79 +371,6 @@ function promo(){
 
         
 
-<?php
-/*
-                    $id = $_SESSION['user'];
-
-                        $requete = 'SELECT nomArticle, prix, qteArticle, dateCommande,img,idClient FROM Commandes, Articles WHERE Commandes.idArticle = Articles.idArticle AND idClient = '.$id.' ORDER BY dateCommande;';
-                        $resultat = $connexion->prepare($requete);
-                        $resultat->execute();
-                        
-
-
-
-         while($ligne = $resultat->fetch()) {
-
-                $image = "photos/".$ligne['img'];
-                             echo '     <table>
-                        <thead>
-                            <tr>
-                                <th colspan="4">Commande du : '.$ligne['dateCommande'].'</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-
-                                <td></td>
-                                <td>Nom article</td>
-                                 <td>Prix</td>
-                                 <td></td>
-                                <td>Quantite</td>
-                            </tr>
-                            <tr>
-
-                                <td><img src="'.$image.'" width="50" height="50" alt="'.$ligne['nomArticle'].'"></td>
-                                <td>'.$ligne['nomArticle'].'</td>
-                                 <td>'.$ligne['prix'] * $ligne['qteArticle']."€".'</td>
-                                 <td></td>
-                                <td>'.$ligne['qteArticle'].'</td>
-                            </tr>
-                        </tbody>
-                    </table> ';
-                    echo "<br>";
-                    echo "<br>";
-
-
-
-
-
-                    }  
-           */
-
-                    ?>
-<!-- 
-
-        <div id="meilleures_ventes">
-            <h2>Meilleures Ventes</h2>
-            <h3>Réfrigérateur Américain LG GSXV90MCAE INSTAVIEW </h3>
-            <img src="photos/frigo1.jpeg" class='image' alt="frigo" /><br>
-            <p class='ancien_prix'>2999, 00 € </p>
-            <p class='nouveau_prix'>1999,00 €</p>
-            Économisez 1000 € <br>
-            <h3>Table salle à manger bois massif pied mikado 240 cm MELBOURNE</h3>
-            <img src="photos/table_bois.jpg" class='image' alt="table bois" /><br>
-            <p class='ancien_prix'>1349,00 € </p>
-            <p class='nouveau_prix'>1199,99 €</p>
-            Économisez 149,01 € <br>
-        </div>
-        
-        <div id="promo2"  >
-            fdfdfdfd
-
-        </div>
-        <br>
--->
-
         
         <?php
         if (isset($_SESSION['user'])) {
@@ -478,7 +383,8 @@ function promo(){
         <br>
         <?php
         if (isset($data['typemembre']) && $data['typemembre'] == 'vendeur') {
-            echo "<a href = http://localhost:8000/ajout_produit.php>Mettre un article en vente</a>";
+            echo "<a href = http://localhost:8000/ajout_produit.php>Mettre un article en vente</a><br>";
+            echo "<a href = http://localhost:8000/mes_ventes.php>Mes Ventes</a>";
         }
         if(isset($data['typemembre']) && $data['typemembre'] == 'admin'){
             echo "<a href = http://localhost:8000/gestion.php>gestion admin</a>";

@@ -61,45 +61,63 @@ $data = $check->fetch();
         </div>
 	<br>
 	<br>
-	Commentaire(s) :
+        <div class="vente" >
+	Mes ventes
 	<br>
 	<br>
 	<?php
 
-			$requete = "SELECT Membres.pseudo,  Commentaires.idMembre, dateCommentaire,mess ,idCommentaire FROM Commentaires , Membres WHERE Commentaires.idMembre = Membres.idMembre ";
+			$requete = "SELECT * FROM Commandes  WHERE idVendeur = ".$id." ";
 			
     		/* recupere dans resultat toutes les lignes evc les colonnes QUE L'ON VEUT */
 		    $resultat = $connexion->prepare($requete);
 		    $resultat->execute();
 
+          while($ligne = $resultat->fetch()) {
+
+				$image = "photos/".$ligne['img'];
+							 echo '		<table>
+					    <thead>
+					        <tr>
+					            <th colspan="4">Commande du : '.$ligne['dateCommande'].'</th>
+					        </tr>
+					    </thead>
+					    <tbody>
+					    <tr>
+
+					            <td></td>
+					            <td>Nom article</td>
+					             <td>Prix</td>
+					             <td></td>
+					            <td>Quantite</td>
+					        </tr>
+					        <tr>
+
+					            <td><img src="'.$image.'" width="50" height="50" alt="'.$ligne['nomArticle'].'"></td>
+					            <td>'.$ligne['nomArticle'].'</td>
+					             <td>'.$ligne['prixArticle'] * $ligne['qteArticle']."€".'</td>
+					             <td></td>
+					            <td>'.$ligne['qteArticle'].'</td>
+					        </tr>
+					    </tbody>
+					</table> ';
+					echo "<br>";
+					echo "<br>";
+                  
+
+
+
+
+
+		            }
+          
 
 		
 
 
-while($ligne = $resultat->fetch()) {
-               
-              
-                echo "<div class = 'affiche'>";
-                
-                echo "idMembre : ".$ligne['idMembre'];
-                echo "<br>" ;
-                 echo "pseudo : ".$ligne['pseudo'];
-                echo "<br>" ;
-                echo "date commentaire : ".$ligne['dateCommentaire'];
-                echo "<div class = 'box3'>";
-                echo $ligne['mess'];
-                echo "</div>";
-                echo "<br>" ;
-                 echo '<form action="supprime_commentaire.php" method="post">';
-                echo '<button type="submit" name="idCommentaire" value="'.$ligne['idCommentaire'].'" >Supprimer commentaire</button></a>';
-                
-            	echo '</form>'; 
-                echo "</div>";
-                
-            	echo "<br>" ;
 
-            }  
 	?>
+        </div>
 
        
 

@@ -34,9 +34,9 @@ $data = $check->fetch();
 
 
 			if (!isset($_SESSION['pseudo'])) {
-				echo "<a id=\"con\" href=\"connexion2.php\">connexion</a> <a id=\"panier\" href=\"panier.php\">Mon Panier</a> <a id=\"deco\" href=\"deconnexion.php\">deconnexion</a></div>";
+				echo "<a id=\"con\" href=\"connexion2.php\">connexion</a> <a id=\"panier\" href=\"php/panier/panier.php\">Mon Panier</a> <a id=\"deco\" href=\"deconnexion.php\">deconnexion</a></div>";
 			} else {
-				echo "<a id=\"con\" href=\"index.php\">{$_SESSION['pseudo']}</a> <a id=\"panier\" href=\"panier.php\">Mon Panier</a></div><a id=\"deco\" href=\"deconnexion.php\">deconnexion</a></div> ";
+				echo "<a id=\"con\" href=\"index.php\">{$_SESSION['pseudo']}</a> <a id=\"panier\" href=\"php/panier/panier.php\">Mon Panier</a></div><a id=\"deco\" href=\"deconnexion.php\">deconnexion</a></div> ";
 			}
 
 			?>

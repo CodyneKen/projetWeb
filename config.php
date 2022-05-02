@@ -24,12 +24,12 @@ function alert_js($msg) {
 
 
   // Variables de PDO
-  $serveur = "localhost";
-  $login = 'phpmyadmin';
-  $pass = '753951';
+  $serveur = "webetu.univ-st-etienne.fr";
+  $login = 'ml05629u';
+  $pass = '7RW65A4V';
 
   try {
-    $connexion = new PDO("mysql:host=$serveur;dbname=phpmyadmin", $login, $pass);
+    $connexion = new PDO("mysql:host=$serveur;dbname=ml05629u", $login, $pass);
     $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   } catch (PDOException $e) {
     echo 'echec ' . $e->getMessage();

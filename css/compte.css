@@ -143,3 +143,11 @@ body {
     font-family: "Molot";
     color: whitesmoke;
 }
+
+#deco {
+  
+  font-family: "serif";
+
+    color: whitesmoke;
+    text-decoration: none;
+}

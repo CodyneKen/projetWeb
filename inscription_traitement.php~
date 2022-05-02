@@ -2,7 +2,7 @@
 
 	require_once 'config.php';
 	
-	if(isset($_POST['pseudo']) && isset($_POST['password']) && isset($_POST['password_retype']) && isset($_POST['type']) ){
+	if(isset($_POST['pseudo']) && isset($_POST['password']) && isset($_POST['password_retype'])){
 		$pseudo = htmlspecialchars($_POST['pseudo']);
 		$prenom = htmlspecialchars($_POST['prenom']);
 		$nom = htmlspecialchars($_POST['nom']);
@@ -24,25 +24,18 @@
 					'mdp' => $mdp_crypte,
 					'typemembre' => $type
 				));
-                $check = $connexion->prepare("SELECT idMembre, pseudo, mdp, nom FROM Membres where pseudo = '$pseudo'");
-                $check->execute(array($password));
-                $data = $check->fetch();
-                $_SESSION['user'] = $data['idMembre'];
-                $_SESSION['pseudo'] = $data['pseudo'];
 				header('Location:index.php');
 				
 				die();
 	    	}
 			else{
-			header('Location:inscription2.php');
+				header('Location:compte.php');
 				
 			}
 	    }
 		else{
-		header('Location:inscription2.php');
+			header('Location:ajout_produit.php');
 			
 		}
-	}else{
-        header('Location:inscription2.php');
-    }
+	}
 ?>

@@ -26,19 +26,20 @@ $host = "http://localhost:8000/";
         
         <br>
 
-<div id = "categories">
-                 Produits
+
+ <div id="categories">
             Categories :
-            <a class ="c" href =http://localhost:8000/produits.php?c=informatique>Informatique</a>
-            <a class ="c" href = http://localhost:8000/produits.php?c=electromenager>Electromenager</a>
-            <a class ="c"  href = http://localhost:8000/produits.php?c=figurine>figurine</a>
-            <a class ="c" href = http://localhost:8000/produits.php?c=vetements>Vetements</a>
-            <a class ="c" href = http://localhost:8000/produits.php?c=mobilier>Mobilier</a>
-            <a class ="c" href = http://localhost:8000/produits.php?c=poster>Poster</a>
+            <a class="c" href=http://localhost:8000/categ.php?categorie=informatique>Informatique</a>
+            <a class="c" href=http://localhost:8000/categ.php?categorie=electromenager>Electromenager</a>
+            <a class="c" href=http://localhost:8000/categ.php?categorie=figurine>Figurines</a>
+            <a class="c" href=http://localhost:8000/categ.php?categorie=vetement>Vetements</a>
+            <a class="c" href=http://localhost:8000/categ.php?categorie=mobilier>Mobilier</a>
+            <a class="c" href=http://localhost:8000/categ.php?categorie=poster>Poster</a>
+        </div>
 
 
-          
-            </div>
+        
+
 
 
 
@@ -55,7 +56,7 @@ $host = "http://localhost:8000/";
         require_once 'config.php';
         $recherche = $_GET['search'];
 
-        $requete = "SELECT nomArticle, descriptif, prix, img, stock FROM Articles WHERE nomArticle LIKE '". $recherche ."%'"; 
+        $requete = "SELECT idArticle, nomArticle, descriptif, prix, img, stock FROM Articles WHERE nomArticle LIKE '". $recherche ."%'"; 
         /* recupere dans resultat toutes les lignes evc les colonnes QUE l'ON VEUT */
         $resultat = $connexion->prepare($requete);
         $resultat->execute();
@@ -70,7 +71,17 @@ $host = "http://localhost:8000/";
             echo "Plus que ".$ligne['stock']." articles";
             echo "<br>";
             echo "<br>";
-            echo "<button id='ajouter' onclick='...fonctionpanier...'>Ajouter au panier</button>";
+
+            echo "<form method='GET' action='php/panier/panier_ajout.php' >";
+        echo "<button id='ajouter' type='submit' name='recup_id_art' value='".$ligne['idArticle']."'>Ajout au panier</button>";
+        echo "</form>";
+
+
+            
+         
+
+            
+            
             echo "</div>";
             echo "<div class = 'box2'>";
             echo "<img src='$image' class='image' alt='$image' />";

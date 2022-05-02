@@ -1,15 +1,5 @@
 
 
-
-
-
-
-
-
-
-
-
-
 @font-face { font-family: "Molot"; 	src: url('molot.ttf'); }
 
 #haut {
@@ -135,7 +125,7 @@ float:left;
 
 .c {
     color: #04212f;
-	text-decoration: none;
+    text-decoration: none;
 }
 
 #promo2{
@@ -271,17 +261,25 @@ body{
     background-color: #04212f;
 }
 
-a{
-    text-decoration: none;
-    color: red;
-    font-family: "Molot";
-}
 
 /* CSS DU PANIER*/
 
 .panier{
-    background-color:aliceblue;
+  background-color:aliceblue;
 }
+
+#connexion{
+  color:aliceblue;
+  text-decoration :none;
+  padding-left : 10px;
+}
+
+#compte{
+  color:aliceblue;
+  text-decoration :none;
+  padding-left : 10px;
+}
+
 
 .tete_panier{
     border-radius: 15px;
@@ -311,73 +309,8 @@ a{
     border: 3px solid slategray;
 }
 
-
-
-
-
-
-
-
-
-
-/* CSS DE INSCRPTION DE WALID
-body {
-    background-color:#04212f ;
-  }
-
-  .logo {
-      width:10%;
-      font-family: "Molot";
-      font-size: 40px;
-      float:center;
-      
-      position: relative;
-      color: whitesmoke;
-      margin: 0 auto;
-   width: 100px;
-}
-.co {
-    
-    margin: 0 auto;
-   width: 1000px;
-   height: 1000px;
-   background-color: grey;
-   position: relative;
-   align-content: center;
-}
-.bloc{
-    margin: 0 auto;
-   width: 150px;
-
-}
-h2{
-    margin: 0 auto;
-   width: 150px;
-    font-family: "Molot";
-   font-size: 40px;
-color: whitesmoke;
-}
-button {
-    margin: 0 auto;
-   width: 100px;
-   font-family: "Molot";
-    width: 100px;
-    font-size: 40;
-}
-
-input {
-    font-family: "Molot";
-    font-size: 20px;
-color: #04212f;
-}
 a{
-    font-family: "Molot";
-    color: red;
-    text-decoration: none;
-    position: relative;
-    float: right;
+  text-decoration:none;
+  font-family : Molot;
+  color : whitesmoke;
 }
-*/
-
-
-

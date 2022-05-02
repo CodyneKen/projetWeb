@@ -5,7 +5,7 @@
 
     $recherche = $_GET['search'];
 			
-    		$requete = "SELECT * FROM Membres WHERE pseudo LIKE '". $recherche ."%'"; 
+    		$requete = "SELECT * FROM Membres WHERE pseudo LIKE '". $recherche ."%' AND typemembre != 'admin'"; 
 			
     		/* recupere dans resultat toutes les lignes evc les colonnes QUE L'ON VEUT */
 		    $resultat = $connexion->prepare($requete);

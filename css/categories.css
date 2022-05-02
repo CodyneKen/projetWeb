@@ -208,6 +208,14 @@ h2{
 }
 
 
+/* css mes_ventes.php*/
+
+.vente {
+font-family: "Molot";
+    color: whitesmoke;
+}
+
+
 
 /* CSS DE INSCRPTION DE WALID
 body {
@@ -269,8 +277,9 @@ a{
 */
 
 .affiche{
-    background-color: whitesmoke;
+    background-color: skyblue;
     margin-bottom: 10px;
+    
 }
 
 .affiche {
@@ -278,6 +287,7 @@ a{
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 100px 100px;
     grid-gap: 10px;
+    
 }
 
 .box2 {
