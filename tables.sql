@@ -2,10 +2,12 @@ CREATE DATABASE IF NOT EXISTS phpmyadmin;
 
 USE phpmyadmin;
 
+
 drop TABLE IF EXISTS Commandes;
 drop TABLE IF EXISTS Commentaires;
 drop TABLE IF EXISTS Articles;
 drop TABLE IF EXISTS Membres;
+
 
 
 CREATE TABLE Membres (
@@ -43,9 +45,6 @@ CREATE TABLE Commandes(
     img VARCHAR(255),
     nomArticle VARCHAR(128) NOT NULL,
     dateCommande DATE
-    
-    
-   
     )ENGINE=InnoDB;
 
 CREATE TABLE Commentaires(
@@ -80,8 +79,8 @@ INSERT INTO Articles VALUES(NULL, "Sweat à Capuche Fourré Patch Détaillé ave
 INSERT INTO Articles VALUES(NULL, "PHP pour les nuls", "Apprenez facilement à développer en PHP, en seulement une seule étape !", '22.99', 'autre.jpg', 3, 39, 'poster', 0);
 INSERT INTO Articles VALUES(NULL, "PHP programmers", "Afficher ce magnifique poster dans votre maison, votre décoration sera splendide", '11.95', 'programmers.jpg', 3, 55, 'poster', 0);
 INSERT INTO Articles VALUES(NULL, "Meuble design", "Double plateau PHOENIX Vous aimez passer des soirées en famille ou entre amis ? Le meuble TV double plateau PHOENIX bois et noir est fait pour vous ! Grâce à ses deux longs plateaux 116 cm épaisseur 15 mm en particules de bois mélaminé, vous pourrez passer de bonnes soirées devant un plateau TV ou autour d'un apéritif.", '89.99', 'petit_meuble.png', 1, 150, 'mobilier', 0);
-INSERT INTO Articles VALUES(NULL, "Bibliothèque design", "Tablettes, montants et façades : panneaux dérivés de bois, panneau aggloméré mélaminé et/ou plaqué, épaisseur 19mm. Ferrures : accessoires et quincaillerie de première qualité. Caisson et tiroir : multiplex. Poignée : aluminium, option laque colorée. Option tablettes renforcées : celles de 37 cm de large peuvent supporter une charge maximale de 60 kg, celles de 73 cm de 40 kg. Les tablettes renforcées sont disponibles dans le configurateur.Profondeur: 35cm Hauteur: 195cm Largeur: 231cm ", 1100, 'bibliotheque.webp', 1, 200, 'mobilier', 0);
-INSERT INTO Articles VALUES(NULL, "Canapé", "    Plus produit : Coffre de rangement, Canapé convertible Type d'angle : Réversible Dimensions du couchage : 140 x 200 cm Epaisseur du matelas : 8 cm ype de couchage : Occasionnel Densité de l'assise : 25 kg/m3 Matière du revêtement : Tissu Couleur(s) : Gris Made in Europe : Oui ", '619.49', 'canape.webp', 1, 200, 'mobilier', 0);
+INSERT INTO Articles VALUES(NULL, "Bibliotheque design", "Tablettes, montants et façades : panneaux dérivés de bois, panneau aggloméré mélaminé et/ou plaqué, épaisseur 19mm. Ferrures : accessoires et quincaillerie de première qualité. Caisson et tiroir : multiplex. Poignée : aluminium, option laque colorée. Option tablettes renforcées : celles de 37 cm de large peuvent supporter une charge maximale de 60 kg, celles de 73 cm de 40 kg. Les tablettes renforcées sont disponibles dans le configurateur.Profondeur: 35cm Hauteur: 195cm Largeur: 231cm ", 1100, 'bibliotheque.webp', 1, 200, 'mobilier', 0);
+INSERT INTO Articles VALUES(NULL, "Canape", "    Plus produit : Coffre de rangement, Canapé convertible Type d'angle : Réversible Dimensions du couchage : 140 x 200 cm Epaisseur du matelas : 8 cm ype de couchage : Occasionnel Densité de l'assise : 25 kg/m3 Matière du revêtement : Tissu Couleur(s) : Gris Made in Europe : Oui ", '619.49', 'canape.webp', 1, 200, 'mobilier', 0);
 INSERT INTO Articles VALUES(NULL, "PC portable Asus", "
     Processeur AMD Ryzen 7 4800H (Octo-Core 2.9 GHz / 4.2 GHz Turbo - 16 Threads - Cache 8 Mo)
     16 Go de mémoire vive DDR4 3200 MHz (2x 8 Go - 2 slots - maximum 32 Go au total)
@@ -97,4 +96,4 @@ INSERT INTO Articles VALUES(NULL, "PC portable Asus", "
 INSERT INTO Articles VALUES(NULL, "Samsung M3 Portable 1 To Disque dur - externe", " Samsung M3 Portable est conçu pour stocker en toute sécurité une grande capacité de photos, films, musique et autres données. ", 180, 'disque_dur.webp', 1, 45, 'informatique', 0);
 INSERT INTO Articles VALUES(NULL, "Razer Basilisk V3 souris", "Créez, contrôlez et imposez votre propre style de jeu avec la Razer Basilisk V3, la souris gaming ergonomique pour des performances individuelles. Toutes les macros disponibles vous proposent de nombreuses possibilités", '79.99', 'souris.webp', 1, 100, 'informatique', 0);
 INSERT INTO Articles VALUES(NULL, "Naruto", "Fonçant droit vers Obito devenu invulnérable en réceptacle de Jûbi, on voit ici Naruto - Fourth Great Ninja War Ikigai combiner son attaque Futon Rasen Shuriken avec l’Enton Kagutsuchi de son rival Sasuke, décidés à anéantir ensemble leur ennemi commun. Dans une pose ultra dynamique, il utilise le mode Chakra de Kyubi transcrit grâce aux symboles caractéristiques de sa tenue et sa silhouette flamboyant dans des nuances enflammées. De sa main droite, il prépare son attaque, étant la technique d’élément vent qu’il créa après avoir compris les principes du Fûton en fusionnant celui-ci avec son Rasengan. Le décor rocheux du socle nous transporte sur le champ de bataille de la 4ème Grande Guerre Ninja. ", '341.03', 'naruto.jpg', 3, 4, 'figurine', 0);
-INSERT INTO Articles VALUES(NULL, "Saïtama", "Son entrainement 100 pompes, 100 abdos, 100 squats et 10 km de course a fait de lui l'homme le plus fort du monde, capable de vaincre tous ses ennemis en un coup de poing, mais a aussi rendu sa vie ennuyeuse à mourir. Devenu membre de l'association des Héros, il débarrasse le pays de ses monstres tout en cherchant un adversaire à sa taille.", '426.50', 'saitama.jpg', 3, 8, 'figurine', 0);
+INSERT INTO Articles VALUES(NULL, "Saitama", "Son entrainement 100 pompes, 100 abdos, 100 squats et 10 km de course a fait de lui l'homme le plus fort du monde, capable de vaincre tous ses ennemis en un coup de poing, mais a aussi rendu sa vie ennuyeuse à mourir. Devenu membre de l'association des Héros, il débarrasse le pays de ses monstres tout en cherchant un adversaire à sa taille.", '426.50', 'saitama.jpg', 3, 8, 'figurine', 0);
