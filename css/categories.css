@@ -28,17 +28,22 @@ position: relative;
 	color: whitesmoke;
 }
 
-#con {
+.con {
     font-family: "serif";
 color : whitesmoke;
 text-decoration: none;
+position: relative;
+float: right;
+
 }
 
 #panier {
     font-family: "serif";
-	
+	float: left;
     color : whitesmoke;
+    position: relative;
     text-decoration: none;
+
     
 }
 .co {

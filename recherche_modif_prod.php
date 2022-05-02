@@ -1,31 +1,20 @@
 <?php
-    session_start();
-    require_once 'config.php';
-    $host = "http://localhost:8000/";
-    
-    $categorie = $_GET['c'];
-			
-    
-			$requete = "SELECT idArticle, nomArticle, descriptif, prix, img, stock FROM Articles where categorie='$categorie'";
-    		/* recupere dans resultat toutes les lignes evc les colonnes QUE L'ON VEUT */
-		    $resultat = $connexion->prepare($requete);
-		    $resultat->execute();
-    /*
-    $requete = 'SELECT nomArticle, descriptif, prix, img, stock FROM Articles';
-    
-    $resultat = $connexion->prepare($requete);
-    $resultat->execute();
-    */
+
+session_start();
+require_once 'config.php';
+$host = "http://localhost:8000/";
+
 
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
-        <meta charset="utf-8">
-        <title>inscription</title>
+        <meta charset="UTF-8">
+        <title>NOZAMA</title>
         <link rel="stylesheet" type="text/css" href="<?=$host?>css/categories.css">
         <script src="<?=$host?>script.js"></script>
+
     </head>
     <body>
 
@@ -73,29 +62,32 @@
 
           
             </div>
-            <br>
-            <div class="texte">
-             <?php
-            	echo $categorie ;
-                 echo "<br>";
-                 ?>
-                 </div>
-             <?php
-	    		$adresse = $_SERVER['PHP_SELF'];
-	    		$i = 0;
-			    foreach($_GET as $cle => $valeur){
-			        $adresse .= ($i == 0 ? '?' : '&').$cle.($valeur ? '='.$valeur : '');
-			        $i++;
-			    }
-    			
-			
-			
-			
-			 echo "<br>";
 
-            while($ligne = $resultat->fetch()) {
-               
-               $image = "photos/".$ligne['img'];
+
+
+
+
+
+
+
+
+
+        
+        <br>
+
+        <?php
+        require_once 'config.php';
+        $recherche = $_GET['search'];
+        
+        $requete = "SELECT nomArticle, descriptif, prix, img, stock FROM Articles WHERE nomArticle LIKE '". $recherche ."%'"; 
+        /* recupere dans resultat toutes les lignes evc les colonnes QUE l'ON VEUT */
+        $resultat = $connexion->prepare($requete);
+        $resultat->execute();
+        while($ligne = $resultat->fetch()){
+
+
+
+ $image = "photos/".$ligne['img'];
                 echo "<div class = 'affiche'>";
                 echo "<div class = 'box1'>";
                 echo $ligne['nomArticle'];
@@ -114,9 +106,17 @@
                 echo $ligne['descriptif'];
                 echo "</div>";
                 echo "</div>";
-            }  
-            ?>
-            
-            
+
+
+
+
+
+
+
+
+                
+        }
+        ?>
+        <a class = "accueil" href = http://localhost:8000/index.php>Accueil</a>
     </body>
 </html>

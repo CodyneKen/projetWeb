@@ -2,11 +2,11 @@
     session_start();
     require_once 'config.php';
     $host = "http://localhost:8000/";
-    
-    $categorie = $_GET['c'];
+
+    $recherche = $_GET['search'];
 			
-    
-			$requete = "SELECT idArticle, nomArticle, descriptif, prix, img, stock FROM Articles where categorie='$categorie'";
+    		$requete = "SELECT * FROM Membres WHERE pseudo LIKE '". $recherche ."%'"; 
+			
     		/* recupere dans resultat toutes les lignes evc les colonnes QUE L'ON VEUT */
 		    $resultat = $connexion->prepare($requete);
 		    $resultat->execute();
@@ -29,8 +29,7 @@
     </head>
     <body>
 
-
-<div id="haut">
+    	<div id="haut">
         <div class="logo" onclick="goHomepage()"><strong>NOZAMA</strong> </div>
 
         <div class="con">
@@ -47,7 +46,7 @@
             
         </div>
 
-            <form class="barre" method="GET" action="recherche_modif_prod.php">
+            <form class="barre" method="GET" action="recherche_membres.php">
               
                 <input id="searchbar" type="search" name="search" placeholder="recherche">
 
@@ -58,25 +57,27 @@
 
             <br>
             <br>
-            <br>
-            
-            <div id = "categories">
-            	 Produits
-            Categories :
-            <a class ="c" href =http://localhost:8000/produits.php?c=informatique>Informatique</a>
-            <a class ="c" href = http://localhost:8000/produits.php?c=electromenager>Electromenager</a>
-            <a class ="c"  href = http://localhost:8000/produits.php?c=figurine>figurine</a>
-            <a class ="c" href = http://localhost:8000/produits.php?c=vetements>Vetements</a>
-            <a class ="c" href = http://localhost:8000/produits.php?c=mobilier>Mobilier</a>
-            <a class ="c" href = http://localhost:8000/produits.php?c=poster>Poster</a>
 
+
+
+        
+            
+            
+            
+		 <div id = "categories">
+		           Membres
+		            Categories :
+		  <a class ="c" href =membres.php?c=client>Membres simple</a>
+		  <a class ="c" href = membres.php?c=vendeur>Vendeurs</a>
+        
+            </div>
 
           
-            </div>
+           
             <br>
             <div class="texte">
              <?php
-            	echo $categorie ;
+            	echo $idMembre ; 
                  echo "<br>";
                  ?>
                  </div>
@@ -87,32 +88,33 @@
 			        $adresse .= ($i == 0 ? '?' : '&').$cle.($valeur ? '='.$valeur : '');
 			        $i++;
 			    }
-    			
-			
-			
 			
 			 echo "<br>";
 
             while($ligne = $resultat->fetch()) {
                
-               $image = "photos/".$ligne['img'];
+               
                 echo "<div class = 'affiche'>";
                 echo "<div class = 'box1'>";
-                echo $ligne['nomArticle'];
+                echo "id : ".$ligne['idMembre'];
                 echo "<br>";
-                echo $ligne['prix']."€";
+                echo "pseudo : ".$ligne['pseudo'];
                 echo "<br>";
-                echo "Plus que ".$ligne['stock']." articles";
+                echo "prenom : ".$ligne['prenom'];
                 echo "<br>";
+                echo "nom : ".$ligne['nom'];
                 echo "<br>";
-                echo "<a href='produit.php?id=".$ligne['idArticle'].">< button id='ajouter' > Modifier article </button></a>";
+                echo "adresse mail : ".$ligne['mail'];
+                echo "<br>";
+                echo "adresse : ".$ligne['adresse'];
+                echo "<br>";
+                echo '<form action="bannir_traitement.php" method="post">';
+                echo '<button type="submit" name="idMembre" value="'.$ligne['idMembre'].'" >Bannir</button></a>';
+                
+            	echo '</form>'; 
                 echo "</div>";
-                echo "<div class = 'box2'>";
-                echo "<img src='$image' class='image' alt='$image' />";
-                echo "</div>";
-                echo "<div class = 'box3'>";
-                echo $ligne['descriptif'];
-                echo "</div>";
+               
+                
                 echo "</div>";
             }  
             ?>

@@ -28,8 +28,32 @@
         <script src="<?=$host?>script.js"></script>
     </head>
     <body>
-        <div class="logo" onclick="goHomepage()"><strong>NOZAMA</strong> </div> 
-            <a id = 'accueil' href="index.php">Accueil</a>
+
+        
+        <div id="haut">
+        <div class="logo" onclick="goHomepage()"><strong>NOZAMA</strong> </div>
+
+        <div class="con">
+            
+            <?php
+            if (!isset($_SESSION['pseudo'])) { 
+                ?> <a id="panier"  href="connexion2.php">connexion</a> <a id="panier" href="php/panier/panier.php">Mon Panier</a></div> <?php 
+            } 
+            else { 
+                
+                ?> <a id="panier" href="compte.php">Bonjour <?php echo $_SESSION['pseudo'] ;?>   </a> <a id="panier" href="php/panier/panier.php"> &nbsp  Mon Panier</a></div> <?php 
+            }
+            ?>
+            
+        </div>
+
+            <form class="barre" method="GET" action="recherche_membres.php">
+              
+                <input id="searchbar" type="search" name="search" placeholder="recherche">
+
+               
+            </form>
+
             <br>
             <br>
             <br>

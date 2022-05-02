@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once '../../config.php';
+require_once 'config.php';
 $host = "http://localhost:8000/";
 
 
@@ -22,20 +22,39 @@ $host = "http://localhost:8000/";
             <input id="searchbar" type="search" name="search" placeholder="recherche">  
         </form> 
         <br>
-        <div id = "categories">
-            Categories :
-            <a class ="c" href = http://localhost:8000/categ.php?categorie=informatique>Informatique</a>
-            <a class ="c" href = http://localhost:8000/categ.php?categorie=electromenager>Electromenager</a>
-            <a class ="c"  href = http://localhost:8000/categ.php?categorie=figurine>Figurines</a>
-            <a class ="c" href = http://localhost:8000/categ.php?categorie=vetements>Vetements</a>
-            <a class ="c" href = http://localhost:8000/categ.php?categorie=mobilier>Mobilier</a>
-            <a class ="c" href = http://localhost:8000/categ.php?categorie=poster>Poster</a>
-        </div>
+        
+        
         <br>
+
+<div id = "categories">
+                 Produits
+            Categories :
+            <a class ="c" href =http://localhost:8000/produits.php?c=informatique>Informatique</a>
+            <a class ="c" href = http://localhost:8000/produits.php?c=electromenager>Electromenager</a>
+            <a class ="c"  href = http://localhost:8000/produits.php?c=figurine>figurine</a>
+            <a class ="c" href = http://localhost:8000/produits.php?c=vetements>Vetements</a>
+            <a class ="c" href = http://localhost:8000/produits.php?c=mobilier>Mobilier</a>
+            <a class ="c" href = http://localhost:8000/produits.php?c=poster>Poster</a>
+
+
+          
+            </div>
+
+
+
+<br>
+        
+        
+        <br>
+       
+        
+        <br>
+        
 
         <?php
         require_once 'config.php';
         $recherche = $_GET['search'];
+
         $requete = "SELECT nomArticle, descriptif, prix, img, stock FROM Articles WHERE nomArticle LIKE '". $recherche ."%'"; 
         /* recupere dans resultat toutes les lignes evc les colonnes QUE l'ON VEUT */
         $resultat = $connexion->prepare($requete);

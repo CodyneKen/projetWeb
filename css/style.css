@@ -40,17 +40,30 @@ position: relative;
 	color: whitesmoke;
 }
 
+
+
+
 .con {
-   
     font-family: "serif";
 color : whitesmoke;
 text-decoration: none;
-float:right;
-    align-content: space-between;
-    position: relative
-
+position: relative;
+float: right;
 
 }
+
+#panier {
+    font-family: "serif";
+    float: left;
+    color : whitesmoke;
+    position: relative;
+    text-decoration: none;
+
+    
+}
+
+
+
 
 
 
@@ -99,13 +112,7 @@ float:left;
 
 
 
-#panier {
-    font-family: "serif";
-	
-    color : whitesmoke;
-    text-decoration: none;
-    
-}
+
 .co {
     width:10%;
     font-family: "serif";
