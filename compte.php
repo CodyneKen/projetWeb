@@ -11,7 +11,7 @@ $data = $check->fetch();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang = "fr">
 
 <head>
 	<meta charset="utf-8">
@@ -28,32 +28,30 @@ $data = $check->fetch();
 
 	<div class="haut">
 		<div class="logo" onclick="goHomepage()"><strong>NOZAMA</strong> </div>
-
 		<div class="barre"><input id="searchbar" type="text" name="search" placeholder="recherche"> </div>
 		<div class="co">
 			<?php
 
 
 			if (!isset($_SESSION['pseudo'])) {
-				echo "<a id=\"con\" href=\"connexion2.php\">connexion</a> <a id=\"panier\" href=\"panier.php\">Mon Panier</a> <a id=\"deco\" href=\"deconnexion.php\">deconnexion</a></div>";
+				echo "<a id=\"con\" href=\"connexion2.php\">connexion</a> <a id=\"panier\" href=\"php/panier/panier.php\">Mon Panier</a> <a id=\"deco\" href=\"deconnexion.php\">deconnexion</a></div>";
 			} else {
-				echo "<a id=\"con\" href=\"index.php\">{$_SESSION['pseudo']}</a> <a id=\"panier\" href=\"panier.php\">Mon Panier</a></div><a id=\"deco\" href=\"deconnexion.php\">deconnexion</a></div> ";
+				echo "<a id=\"con\" href=\"index.php\">{$_SESSION['pseudo']}</a> <a id=\"panier\" href=\"php/panier/panier.php\">Mon Panier</a></div><a id=\"deco\" href=\"deconnexion.php\">deconnexion</a></div> ";
 			}
 
 			?>
 
-		</div>
 		<br>
 		<br>
 		<br>
 		<div id="categories">
 			Categories :
-			<a class="c" href=http://localhost:8000/categ.php?categorie=informatique>Informatique</a>
-			<a class="c" href=http://localhost:8000/categ.php?categorie=electromenager>Electromenager</a>
-			<a class="c" href=http://localhost:8000/categ.php?categorie=figurine>Figurines</a>
-			<a class="c" href=http://localhost:8000/categ.php?categorie=vetements>Vetements</a>
-			<a class="c" href=http://localhost:8000/categ.php?categorie=mobilier>Mobilier</a>
-			<a class="c" href=http://localhost:8000/categ.php?categorie=poster>Poster</a>
+			<a class="c" href="http://localhost:8000/categ.php?categorie=informatique">Informatique</a>
+			<a class="c" href="http://localhost:8000/categ.php?categorie=electromenager">Electromenager</a>
+			<a class="c" href="http://localhost:8000/categ.php?categorie=figurine">Figurines</a>
+			<a class="c" href="http://localhost:8000/categ.php?categorie=vetements">Vetements</a>
+			<a class="c" href="http://localhost:8000/categ.php?categorie=mobilier">Mobilier</a>
+			<a class="c" href="http://localhost:8000/categ.php?categorie=poster">Poster</a>
 		</div>
 		<br>
 		<br>
@@ -93,7 +91,7 @@ $data = $check->fetch();
 					<?php
 					$id = $_SESSION['user'];
 
-						$requete = 'SELECT nomArticle, prix, qteArticle, dateCommande,img,idClient FROM Commandes, Articles WHERE Commandes.idArticle = Articles.idArticle AND idClient = '.$id.' ORDER BY dateCommande;';
+						$requete = 'SELECT Commandes.nomArticle, prixArticle, qteArticle, dateCommande,Commandes.img,idClient FROM Commandes WHERE  idClient = '.$id.' ORDER BY dateCommande;';
     					$resultat = $connexion->prepare($requete);
     					$resultat->execute();
     					
@@ -122,7 +120,7 @@ $data = $check->fetch();
 
 					            <td><img src="'.$image.'" width="50" height="50" alt="'.$ligne['nomArticle'].'"></td>
 					            <td>'.$ligne['nomArticle'].'</td>
-					             <td>'.$ligne['prix'] * $ligne['qteArticle']."€".'</td>
+					             <td>'.$ligne['prixArticle'] * $ligne['qteArticle']."€".'</td>
 					             <td></td>
 					            <td>'.$ligne['qteArticle'].'</td>
 					        </tr>
