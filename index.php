@@ -1,3 +1,4 @@
+
 <?php
 
 require_once 'config.php';
@@ -20,7 +21,7 @@ $data = $check->fetch();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="<?=$host?>css/style.css">
     <script src="<?=$host?>script.js"></script>
-    <title>accueil</title>
+    <title>NOZAMA</title>
 </head>
 
 <body>
@@ -73,9 +74,9 @@ $data = $check->fetch();
 
 <div id="superBloc" >
        
-       <div class="bloc3">
+       <div class="bloc2">
         
-      <div class="bloc3">
+      <div class="bloc2">
 
       <table>
                         <thead>
@@ -109,7 +110,6 @@ $data = $check->fetch();
               
 
                     echo '
-
                             <tr>
                                 <td>'.$ligne['nomArticle'].'</td>
                                 <td><img src="'.$image.'" width="50" height="50" alt="'.$ligne['nomArticle'].'"></td>
@@ -118,23 +118,16 @@ $data = $check->fetch();
                                 <td>
                                  
             <p class="nouveau_prix">'.$ligne['prix'] ."€".' </p></td>
-
-
             <td>
                 <form method="GET" action="php/panier/panier_ajout.php" >
-
                     <button  type="submit" name ="recup_id_art" value="'.$ligne['idArticle'].'">Ajout au panier</button>
                 </form>
         
-
              </td>
                                 
                                
                             </tr>
-
-
                       
-
                     ';
                 }
                
@@ -181,7 +174,6 @@ $data = $check->fetch();
               
 
                     echo '
-
                             <tr>
                                 <td>'.$ligne['nomArticle'].'</td>
                                 <td><img src="'.$image.'" width="50" height="50" alt="'.$ligne['nomArticle'].'"></td>
@@ -189,46 +181,159 @@ $data = $check->fetch();
                                 
                                 <td>
                                  
-            <p class="nouveau_prix">'.$ligne['prix'] ."€".' </p></td>
-
-
-            <td>
-                <form method="GET" action="php/panier/panier_ajout.php" >
-
-                    <button  type="submit" name ="recup_id_art" value="'.$ligne['idArticle'].'">Ajout au panier</button>
-                </form>
-        
-
-             </td>
+                                <p class="nouveau_prix">'.$ligne['prix'] ."€".' </p></td>
+                                <td>
+                                <form method="GET" action="php/panier/panier_ajout.php" >
+                                <button  type="submit" name ="recup_id_art" value="'.$ligne['idArticle'].'">Ajout au panier</button>
+                                </form>
                                 
-                               
-                            </tr>
-
-
-                      
-
-                    ';
-                }
-
-
+                                </td>
+                                </tr>';
+                            }
                             ?>
-</tbody>
-                    </table> 
-
-                    </div>
-
-
-
-
-
-
-
-
-
+            </tbody>
+        </table> 
     </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</div>
+<div class="bloc2">
+       
+       <div class="bloc2">
+ 
+       <table>
+                         <thead>
+                             <tr>
+                                 <th colspan="4">Meilleures Ventes Figurines :</th>
+                             </tr>
+                         </thead>
+ 
+                         <tbody>
+                         
+                              
+                           
+ 
+                             <?php
+                              $requete = 'SELECT idArticle ,nomArticle, prix,img,nbVentes,categorie FROM Articles WHERE categorie = "figurine" ORDER BY nbVentes DESC LIMIT 3;';
+                         $resultat = $connexion->prepare($requete);
+                         $resultat->execute();
+                         
+ 
+ 
+ 
+          while($ligne = $resultat->fetch()) {
+ 
+                 $image = "photos/".$ligne['img'];
+               
+ 
+                     echo '
+                             <tr>
+                                 <td>'.$ligne['nomArticle'].'</td>
+                                 <td><img src="'.$image.'" width="50" height="50" alt="'.$ligne['nomArticle'].'"></td>
+                                
+                                 
+                                 <td>
+                                  
+             <p class="nouveau_prix">'.$ligne['prix'] ."€".' </p></td>
+             <td>
+                 <form method="GET" action="php/panier/panier_ajout.php" >
+                     <button  type="submit" name ="recup_id_art" value="'.$ligne['idArticle'].'">Ajout au panier</button>
+                 </form>
+         
+              </td>
+                                 
+                                
+                             </tr>
+                       
+                     ';
+                 }
+ 
+ 
+                             ?>
+ </tbody>
+                     </table> 
+ 
+                     </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+     </div>
+     <div class="bloc3">
+        
+      <div class="bloc3">
+
+      <table>
+                        <thead>
+                            <tr>
+                                <th colspan="4">Meilleures Ventes Mobilier :</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                        
+                             
+                          
+
+                            <?php
+                             $requete = 'SELECT idArticle ,nomArticle, prix,img,nbVentes,categorie FROM Articles WHERE categorie = "mobilier" ORDER BY nbVentes DESC LIMIT 3;';
+                        $resultat = $connexion->prepare($requete);
+                        $resultat->execute();
+                        
+
+
+
+         while($ligne = $resultat->fetch()) {
+
+                $image = "photos/".$ligne['img'];
+              
+
+                    echo '
+                            <tr>
+                                <td>'.$ligne['nomArticle'].'</td>
+                                <td><img src="'.$image.'" width="50" height="50" alt="'.$ligne['nomArticle'].'"></td>
+                               
+                                
+                                <td>
+                                 
+                                <p class="nouveau_prix">'.$ligne['prix'] ."€".' </p></td>
+                                <td>
+                                <form method="GET" action="php/panier/panier_ajout.php" >
+                                <button  type="submit" name ="recup_id_art" value="'.$ligne['idArticle'].'">Ajout au panier</button>
+                                </form>
+                                
+                                </td>
+                                </tr>';
+                            }
+                            ?>
+            </tbody>
+        </table> 
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</div>
  </div>
 
         
+  
 
         
         <?php
