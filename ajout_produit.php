@@ -8,10 +8,10 @@ $host = "http://localhost:8000/";
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang = "fr">
     <head>
         <meta charset="utf-8">
-        <title>inscription</title>
+        <title>NOZAMA</title>
         <link rel="stylesheet" type="text/css" href="<?=$host?>css/style.css">
         <script src="<?=$host?>script.js"></script>
 
@@ -25,16 +25,14 @@ $host = "http://localhost:8000/";
             
             <?php
             if (!isset($_SESSION['pseudo'])) { 
-                ?> <a id="panier"  href="connexion2.php">connexion/Inscription</a> <a id="panier" href="php/panier/panier.php"> &nbsp Mon Panier</a></div> <?php 
+                ?> <a id="connexion"  href="connexion2.php">connexion/Inscription</a> <a id="panier" href="php/panier/panier.php"> Mon Panier</a></div> <?php 
             } 
             else { 
                 
-                ?> <a id="panier" href="compte.php">Bonjour <?php echo $_SESSION['pseudo'] ;?>   </a> <a id="panier" href="php/panier/panier.php"> &nbsp  Mon Panier</a><br><a id="panier" href="deconnexion.php">deconnexion</a></div> <?php 
+                ?> <a id="compte" href="compte.php">Bonjour <?php echo $_SESSION['pseudo'] ;?>   </a> <a id="panier" href="php/panier/panier.php"> Mon Panier</a><br><a id="deconnexion" href="deconnexion.php">deconnexion</a></div> <?php 
             }
             ?>
             
-        </div>
-
             <form class="barre" method="GET" action="recherche_membres.php">
               
                 <input id="searchbar" type="search" name="search" placeholder="recherche">
@@ -46,12 +44,12 @@ $host = "http://localhost:8000/";
             <br>
 <div id="categories">
 			Categories :
-			<a class="c" href=http://localhost:8000/categ.php?categorie=informatique>Informatique</a>
-			<a class="c" href=http://localhost:8000/categ.php?categorie=electromenager>Electromenager</a>
-			<a class="c" href=http://localhost:8000/categ.php?categorie=figurine>Figurines</a>
-			<a class="c" href=http://localhost:8000/categ.php?categorie=vetements>Vetements</a>
-			<a class="c" href=http://localhost:8000/categ.php?categorie=mobilier>Mobilier</a>
-			<a class="c" href=http://localhost:8000/categ.php?categorie=poster>Poster</a>
+			<a class="c" href="http://localhost:8000/categ.php?categorie=informatique">Informatique</a>
+			<a class="c" href="http://localhost:8000/categ.php?categorie=electromenager">Electromenager</a>
+			<a class="c" href="http://localhost:8000/categ.php?categorie=figurine">Figurines</a>
+			<a class="c" href="http://localhost:8000/categ.php?categorie=vetements">Vetements</a>
+			<a class="c" href="http://localhost:8000/categ.php?categorie=mobilier">Mobilier</a>
+			<a class="c" href="http://localhost:8000/categ.php?categorie=poster">Poster</a>
 		</div>
 
       

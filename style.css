@@ -264,8 +264,9 @@ body{
 
 /* CSS DU PANIER*/
 
-.panier{
-  background-color:aliceblue;
+#panier{
+  color:aliceblue;
+  font-family: "Molot";
 }
 
 #connexion{
